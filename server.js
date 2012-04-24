@@ -83,29 +83,18 @@ function sendResponse(res, code, body, options) {
 }
 
 function retrieveCiteprocJson(urlStr, callback, errback) {
-	var pUrl = url.parse(urlStr);
-	var options = {
-		host : pUrl.hostname,
+	request( {
+		uri : urlStr,
 		headers : {
 			'Accept': 'application/citeproc+json'
-		},
-		port : pUrl.port,
-		path : pUrl.pathname
-	};
-	console.log(options);
-	return http.get(options, function(res) {
-		var chunks = [];
-		console.log(res.statusCode);
-		if (res.statusCode == 200) {
-			res.on('data', function(chunk) {
-				chunks.push(chunk);
-			});
-			res.on('end', function() {
-				var data = chunks.join("");
-				callback(data);
-			});
-		} else
-			errback(res);
+		}
+	}, function (error, response, body) {
+		if (error) 
+			errback("unknown error");
+		else if (response.statusCode == 200)
+			callback(body);
+		else 
+			errback(body);
 	});
 }
 
