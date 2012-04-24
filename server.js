@@ -4,8 +4,8 @@ var url = require('url');
 var request = require('request');
 var CSL = require("../lib/citeprocmodule").CSL;
 
-var connegUrl = "http://test.datacite.org:80/data";
-//var connegUrl = "http://dx.doi.org:80";
+var connegUrl = "http://test.datacite.org/data";
+//var connegUrl = "http://dx.doi.org";
 
 var styles;
 var locales;
@@ -56,6 +56,7 @@ function formatHandler(req, res) {
 		sendResponse(res, 400, "doi param required");
 	else {
 		retrieveCiteprocJson(connegUrl + "/" + doi, function(data) {
+			console.log(data);
 			item = JSON.parse(data);
 			format(item, query.style, query.lang, function(text) {
 				sendResponse(res, 200, text);
@@ -83,20 +84,28 @@ function sendResponse(res, code, body, options) {
 }
 
 function retrieveCiteprocJson(urlStr, callback, errback) {
+	var requestType = 'application/citeproc+json';
 	request( {
 		uri : urlStr,
 		headers : {
-			'Accept': 'application/citeproc+json'
+			'Accept': requestType
 		}
 	}, function (error, response, body) {
+		var responseType = response.headers["content-type"];
 		if (error) 
 			errback("unknown error");
+		else if (!responseType.startsWith(requestType))
+			errback("cannot get metadata");
 		else if (response.statusCode == 200)
 			callback(body);
 		else 
 			errback(body);
 	});
 }
+
+String.prototype.startsWith = function(str, prefix) {
+    return str.indexOf(prefix) === 0;
+};
 
 function format(item, style, lang, callback, errback) {
 	if (style == null)
