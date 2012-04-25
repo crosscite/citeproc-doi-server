@@ -1,4 +1,4 @@
-var CSL = require("../lib/citeprocmodule").CSL;
+var CSL = require("../lib/citeproc").CSL;
 var fs = require("fs");
 
 var styles = {};
@@ -6,11 +6,11 @@ var locales = {};
 
 function init() {
 	console.log("loading styles...");
-	styles = loadDir("../csl/", /(.*)\.csl$/);
+	styles = loadDir("csl/", /(.*)\.csl$/);
 	console.log(Object.keys(styles).length + " styles loaded.");
 
 	console.log("loading locales...");
-	locales = loadDir("../csl-locales/", /locales-(.*)\.xml$/);
+	locales = loadDir("csl-locales/", /locales-(.*)\.xml$/);
 	console.log(Object.keys(locales).length + " locales loaded.");
 }
 

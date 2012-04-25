@@ -1,5 +1,5 @@
 var request = require('request');
-var settings = require('./settings').load("doi.config.json");
+var settings = require('./settings').load("config/doi.json");
 
 // callback = function(data)
 // errback = function(code, msg)
