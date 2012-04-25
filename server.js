@@ -103,8 +103,8 @@ function retrieveCiteprocJson(urlStr, callback, errback) {
 	});
 }
 
-String.prototype.startsWith = function(str, prefix) {
-    return str.indexOf(prefix) === 0;
+String.prototype.startsWith = function(prefix) {
+    return this.indexOf(prefix) === 0;
 };
 
 function format(item, style, lang, callback, errback) {
