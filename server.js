@@ -6,6 +6,7 @@ var citeproc = require('./citeproc');
 var connegUrl = "http://test.datacite.org/data";
 //var connegUrl = "http://dx.doi.org";
 
+
 function init() {
 	console.log("creating server...");
 	port = 8006;
@@ -43,7 +44,7 @@ function formatHandler(req, res) {
 	if (doi == undefined)
 		sendResponse(res, 400, "doi param required");
 	else {
-		retrieveCiteprocJson(connegUrl + "/" + doi, function(data) {
+		require("./doi").retrieveCiteprocJson(connegUrl + "/" + doi, function(data) {
 			console.log(data);
 			item = JSON.parse(data);
 			citeproc.format(item, query.style, query.lang, function(text) {
@@ -70,29 +71,5 @@ function sendResponse(res, code, body, options) {
 	res.write(body);
 	res.end();
 }
-
-function retrieveCiteprocJson(urlStr, callback, errback) {
-	var requestType = 'application/citeproc+json';
-	request( {
-		uri : urlStr,
-		headers : {
-			'Accept': requestType
-		}
-	}, function (error, response, body) {
-		var responseType = response.headers["content-type"];
-		if (error) 
-			errback("unknown error");
-		else if (!responseType.startsWith(requestType))
-			errback("cannot get metadata");
-		else if (response.statusCode == 200)
-			callback(body);
-		else 
-			errback(body);
-	});
-}
-
-String.prototype.startsWith = function(prefix) {
-    return this.indexOf(prefix) === 0;
-};
 
 init();
