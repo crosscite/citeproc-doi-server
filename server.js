@@ -20,10 +20,10 @@ function server(req, res) {
 		formatHandler(req, res);
 		break;
 	case "/styles":
-		listHandler(req, res, Object.keys(styles));
+		listHandler(req, res, citeproc.getStyles());
 		break;
 	case "/locales":
-		listHandler(req, res, Object.keys(locales));
+		listHandler(req, res, citeproc.getLocales());
 		break;
 	default:
 		sendResponse(res, 404, "url not found");

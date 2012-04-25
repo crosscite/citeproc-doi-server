@@ -1,8 +1,8 @@
 var CSL = require("../lib/citeprocmodule").CSL;
 var fs = require("fs");
 
-exports.styles = {};
-exports.locales = {};
+var styles = {};
+var locales = {};
 
 function init() {
 	console.log("loading styles...");
@@ -25,6 +25,14 @@ function loadDir(dir, regexp) {
 	});
 	return files;
 }
+
+exports.getStyles = function() {
+	return Object.keys(styles);
+};
+
+exports.getLocales = function() {
+	return Object.keys(locales);
+};
 
 exports.format = function(item, style, lang, callback, errback) {
 	if (style == null)
