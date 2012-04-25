@@ -1,9 +1,12 @@
 var request = require('request');
 
-exports.retrieveCiteprocJson = function(urlStr, callback, errback) {
+var connegUrl = "http://test.datacite.org/data";
+//var connegUrl = "http://dx.doi.org";
+
+exports.resolve = function(doi, callback, errback) {
 	var requestType = 'application/citeproc+json';
 	request( {
-		uri : urlStr,
+		uri : connegUrl + "/" + doi,
 		headers : {
 			'Accept': requestType
 		}

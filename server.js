@@ -3,10 +3,6 @@ var url = require('url');
 var request = require('request');
 var citeproc = require('./citeproc');
 
-var connegUrl = "http://test.datacite.org/data";
-//var connegUrl = "http://dx.doi.org";
-
-
 function init() {
 	console.log("creating server...");
 	port = 8006;
@@ -44,7 +40,7 @@ function formatHandler(req, res) {
 	if (doi == undefined)
 		sendResponse(res, 400, "doi param required");
 	else {
-		require("./doi").retrieveCiteprocJson(connegUrl + "/" + doi, function(data) {
+		require("./doi").resolve(doi, function(data) {
 			console.log(data);
 			item = JSON.parse(data);
 			citeproc.format(item, query.style, query.lang, function(text) {
