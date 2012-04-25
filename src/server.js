@@ -3,12 +3,14 @@ var url = require('url');
 var request = require('request');
 var citeproc = require('./citeproc');
 var doi = require('./doi');
+var settings = require('./settings');
+
+console.log(settings);
 
 function init() {
 	console.log("creating server...");
-	port = 8006;
-	http.createServer(server).listen(port);
-	console.log("server listening on port " + port + ".");
+	http.createServer(server).listen(settings.port);
+	console.log("server listening on port " + settings.port + ".");
 }
 
 function server(req, res) {
