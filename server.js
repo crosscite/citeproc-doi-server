@@ -41,15 +41,18 @@ function formatHandler(req, res) {
 		sendResponse(res, 400, "doi param required");
 	else {
 		require("./doi").resolve(doi, function(data) {
-			console.log(data);
-			item = JSON.parse(data);
-			citeproc.format(item, query.style, query.lang, function(text) {
-				sendResponse(res, 200, text);
-			}, function(msg) {
-				sendResponse(res, 400, msg);
-			});
-		}, function() {
-			sendResponse(res, 404, "doi not found");
+			try {
+				item = JSON.parse(data);
+				citeproc.format(item, query.style, query.lang, function(text) {
+					sendResponse(res, 200, text);
+				}, function(msg) {
+					sendResponse(res, 400, msg);
+				});
+			} catch (err) {
+				sendResponse(res, 500, "error while formatting: " + err.message);
+			}
+		}, function(code, msg) {
+			sendResponse(res, code, msg);
 		});
 	}
 }
