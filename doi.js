@@ -1,24 +1,27 @@
 var request = require('request');
 
-var connegUrl = "http://test.datacite.org/data";
-//var connegUrl = "http://dx.doi.org";
+var doiProxy = "http://test.datacite.org/data";
+// var doiProxy = "http://dx.doi.org";
 
 // callback = function(data)
 // errback = function(code, msg)
-exports.resolve = function(doi, callback, errback) {
-	var requestType = 'application/citeproc+json';
-	request( {
-		uri : connegUrl + "/" + doi,
-		headers : {
-			'Accept': requestType
-		}
-	}, function (error, response, body) {
+exports.resolve = function(doi, callback, errback, mediaType) {
+	options = {
+		uri : doiProxy + "/" + doi,
+		headers : {}
+	};
+
+	if (mediaType)
+		options.headers['Accept'] = mediaType;
+
+	request(options, function(error, response, body) {
 		var responseType = response.headers["content-type"];
-		if (error) 
+		if (error)
 			errback(500, "unknown error");
 		else if (response.statusCode == 404)
 			errback(404, "doi not found");
-		else if (response.statusCode == 406 || !responseType.startsWith(requestType))
+		else if (response.statusCode == 406
+				|| !responseType.startsWith(mediaType))
 			errback(404, "metadata for doi not found");
 		else if (response.statusCode == 200)
 			callback(body);
@@ -30,5 +33,5 @@ exports.resolve = function(doi, callback, errback) {
 };
 
 String.prototype.startsWith = function(prefix) {
-	return prefix == undefined || prefix == null || this.indexOf(prefix) === 0 ;
+	return prefix == undefined || prefix == null || this.indexOf(prefix) === 0;
 };
