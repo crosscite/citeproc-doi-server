@@ -2,6 +2,7 @@ var http = require('http');
 var url = require('url');
 var request = require('request');
 var citeproc = require('./citeproc');
+var doi = require('./doi');
 
 function init() {
 	console.log("creating server...");

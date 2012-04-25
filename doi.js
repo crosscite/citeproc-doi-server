@@ -1,13 +1,11 @@
 var request = require('request');
-
-var doiProxy = "http://test.datacite.org/data";
-// var doiProxy = "http://dx.doi.org";
+var settings = require('./settings').load("doi.config.json");
 
 // callback = function(data)
 // errback = function(code, msg)
 exports.resolve = function(doi, callback, errback, mediaType) {
 	options = {
-		uri : doiProxy + "/" + doi,
+		uri : settings.doiProxy + "/" + doi,
 		headers : {}
 	};
 
