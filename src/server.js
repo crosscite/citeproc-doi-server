@@ -45,20 +45,24 @@ function formatHandler(req, res) {
 	if (doi == undefined)
 		sendResponse(res, 400, "doi param required");
 	else {
-		require("./doi").resolve(doi, function(data) {
-			try {
-				item = JSON.parse(data);
-				citeproc.format(item, query.style, query.lang, function(text) {
-					sendResponse(res, 200, text);
-				}, function(msg) {
-					sendResponse(res, 400, msg);
-				});
-			} catch (err) {
-				sendResponse(res, 500, "error while formatting: " + err.message);
-			}
-		}, function(code, msg) {
-			sendResponse(res, code, msg);
-		}, "application/citeproc+json");
+		require("./doi").resolve(
+				doi,
+				function(data) {
+					try {
+						item = JSON.parse(data);
+						citeproc.format(item, query.style, query.lang,
+								function(text) {
+									sendResponse(res, 200, text);
+								}, function(msg) {
+									sendResponse(res, 400, msg);
+								});
+					} catch (err) {
+						sendResponse(res, 500, "error while formatting: "
+								+ err.message);
+					}
+				}, function(code, msg) {
+					sendResponse(res, code, msg);
+				}, "application/citeproc+json");
 	}
 }
 
