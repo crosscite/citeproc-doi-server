@@ -10,8 +10,13 @@ console.log(settings);
 
 function init() {
 	console.log("creating server...");
-	var server = connect().use(connect.logger()).use(connect.static('./html'))
-			.use(dispatcher);
+	
+	var server = connect();
+	server.use(connect.query());
+	server.use(connect.logger());
+	server.use(connect.static('./html'));
+	server.use(dispatcher);
+	
 	http.createServer(server).listen(settings.port);
 	console.log("server listening on port " + settings.port + ".");
 }
@@ -41,7 +46,7 @@ function listHandler(req, res, array) {
 }
 
 function formatHandler(req, res) {
-	var query = getQuery(req.url);
+	var query = req.query
 	var doi = query.doi;
 	if (doi == undefined)
 		sendResponse(res, 400, "doi param required");
@@ -65,10 +70,6 @@ function formatHandler(req, res) {
 					sendResponse(res, code, msg);
 				}, "application/citeproc+json");
 	}
-}
-
-function getQuery(url) {
-	return require('url').parse(url, true).query;
 }
 
 function sendResponse(res, code, body, options) {
