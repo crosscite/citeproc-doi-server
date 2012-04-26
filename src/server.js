@@ -10,43 +10,31 @@ console.log(settings);
 
 function init() {
 	console.log("creating server...");
-	
+
 	var server = connect();
 	server.use(connect.query());
 	server.use(connect.logger());
 	server.use(connect.static('./html'));
-	server.use(dispatcher);
-	
+
+	server.use('/styles', listHandler(citeproc.getStyles()));
+	server.use('/locales', listHandler(citeproc.getLocales()));
+	server.use('/format', formatHandler);
+
 	http.createServer(server).listen(settings.port);
 	console.log("server listening on port " + settings.port + ".");
 }
 
-function dispatcher(req, res) {
-	var path = url.parse(req.url).pathname;
-	switch (path) {
-	case "/format":
-		formatHandler(req, res);
-		break;
-	case "/styles":
-		listHandler(req, res, citeproc.getStyles());
-		break;
-	case "/locales":
-		listHandler(req, res, citeproc.getLocales());
-		break;
-	default:
-		sendResponse(res, 404, "url not found");
-	}
-}
-
-function listHandler(req, res, array) {
-	var json = JSON.stringify(array);
-	sendResponse(res, 200, json, {
-		"Content-Type" : "application/json"
-	});
+function listHandler(array) {
+	return function(req, res) {
+		var json = JSON.stringify(array);
+		sendResponse(res, 200, json, {
+			"Content-Type" : "application/json"
+		});
+	};
 }
 
 function formatHandler(req, res) {
-	var query = req.query
+	var query = req.query;
 	var doi = query.doi;
 	if (doi == undefined)
 		sendResponse(res, 400, "doi param required");
