@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "jsdom": ">=0.2.0",
-    "request": "*"
+    "request": "*",
+    "connect": "*"
   },
   "devDependencies": {}
 }

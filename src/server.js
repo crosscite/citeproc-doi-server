@@ -1,4 +1,5 @@
 var http = require('http');
+var connect = require('connect');
 var url = require('url');
 var request = require('request');
 var citeproc = require('./citeproc');
@@ -9,11 +10,12 @@ console.log(settings);
 
 function init() {
 	console.log("creating server...");
+	var server = connect().use(connect.static('./html')).use(dispatcher);
 	http.createServer(server).listen(settings.port);
 	console.log("server listening on port " + settings.port + ".");
 }
 
-function server(req, res) {
+function dispatcher(req, res) {
 	var path = url.parse(req.url).pathname;
 	switch (path) {
 	case "/format":
