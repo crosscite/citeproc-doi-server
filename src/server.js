@@ -10,7 +10,8 @@ console.log(settings);
 
 function init() {
 	console.log("creating server...");
-	var server = connect().use(connect.static('./html')).use(dispatcher);
+	var server = connect().use(connect.logger()).use(connect.static('./html'))
+			.use(dispatcher);
 	http.createServer(server).listen(settings.port);
 	console.log("server listening on port " + settings.port + ".");
 }
