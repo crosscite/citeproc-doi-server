@@ -1,8 +1,6 @@
 var request = require('request');
 var settings = require('./settings');
 
-console.log(settings);
-
 // callback = function(data)
 // errback = function(code, msg)
 exports.resolve = function(doi, callback, errback, mediaType) {

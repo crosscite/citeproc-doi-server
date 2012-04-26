@@ -1,12 +1,8 @@
-var http = require('http');
 var connect = require('connect');
-var url = require('url');
 var request = require('request');
 var citeproc = require('./citeproc');
 var doi = require('./doi');
 var settings = require('./settings');
-
-console.log(settings);
 
 function init() {
 	console.log("creating server...");
@@ -20,7 +16,7 @@ function init() {
 	server.use('/locales', listHandler(citeproc.getLocales()));
 	server.use('/format', formatHandler);
 
-	http.createServer(server).listen(settings.port);
+	server.listen(settings.port);
 	console.log("server listening on port " + settings.port + ".");
 }
 
