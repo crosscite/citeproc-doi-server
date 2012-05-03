@@ -10,7 +10,7 @@ function init() {
 	var server = connect();
 	server.use(connect.query());
 	server.use(connect.logger());
-	server.use(connect.static('./html'));
+	server.use(connect.static('./ui'));
 	server.use(connect.json());
 
 	server.use('/styles', listHandler(citeproc.getStyles()));
