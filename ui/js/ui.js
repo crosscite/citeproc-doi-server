@@ -2,6 +2,7 @@ function init() {
 	$("#form").submit(submit);
 	$("#styles").loadSelect("styles").val("apa");
 	$("#locales").loadSelect("locales").val("en-US");
+	$("#citation").hide();
 }
 
 $.fn.loadSelect = function(url) {
@@ -30,6 +31,7 @@ function arrayToSelectOptions(array) {
 }
 
 function submit() {
+	$("#citation").hide();
 	var doi = $("#doi").val();
 	$.ajax({
 		url : "format",
@@ -41,6 +43,7 @@ function submit() {
 		dataType : "text",
 		success : function(data) {
 			$("#citation").text(data);
+			$("#citation").show();
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			alert(jqXHR.responseText);
