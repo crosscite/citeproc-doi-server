@@ -41,7 +41,6 @@ function method(method, handler) {
 }
 
 function formatPostHandler(req, res) {
-	console.log(req.body);
 	citeproc.format(req.body, req.query.style, req.query.lang,
 			function(text) {
 				sendResponse(res, 200, text);
@@ -52,7 +51,6 @@ function formatPostHandler(req, res) {
 
 function formatHandler(req, res) {
 	var query = req.query;
-	console.log(req.body);
 	var doi = query.doi;
 	if (doi == undefined)
 		sendResponse(res, 400, "doi param required");
