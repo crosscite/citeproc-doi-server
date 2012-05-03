@@ -2,14 +2,20 @@
 <head>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/ui.js"></script>
+<link rel="stylesheet" type="text/css" href="css/ui.css" />
 </head>
 <body>
-<form id="form" action="">
-DOI: <input id="doi" type="text"/>
-<select id="styles"></select>
-<select id="locales"></select>
-<input type="submit"/>
-</form>
-<div id="citation"></div>
+  <h1>
+    <img src="https://mds.datacite.org/resources/images/dc-logo.gif">
+    <img
+      src="http://www.crossref.org/images/citation_linking_graphic_24x106_trans.png">
+    DOI Citation Formatter <small>beta</small>
+  </h1>
+  <form id="form" action="">
+    DOI: <input id="doi" type="text" />
+    <select id="styles"></select> <select id="locales"></select>
+    <input type="submit" value="Format"/>
+  </form>
+  <div id="citation"></div>
 </body>
 </html>
