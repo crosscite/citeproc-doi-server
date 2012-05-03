@@ -46,6 +46,7 @@ a:hover {
   margin-right: auto;
   max-width: 800px;
   padding: 5pt;
+  display: none; /* only show on demand */
 }
 
 input#doi {
