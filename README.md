@@ -1,5 +1,10 @@
 # Overview
 
+citeproc-doi-server is a simple server, which formats a DOI's metadata in various styles. 
+
+It uses content negotiation to get the "application/citeproc+json" representation of a DOI. 
+With the default dx.doi.org resolver this is supported by all DataCite and CrossRef DOIs.
+
 ## Cloning this repository
 
 The CSL styles and locales are added as a git submodule. So to clone this repos you should do
