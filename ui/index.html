@@ -26,9 +26,15 @@
     DOI Citation Formatter <small>beta</small>
   </h1>
   <form id="form" action="">
-    DOI: <input id="doi" type="text" />
-    Style: <select id="styles"></select>
-    Locale: <select id="locales"></select>
+    <label for="doi">DOI:</label> 
+    <input id="doi" type="text" />
+    
+    <label for="styles">Style:</label> 
+    <select id="styles"></select>
+    
+    <label for="locales">Locale:</label> 
+    <select id="locales"></select>
+    
     <input type="submit" value="Format"/>
   </form>
   <div id="citation"></div>
