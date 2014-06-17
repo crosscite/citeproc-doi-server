@@ -2,7 +2,7 @@
 
 citeproc-doi-server is a simple server, which formats a DOI's metadata in various styles. 
 
-It uses content negotiation to get the "application/citeproc+json" representation of a DOI. 
+It uses content negotiation to get the "application/vnd.citationstyles.csl+json" representation of a DOI. 
 With the default dx.doi.org resolver this is supported by all DataCite and CrossRef DOIs.
 
 # Usage
@@ -23,7 +23,7 @@ or format a given citeproc text via
 
     POST /format?style=<style>&lang=<lang> 
     
-This requires a body with `Content-Type:application/citeproc+json`.
+This requires a body with `Content-Type:application/vnd.citationstyles.csl+json`.
     
 The `style` and `lang` parameters are optional. A list of allowed values is given by
 
