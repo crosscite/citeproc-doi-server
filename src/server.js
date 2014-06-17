@@ -67,7 +67,7 @@ function formatHandler(req, res) {
 					}
 				}, function(code, msg) {
 					sendResponse(res, code, msg);
-				}, "application/citeproc+json");
+				}, "application/vnd.citationstyles.csl+json");
 	}
 }
 
