@@ -20,8 +20,11 @@ small {
     color: #77C9EA;
 }
 
-h1 img {
+div img {
     vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 40px;
 }
 a:link {
 	color: #0084B8;
