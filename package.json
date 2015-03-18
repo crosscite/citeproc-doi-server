@@ -4,7 +4,7 @@
   "description": "Nodejs server for formatted citation of dois",
   "version": "v0.0.1",
   "engines": {
-    "node": ">=0.6.11"
+    "node": ">=0.6.11 <0.11"
   },
   "bin": {
     "citeproc-doi-server": "./src/server.js"
