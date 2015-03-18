@@ -13,9 +13,9 @@
     "start": "node ./src/server.js"
   },
   "dependencies": {
-    "jsdom": ">=0.2.0",
+    "jsdom": "0.2.0",
     "request": "*",
-    "connect": "*"
+    "connect": "2.29.1"
   },
   "devDependencies": {}
 }
