@@ -58,12 +58,12 @@ RUN apt-get update && \
 # Preserve env variables for nginx
 RUN rm -f /etc/service/nginx/down && \
     rm /etc/nginx/sites-enabled/default
-COPY public/vendor/docker/webapp.conf /etc/nginx/sites-enabled/webapp.conf
-COPY public/vendor/docker/00_app_env.conf /etc/nginx/conf.d/00_app_env.conf
-COPY public/vendor/docker/cors.conf /etc/nginx/conf.d/cors.conf
+COPY vendor/docker/webapp.conf /etc/nginx/sites-enabled/webapp.conf
+COPY vendor/docker/00_app_env.conf /etc/nginx/conf.d/00_app_env.conf
+COPY vendor/docker/cors.conf /etc/nginx/conf.d/cors.conf
 
 # Use Amazon NTP servers
-COPY public/vendor/docker/ntp.conf /etc/ntp.conf
+COPY vendor/docker/ntp.conf /etc/ntp.conf
 
 # Enable the memcached service
 # RUN rm -f /etc/service/memcached/down
@@ -76,7 +76,7 @@ RUN chown -R app:app /home/app/webapp && \
     chmod -R 755 /home/app/webapp
 
 # Install npm and bower packages
-WORKDIR /home/app/webapp/public/vendor
+WORKDIR /home/app/webapp/vendor
 RUN /sbin/setuser app npm install
 # && \
     # npm install -g phantomjs-prebuilt
