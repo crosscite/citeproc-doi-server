@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./js/ui.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/ui.css" />
+<!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="css/ui_ie.css" />
+<![endif]-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22806196-3']);
+  _gaq.push(['_setDomainName', 'crosscite.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+  <h1>
+    DOI Citation Formatter <small>beta</small>
+  </h1>
+  <div>
+    <img src="https://mds.datacite.org/resources/images/dc-logo.gif"/>
+    <img src="http://www.crossref.org/images/citation_linking_graphic_24x106_trans.png"/>
+    <img src="img/medra.png"/>
+    <img src="img/istic.gif" width="140px"/>
+  </div>
+  <form id="form" action="">
+    <label for="doi">DOI:</label>
+    <input id="doi" type="text" />
+
+    <label for="styles">Style:</label>
+    <select id="styles"></select>
+
+    <label for="locales">Locale:</label>
+    <select id="locales"></select>
+
+    <input type="submit" value="Format"/>
+  </form>
+  <div id="citation"></div>
+</body>
+</html>
