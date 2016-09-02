@@ -1,0 +1,103 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+ЧАЙКОВСКИЙ, П.И., R. VAN WINKLE, 我妻栄, C. THUCYDIDES III, Š. ČESNEK, A. MALÍKOVÁ, TOKUGAWA I., et al.
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="ja">
+    <style-options name-as-sort-order="ja" name-never-short="ja"/>
+  </locale>
+  <citation 
+         et-al-min="8"
+         et-al-use-first="7">
+    <layout delimiter="; ">
+      <names variable="author">
+        <name delimiter=", " initialize-with="." name-as-sort-order="first" sort-separator=", ">
+          <name-part name="family" text-case="uppercase" />
+        </name>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Чайковский", 
+                "given": "Пётр Ильич"
+            }, 
+            {
+                "family": "Winkle", 
+                "given": "Rip", 
+                "non-dropping-particle": "van"
+            }, 
+            {
+                "family": "我妻", 
+                "given": "栄", 
+                "multi": {
+                    "_key": {}, 
+                    "main": "ja"
+                }
+            }, 
+            {
+                "family": "Thucydides", 
+                "given": "Carl", 
+                "suffix": "III"
+            }, 
+            {
+                "family": "Česnek", 
+                "given": "Šťěpán"
+            }, 
+            {
+                "family": "Malíková", 
+                "given": "Andrea"
+            }, 
+            {
+                "family": "Tokugawa", 
+                "given": "Ieyasu", 
+                "multi": {
+                    "_key": {}, 
+                    "main": "ja-alalc97"
+                }
+            }, 
+            {
+                "given": "Prince", 
+                "static-ordering": false
+            }
+        ], 
+        "id": "item-1", 
+        "issued": {
+            "date-parts": [
+                [
+                    "2000"
+                ]
+            ]
+        }, 
+        "title": "Our Story", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

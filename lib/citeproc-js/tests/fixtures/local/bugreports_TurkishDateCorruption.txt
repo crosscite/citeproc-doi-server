@@ -1,0 +1,52 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+September 20, 2006; August 30, 1999
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+       <date variable="issued" form="text" date-parts="year-month-day"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "issued": {
+            "date-parts": [], 
+            "raw": "September 20, 2006"
+        }, 
+        "title": "Some English Book or Other", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-2", 
+        "issued": {
+            "date-parts": [], 
+            "raw": "ağustos 30, 1999"
+        }, 
+        "title": "Some Turkish Book or Other", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

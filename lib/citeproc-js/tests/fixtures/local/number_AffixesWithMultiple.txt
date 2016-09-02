@@ -1,0 +1,332 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+Normalizes punctuation and grouping when multiple numbers are provided in input.
+
+>>===== RESULT =====>>
+>>[0] [1] page --- Numeric, singular
+[2]–[3] pages --- Numeric, plural
+[4] &#38; [6] pages --- Numeric, plural
+[7], [8] &#38; [9] pages --- Numeric, plural
+[10]–[13] &#38; [20] pages --- Numeric, plural
+[15], [17], [19], [20], [21] pages --- Numeric, plural
+[16], [28], [30], [31], [32], [34], [36] pages --- Numeric, plural
+[25], [15], [17], [19], [20], [21], [23], [24] pages --- Numeric, plural
+[38], [37]–[40] pages --- Numeric, plural
+[43]–[41] pages --- Numeric, plural
+[205]–[2000] pages --- Numeric, plural
+1 vol + 1 CD --- Non-numeric
+[12nd] page --- Numeric, trailing matter untouched, singular
+[12a-c] page --- Numeric, trailing matter untouched, singular
+12th Yellow-tailed Wooly Monkey --- Non-numeric
+[T51] page --- Numeric, singular
+Locator 1 --- Non-numeric
+Locators 1-6 --- Non-numeric
+‘42 locatorX’ --- Quotes preserved, non-numeric
+‘42-47 locatorz’ --- Normalized, quotes preserved, non-numeric
+T51 edn. --- Non-numeric
+[T51] &#38; [T53] pages --- Numeric, plural
+[12:xx] page --- Numeric, singular
+12 13 --- Non-numeric
+12th folio --- Non-numeric
+<<===== RESULT =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="open-quote">‘</term>
+      <term name="close-quote">’</term>
+      <term name="open-inner-quote">“</term>
+      <term name="close-inner-quote">”</term>
+      <term name="page" form="short">[%s]</term>
+    </terms>
+  </locale>
+  <citation>
+    <layout delimiter="&#x0A;">
+      <group delimiter=" ">
+        <choose>
+          <if is-numeric="locator">
+            <number variable="locator"/>
+            <label variable="locator" form="short"/>
+            <label variable="locator"/>
+            <text variable="locator" prefix="--- " quotes="true"/>
+            <text variable="title" prefix="--- "/>
+          </if>
+          <else>
+            <number variable="locator"/>
+            <text variable="locator" quotes="true"/>
+            <text variable="title" prefix="--- "/>
+          </else>
+	    </choose>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "1"
+                }, 
+                {
+                    "id": "ITEM-2", 
+                    "locator": "2 - 3"
+                }, 
+                {
+                    "id": "ITEM-3", 
+                    "locator": "4 & 6"
+                }, 
+                {
+                    "id": "ITEM-4", 
+                    "locator": "7, 8 & 9"
+                }, 
+                {
+                    "id": "ITEM-5", 
+                    "locator": "10-13 & 20"
+                }, 
+                {
+                    "id": "ITEM-6", 
+                    "locator": "15, 17, 19, 20, 21"
+                }, 
+                {
+                    "id": "ITEM-7", 
+                    "locator": "16, 28, 30, 31, 32, 34, 36"
+                }, 
+                {
+                    "id": "ITEM-8", 
+                    "locator": "25, 15, 17, 19, 20, 21, 23, 24"
+                }, 
+                {
+                    "id": "ITEM-9", 
+                    "locator": "38, 37 - 40"
+                }, 
+                {
+                    "id": "ITEM-10", 
+                    "locator": "43-41"
+                }, 
+                {
+                    "id": "ITEM-11", 
+                    "locator": "205 - 2000"
+                }, 
+                {
+                    "id": "ITEM-12", 
+                    "locator": "1 vol + 1 CD"
+                }, 
+                {
+                    "id": "ITEM-13", 
+                    "locator": "12nd"
+                }, 
+                {
+                    "id": "ITEM-14", 
+                    "locator": "12a-c"
+                }, 
+                {
+                    "id": "ITEM-15", 
+                    "locator": "12th Yellow-tailed Wooly Monkey"
+                }, 
+                {
+                    "id": "ITEM-16", 
+                    "locator": "T51"
+                }, 
+                {
+                    "id": "ITEM-17", 
+                    "locator": "Locator 1"
+                }, 
+                {
+                    "id": "ITEM-18", 
+                    "locator": "Locators 1 - 6"
+                }, 
+                {
+                    "id": "ITEM-19", 
+                    "locator": "\"42 locatorX\""
+                }, 
+                {
+                    "id": "ITEM-20", 
+                    "locator": "\"42 - 47 locatorz\""
+                }, 
+                {
+                    "id": "ITEM-21", 
+                    "locator": "T51 edn."
+                }, 
+                {
+                    "id": "ITEM-22", 
+                    "locator": "T51 & T53"
+                }, 
+                {
+                    "id": "ITEM-23", 
+                    "locator": "12:xx"
+                }, 
+                {
+                    "id": "ITEM-24", 
+                    "locator": "12 13"
+                }, 
+                {
+                    "id": "ITEM-25", 
+                    "locator": "12th folio"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+                                
+
+
+
+
+>>===== INPUT =====>>
+[
+	{
+		"id": "ITEM-1",
+		"title": "Numeric, singular",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-2",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-3",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-4",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-5",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-6",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-7",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-8",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-9",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-10",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-11",
+		"title": "Numeric, plural",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-12",
+		"title": "Non-numeric",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-13",
+		"title": "Numeric, trailing matter untouched, singular",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-14",
+		"title": "Numeric, trailing matter untouched, singular",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-15",
+		"title": "Non-numeric",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-16",
+		"title": "Numeric, singular",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-17",
+		"title": "Non-numeric",
+		"type": "book"
+	},
+	{
+		"id": "ITEM-18",
+		"title": "Non-numeric",
+		"type": "book"
+	},
+    {
+        "id": "ITEM-19", 
+        "title": "Quotes preserved, non-numeric", 
+        "type": "book"
+    },
+    {
+        "id": "ITEM-20", 
+        "title": "Normalized, quotes preserved, non-numeric", 
+        "type": "book"
+    },
+    {
+        "id": "ITEM-21", 
+        "type": "book", 
+        "title": "Non-numeric"
+    },
+    {
+        "id": "ITEM-22", 
+        "type": "book", 
+        "title": "Numeric, plural"
+    },
+    {
+        "id": "ITEM-23", 
+        "type": "book", 
+        "title": "Numeric, singular"
+    },
+    {
+        "id": "ITEM-24", 
+        "type": "book", 
+        "title": "Non-numeric"
+    },
+    {
+        "id": "ITEM-25", 
+        "type": "book", 
+        "title": "Non-numeric"
+    }
+]
+<<===== INPUT =====<<

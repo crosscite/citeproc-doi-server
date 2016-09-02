@@ -1,0 +1,124 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+For OSCOLA punctuation rules.
+
+>>===== RESULT =====>>
+..[0] Court of Appeals 10 (Civil Division) 15
+>>[1] Court of Error 20, 25
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "15"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "locator": "25"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter=", ">
+        <group delimiter=" ">
+          <names variable="authority">
+            <name/>
+            <institution use-last="1" form="short"/>
+          </names>
+          <number variable="page"/>
+          <names variable="authority" prefix="(" suffix=")"> 
+            <name/>
+            <institution use-first="1" institution-parts="short"/>
+          </names>
+          <choose>
+            <if authority-residue="true">
+              <number variable="locator"/>
+            </if>
+          </choose>
+        </group>
+        <number variable="locator"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "authority": [
+            {
+                "family": "Court of Appeals|Civil Division", 
+                "given": "",
+                "isInstitution": 1
+            }
+        ],
+        "page": 10,
+        "id": "ITEM-1", 
+        "type": "legal_case"
+    },
+    {
+        "authority": [
+            {
+                "family": "Court of Error", 
+                "given": "",
+                "isInstitution": 1
+            }
+        ],
+        "page": 20,
+        "id": "ITEM-2", 
+        "type": "legal_case"
+    }
+]
+<<===== INPUT =====<<

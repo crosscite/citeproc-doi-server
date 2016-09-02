@@ -1,0 +1,69 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1", 
+            "label": "paragraph", 
+            "locator": "10"
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+
+>>== RESULT ==>>
+[¶ 10; 3rd ed.]
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="cite">
+      <group delimiter=" ">
+        <label form="short" variable="locator"/>
+        <text variable="locator"/>
+      </group>
+  </macro>
+  <macro name="middleman">
+    <text label-form="long" macro="cite"/>
+  </macro>
+  <citation>
+    <layout>
+      <group delimiter="; " prefix="[" suffix="]">
+        <text label-form="symbol" macro="middleman"/>
+        <group delimiter=" ">
+          <number variable="edition" form="ordinal"/>
+          <label form="short" variable="edition"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "type": "book",
+        "id": "ITEM-1", 
+        "edition": "3"
+    }
+]
+<<===== INPUT =====<<

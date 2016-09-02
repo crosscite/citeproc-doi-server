@@ -1,0 +1,490 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] (Aalto, A 2000)
+..[1] (Aalto, E 2000)
+..[2] (Other 2000a)
+..[3] (Aalto, A 2000)
+..[4] (Aalto, E 2000)
+..[5] (Bluthers, C, Conxton, Dragnet 2000)
+..[6] (Bluthers, Z, Conxton, Dragnet 2000)
+..[7] (Other 2000b)
+..[8] (Bluthers, C et al. 2000)
+>>[9] (Bluthers, Z et al. 2000)
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-4", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 4
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-5", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 5
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-6", 
+            "citationItems": [
+                {
+                    "id": "ITEM-4"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 6
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-7", 
+            "citationItems": [
+                {
+                    "id": "ITEM-5"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 7
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-8", 
+            "citationItems": [
+                {
+                    "id": "ITEM-6"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 8
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ], 
+            [
+                "CITATION-7", 
+                7
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-9", 
+            "citationItems": [
+                {
+                    "id": "ITEM-4"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 9
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ], 
+            [
+                "CITATION-7", 
+                7
+            ], 
+            [
+                "CITATION-8", 
+                8
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-10", 
+            "citationItems": [
+                {
+                    "id": "ITEM-5"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 10
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ], 
+            [
+                "CITATION-7", 
+                7
+            ], 
+            [
+                "CITATION-8", 
+                8
+            ], 
+            [
+                "CITATION-9", 
+                9
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name form="short" initialize-with="" delimiter=", " name-as-sort-order="all"/>
+    </names>
+  </macro>
+  <citation et-al-min="4" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-givenname="true" givenname-disambiguation-rule="by-cite" collapse="year">
+    <layout delimiter="; " prefix="(" suffix=")">
+      <group delimiter=" ">
+        <text macro="author"/>
+        <date form="text" variable="issued" date-parts="year"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Aalto", 
+                "given": "Alan"
+            }
+        ], 
+        "id": "ITEM-1", 
+        "type": "book",
+        "issued":{
+          "date-parts":[[2000]]
+        }
+    },
+    {
+        "author": [
+            {
+                "family": "Aalto", 
+                "given": "Elan"
+            }
+        ], 
+        "id": "ITEM-2", 
+        "type": "book",
+        "issued":{
+          "date-parts":[[2000]]
+        }
+    },
+    {
+        "author": [
+            {
+                "family": "Other", 
+                "given": "Otto"
+            }
+        ], 
+        "id": "ITEM-3", 
+        "type": "book",
+        "issued":{
+          "date-parts":[[2000]]
+        }
+    },
+    {
+        "author": [
+            {
+                "family": "Bluthers", 
+                "given": "Charley"
+            },
+            {
+                "family": "Conxton", 
+                "given": "Darrel"
+            },
+            {
+                "family": "Dragnet", 
+                "given": "Elias"
+            }
+        ], 
+        "id": "ITEM-4", 
+        "type": "book",
+        "issued":{
+          "date-parts":[[2000]]
+        }
+    },
+    {
+        "author": [
+            {
+                "family": "Bluthers", 
+                "given": "Zodie"
+            },
+            {
+                "family": "Conxton", 
+                "given": "Darrel"
+            },
+            {
+                "family": "Dragnet", 
+                "given": "Elias"
+            }
+        ], 
+        "id": "ITEM-5", 
+        "type": "book",
+        "issued":{
+          "date-parts":[[2000]]
+        }
+    },
+    {
+        "author": [
+            {
+                "family": "Other", 
+                "given": "Otto"
+            }
+        ], 
+        "id": "ITEM-6", 
+        "type": "book",
+        "issued":{
+          "date-parts":[[2000]]
+        }
+    }
+]
+<<===== INPUT =====<<

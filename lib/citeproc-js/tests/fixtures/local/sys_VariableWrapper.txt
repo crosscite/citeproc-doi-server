@@ -1,0 +1,120 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+>>===== OPTIONS =====>>
+{
+   "variableWrapper": true
+
+}
+<<===== OPTIONS =====<<
+
+
+The boldface on the note number is added by the custom
+wrapping function supplied by the test framework.
+
+>>===== RESULT =====>>
+..[0] Silicott Smith, <a href="http://bimplekrup.com/">Book Title</a>, 2009
+>>[1] Book Title, note <b>1</b>
+<<===== RESULT =====<<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+      <choose>
+        <if position="first">
+          <group delimiter=", ">
+            <names variable="author"/>
+            <text variable="title"/>
+            <date variable="issued" form="text" date-parts="year"/>
+          </group>
+        </if>
+        <else>
+          <text variable="title"/>
+          <text variable="first-reference-note-number" prefix=", note "/>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <group delimiter=", ">
+        <text variable="title"/>
+        <date variable="issued" form="text" date-parts="year"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author":[
+           {
+             "family":"Smith",
+             "given":"Silicott"
+           }
+        ],
+        "title":"Book Title",
+        "issued":{
+            "date-parts":[[2009]]
+        },
+        "URL":"http://bimplekrup.com/",
+        "id": "ITEM-1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

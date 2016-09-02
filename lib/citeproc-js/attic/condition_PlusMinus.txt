@@ -1,0 +1,247 @@
+/*
+ * Copyright (c) 2009-2013 Frank G. Bennett, Jr. All Rights
+ * Reserved.
+ *
+ * The contents of this file are subject to the Common Public
+ * Attribution License Version 1.0 (the “License”); you may not use
+ * this file except in compliance with the License. You may obtain a
+ * copy of the License at:
+ *
+ * http://bitbucket.org/fbennett/citeproc-js/src/tip/LICENSE.
+ *
+ * The License is based on the Mozilla Public License Version 1.1 but
+ * Sections 1.13, 14 and 15 have been added to cover use of software over a
+ * computer network and provide for limited attribution for the
+ * Original Developer. In addition, Exhibit A has been modified to be
+ * consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an “AS IS”
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+ * the License for the specific language governing rights and limitations
+ * under the License.
+ *
+ * The Original Code is the citation formatting software known as
+ * "citeproc-js" (an implementation of the Citation Style Language
+ * [CSL]), including the original test fixtures and software located
+ * under the ./tests subdirectory of the distribution archive.
+ *
+ * The Original Developer is not the Initial Developer and is
+ * __________. If left blank, the Original Developer is the Initial
+ * Developer.
+ *
+ * The Initial Developer of the Original Code is Frank G. Bennett,
+ * Jr. All portions of the code written by Frank G. Bennett, Jr. are
+ * Copyright (c) 2009-2013 Frank G. Bennett, Jr. All Rights Reserved.
+ *
+ * Alternatively, the contents of this file may be used under the
+ * terms of the GNU Affero General Public License (the [AGPLv3]
+ * License), in which case the provisions of [AGPLv3] License are
+ * applicable instead of those above. If you wish to allow use of your
+ * version of this file only under the terms of the [AGPLv3] License
+ * and not to allow others to use your version of this file under the
+ * CPAL, indicate your decision by deleting the provisions above and
+ * replace them with the notice and other provisions required by the
+ * [AGPLv3] License. If you do not delete the provisions above, a
+ * recipient may use your version of this file under either the CPAL
+ * or the [AGPLv3] License.”
+ */
+
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+This test supports a proposal for extending CSL's conditional attributes.
+The proposal would introduce two changes:
+
+  * An optional not: prefix on elements of the list argument to
+    certain condition attributes; and
+
+  * Alternative forms of several condition attributes, identified
+    by an *-all or *-any suffix.
+
+Under the proposal, conditional evaluation would take place as
+follows:
+
+  (1) Each attribute argument list element is evaluated, returning
+      "true" or "false";
+
+  (2) For each attribute, the results from (1) are evaluated using "all"
+      (if the attribute suffix is "-all") or "any" (if the attribute
+      suffix is "-any"), following the rules described in the CSL
+      Specification. Legacy attributes with no suffix follow the value
+      of the "match" attribute, or "all" if no companion "match"
+      attribute is present).
+
+  (3) The "match" attribute evaluates the results from (2) using
+      "all" or "any" as described in the CSL Specification,
+      returning an overall test value of "true" or "false".
+
+This would allow two testing patterns that are not currently possible:
+
+  * A single test can require both true and false values; and
+
+  * Attributes can set an evaluation method ("all" or "any") independent
+    of the "match" attribute that controls inter-attribute evaluation.
+
+This flexibility makes it possible to reduce the bulk of CSL code.
+As one example, the construct below is found in several styles in the 
+CSL repository:
+
+    <macro name="year-date">
+      <choose>
+        <if type="webpage">
+          <choose>
+            <if variable="issued">
+              <date variable="issued">
+                <date-part name="year"/>
+              </date>
+            </if>
+            <else>
+              <date variable="accessed">
+                <date-part name="year"/>
+              </date>
+            </else>
+          </choose>
+        </if>
+        <else>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else>
+      </choose>
+    </macro>
+
+What the code does is to print the "accessed" date if the item is a
+webpage and has no "issued" date, and otherwise to print the "issued"
+date, regardless of item type. A nested cs:choose statement is needed,
+because negative and positive conditions cannot be declared together
+on the same cs:if or cs:else-if element.
+
+With the proposed syntax, the code sample above can be rewritten as a
+single cs:choose statement:
+
+    <macro name="year-date">
+      <choose>
+        <if type="webpage" variable="not:issued" match="all">
+          <date variable="accessed">
+            <date-part name="year"/>
+          </date>
+        </if>
+        <else>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else>
+      </choose>
+    </macro>
+
+Condition attributes that would accept a not: prefix on argument
+elements and be given alternative *-all and *-any forms under the
+proposal are the following:
+
+    * is-numeric
+    * is-uncertain-date
+    * locator
+    * type
+    * variable
+    * jurisdiction (MLZ only)
+    * page (MLZ only)
+
+
+>>===== RESULT =====>>
+Item One is not an ARTICLE-JOURNAL, and has an EDITION
+Item Two is a BOOK, but has no EDITION
+Item Three is a CHAPTER, and has an AUTHOR
+Item Four is an ARTICLE-JOURNAL with both VOLUME and ISSUE, but one of them is non-numeric
+Item Five is an ARTICLE-JOURNAL with both VOLUME and ISSUE, and both of them are numeric
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout delimiter="&#x0A;">
+      <group delimiter=" ">
+        <text variable="title"/>
+          <choose>
+            <if match="all">
+              <condition type="article-journal" variable="volume issue" match="all"/>
+              <condition match="any">
+                <condition variable="volume" match="none"/>
+                <condition variable="issue" match="none"/>
+              </condition>
+              <text value="is an ARTICLE-JOURNAL with both VOLUME and ISSUE, but one of them is non-numeric"/>
+            </if>
+            <else-if match="all" type="article-journal" variable="volume issue" is-numeric="volume issue">
+              <text value="is an ARTICLE-JOURNAL with both VOLUME and ISSUE, and both of them are numeric"/>
+            </else-if>
+            <else-if match="all">
+              <condition type="article-journal">
+              <condition variable="edition" match="all">
+              <text value="is not an ARTICLE-JOURNAL, and has an EDITION"/>
+            </else-if>
+            <else-if match="all">
+              <condition type="book">
+              <condition variable="edition" match="none">
+              <text value="is a BOOK, but has no EDITION"/>
+            </else-if>
+            <else-if type="chapter" variable="author" match="all">
+              <text value="is a CHAPTER, and has an AUTHOR"/>
+            </else-if>
+          </choose>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "edition": "5", 
+        "id": "ITEM-1", 
+        "title": "Item One", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-2", 
+        "title": "Item Two", 
+        "type": "book"
+    },
+    {
+        "id": "ITEM-3", 
+        "title": "Item Three", 
+        "type": "chapter",
+        "author": [
+          {
+             "family": "Snoapes",
+             "given": "John"
+          }
+        ]
+    },
+    {
+        "id": "ITEM-4", 
+        "title": "Item Four", 
+        "type": "article-journal",
+        "volume": "Supplement",
+        "issue": "1"
+    },
+    {
+        "id": "ITEM-5", 
+        "title": "Item Five", 
+        "type": "article-journal",
+        "volume": "2",
+        "issue": "4"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,253 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+In the test result, note that embedded terms are
+recognized only on the label variable. Here we use
+page, hence the broken term there.
+
+Also note that both reject and require are needed
+to prevent duplicate rendering of the page variable.
+Only the locator variable is limited to a single
+rendering within a citation.
+
+>>===== RESULT =====>>
+..[0] Some Book or Other (1), 123
+..[1] Some Book or Other (2) p. 123
+..[2] Some Book or Other (3) fol. 123
+..[3] Some Book or Other (4) [%s] 123
+>>[4] Some Book or Other (5) § 123
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-4", 
+            "citationItems": [
+                {
+                    "id": "ITEM-4"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 4
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-5", 
+            "citationItems": [
+                {
+                    "id": "ITEM-5"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 5
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="folio" form="short">fol.</term>
+      <term name="page" form="short">p.</term>
+      <term name="book" form="short"></term>
+      <term name="paragraph" form="short">[%s]</term>
+      <term name="section" form="short">§</term>
+    </terms>
+  </locale>
+  <citation>
+    <layout>
+      <group delimiter=", ">
+        <group delimiter=" ">
+          <text variable="title"/>
+          <!-- If rendered, will join with space -->
+          <group delimiter=" " reject="comma-safe">
+            <choose>
+              <if type="book">
+                <text value="p."/>
+              </if>
+              <else-if type="article-journal">
+                <text value="fol."/>
+              </else-if>
+              <else-if type="article-magazine">
+                <text value="[%s]"/>
+              </else-if>
+              <else-if type="article-newspaper">
+                <text value="§"/>
+              </else-if>
+            </choose>
+            <number variable="page"/>
+          </group>
+        </group>
+        <!-- If rendered, will join with comma -->
+        <group delimiter=" " require="comma-safe">
+          <choose>
+            <if type="book">
+              <text value="p."/>
+            </if>
+            <else-if type="article-journal">
+              <text value="fol."/>
+            </else-if>
+            <else-if type="article-magazine">
+              <text value="[%s]"/>
+            </else-if>
+            <else-if type="article-newspaper">
+              <text value="§"/>
+            </else-if>
+          </choose>
+          <number variable="page"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "Some Book or Other (1)",
+        "page": 123,
+        "type": "report"
+    },
+    {
+        "id": "ITEM-2", 
+        "title": "Some Book or Other (2)",
+        "page": 123,
+        "type": "book"
+    },
+    {
+        "id": "ITEM-3", 
+        "title": "Some Book or Other (3)",
+        "page": 123,
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-4", 
+        "title": "Some Book or Other (4)",
+        "page": 123,
+        "type": "article-magazine"
+    },
+    {
+        "id": "ITEM-5", 
+        "title": "Some Book or Other (5)",
+        "page": 123,
+        "type": "article-newspaper"
+    }
+]
+<<===== INPUT =====<<

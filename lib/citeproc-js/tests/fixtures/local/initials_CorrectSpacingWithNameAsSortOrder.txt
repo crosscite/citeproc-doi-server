@@ -1,0 +1,77 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+The character between the initials "J.J.", "G.G." and "Q.Q." is
+a zero-width non-breaking space.
+
+>>===== RESULT =====>>
+Doe, John J.﻿J., Jane G.﻿G. Molly Roe &#38; Richard Q.﻿Q. Snoakes.
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="and" form="symbol">&amp;</term>
+    </terms>
+  </locale>
+  <macro name="container-title">
+    <text strip-periods="true" variable="container-title" form="short" />
+  </macro>
+  <macro name="author">
+    <names variable="author" >
+      <name and="symbol" name-as-sort-order="first" delimiter-precedes-last="never" initialize-with=".&#xfeff;" initialize="false">
+	    <name-part name="given"/>
+	  </name>
+    </names>
+  </macro>
+  <citation et-al-min="4" et-al-use-first="1" >
+    <layout delimiter="; " suffix="." >
+      <text macro="author"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <text macro="author"/>
+    </layout>
+  </bibliography> 
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Doe", 
+                "given": "John J.J."
+            }, 
+            {
+                "family": "Roe", 
+                "given": "Jane G.G. Molly"
+            }, 
+            {
+                "family": "Snoakes", 
+                "given": "Richard Q.Q."
+            }
+        ], 
+        "id": "ITEM-1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

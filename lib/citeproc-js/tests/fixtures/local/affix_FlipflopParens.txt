@@ -1,0 +1,191 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] Comment. (Inside parens Smith, Stephen’s Book [2000]; and Jones, John’s Book [2001], ending parens).
+..[1] Comment. (Inside parens Smith, Stephen’s Book [2000]; and Jones, John’s Book [2001], no ending parens.
+..[2] Comment. No parens Smith, Stephen’s Book (2000) in the first; but (open parens in suffix; and close parens in prefix of next ref). Jones, John’s Book (2001), no ending parens.
+>>[3] Comment. No parens Smith, Stephen’s Book (2000) in the first; but (open parens in suffix; and no closing parens in next prefix Jones, John’s Book [2001], but ending parens in second item suffix).
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "prefix": "Comment. (Inside parens "
+                }, 
+                {
+                    "id": "ITEM-2", 
+                    "prefix": "and", 
+                    "suffix": ", ending parens)."
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "prefix": "Comment. (Inside parens"
+                }, 
+                {
+                    "id": "ITEM-2", 
+                    "prefix": "and", 
+                    "suffix": ", no ending parens."
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "prefix": "Comment. No parens ", 
+                    "suffix": " in the first; but (open parens in suffix"
+                }, 
+                {
+                    "id": "ITEM-2", 
+                    "prefix": "and close parens in prefix of next ref). ", 
+                    "suffix": ", no ending parens."
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-4", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "prefix": "Comment. No parens ", 
+                    "suffix": " in the first; but (open parens in suffix"
+                }, 
+                {
+                    "id": "ITEM-2", 
+                    "prefix": "and no closing parens in next prefix", 
+                    "suffix": ", but ending parens in second item suffix)."
+                }
+            ], 
+            "properties": {
+                "noteIndex": 4
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name form="short" />
+    </names>
+  </macro>
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=" ">
+        <group delimiter=", ">
+          <text macro="author"/>
+          <text variable="title"/>
+        </group>
+        <date variable="issued" date-parts="year" form="text" prefix="(" suffix=")"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Smith", 
+                "given": "Stephen"
+            }
+        ], 
+        "id": "ITEM-1", 
+        "title": "Stephen's Book",
+        "issued": { "date-parts": [[2000]]},
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Jones", 
+                "given": "John" 
+            }
+        ], 
+        "id": "ITEM-2", 
+        "title": "John's Book",
+        "issued": { "date-parts": [[2001]]},
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

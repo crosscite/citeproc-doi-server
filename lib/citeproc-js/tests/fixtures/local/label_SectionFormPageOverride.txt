@@ -1,0 +1,97 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1", 
+            "label": "paragraph", 
+            "locator": "10"
+        }
+    ], 
+    [
+        {
+            "id": "ITEM-1", 
+            "label": "page", 
+            "locator": ", sec. 100 & 153"
+        }
+    ], 
+    [
+        {
+            "id": "ITEM-1", 
+            "label": "page", 
+            "locator": ", p. 827"
+        }
+    ], 
+    [
+        {
+            "id": "ITEM-1", 
+            "label": "page", 
+            "locator": "829"
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+Note the simple space in the final test. Intervening punctuation
+must be supplied on the locator explicitly when supplementing a
+value in the section variable.
+
+>>== RESULT ==>>
+White Slave Traffic (Mann) Act 36 Stat. p. 825 ¶ 10 (1910)
+White Slave Traffic (Mann) Act 36 Stat. p. 825, §§ 100 &#38; 153 (1910)
+White Slave Traffic (Mann) Act 36 Stat. pp. 825, 827 (1910)
+White Slave Traffic (Mann) Act 36 Stat. pp. 825 829 (1910)
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter=" ">
+        <text variable="title"/>
+        <number variable="volume"/>
+        <text variable="container-title"/>
+        <group delimiter=" ">
+          <label form="symbol" variable="locator"/>
+          <number label-form="symbol" variable="locator"/>
+        </group>
+        <date variable="original-date" prefix="(" suffix=")" form="text" date-parts="year"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "type": "legislation",
+        "id": "ITEM-1",
+        "title": "White Slave Traffic (Mann) Act",
+        "container-title":"Stat.",  
+        "section": "p. 825",
+        "original-date": {
+          "date-parts": [[1910]]
+        },
+        "jurisdiction": "us",
+        "volume": "36"
+    }
+]
+<<===== INPUT =====<<

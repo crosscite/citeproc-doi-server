@@ -1,0 +1,43 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+His Anonymous Life (Rocky Mountain Time Zone)
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter=" ">
+        <text variable="title"/>
+        <text variable="abstract" prefix="(" suffix=")"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "note": "{:abstract:Rocky Mountain Time Zone}", 
+        "title": "His Anonymous Life", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,110 @@
+.. |superscript| raw:: html
+
+   <sup>superscript</sup>
+
+.. |subscript| raw:: html
+
+   <sub>subscript</sub>
+
+.. |small-caps| raw:: html
+
+   <span style="font-variant: small-caps;">small caps</span>
+
+.. |editor| raw:: html
+
+   <textarea>
+   <p>
+   This page illustrates dynamic citation support in the tinyMCE
+   WYSIWYG editor. The text here is open for editing. Edits will
+   persist across page refreshes. A full reload of the page URL will
+   restore this text.
+   </p>
+   <p>
+   Click on the "Add/Edit citation" button in the toolbar to add a
+   citation at the current cursor position. Highlight a citation
+   and click on the button again to edit the citation content.
+   To remove a citation, either save it with no content, or delete
+   it in the usual way and refresh the page to reformat any remaining
+   citations.
+   </p>
+   <p>
+   Use the style selector in the toolbar to change citation styles.
+   </p>
+   </textarea>
+
+.. |because tradition| raw:: html
+
+   <span style="font-variant:small-caps;">Because Tradition</span>
+
+.. |more| raw:: html
+
+   <button id="more" hidden="true">More ...</button>
+
+.. |CCBYSA| raw:: html
+
+   <div style="width:80px !important;"><a alt="CCBYSA" href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="_static/images/cc-by-sa-80x15.png"/></a></div>
+
+.. |styles| raw:: html
+
+   <select id="citation-styles"></select>
+
+.. |footnotes| raw:: html
+
+   <div hidden id="footnote-container">
+     <div class="footnote-header">
+       <b>Footnotes</b>
+     </div>
+     <div id="footnotes"></div>
+   </div>
+
+.. |bib| raw:: html
+
+   <div hidden id="bibliography-container">
+     <h3>Bibliography</h3>
+     <div id="bibliography"></div>
+   </div>
+
+.. |citeme| raw:: html
+
+   &nbsp;<span class="octicon octicon-chevron-down citeme" title="Edit citations"></span>
+
+
+.. |br| raw:: html
+
+   <br />
+
+.. |cites-target| raw:: html
+
+   <div id="csl-outer-block">
+     <div id="csl-inner-block" class="csl-hide">
+       <div id="csl-content-block"></div>
+     </div>
+   </div>
+
+.. |cites-button| raw:: html
+
+   <button id="csl-cites-button" onclick="toggleCslDiv();">Generate citations</button>
+
+.. |citeproc-js| raw:: html
+
+   <span style="background:#cccccc;border-radius:0.5em;padding-left:0.25em;padding-right:0.25em;font-weight:bold;font-family:'Courier New', Courier, monospace">citeproc-js</span>
+
+.. |git| raw:: html
+
+   <span style="background:#cccccc;border-radius:0.5em;padding-left:0.25em;padding-right:0.25em;font-weight:bold;font-family:'Courier New', Courier, monospace">git</span>
+
+.. |jing| raw:: html
+
+   <span style="background:#cccccc;border-radius:0.5em;padding-left:0.25em;padding-right:0.25em;font-weight:bold;font-family:'Courier New', Courier, monospace">jing</span>
+
+.. |python| raw:: html
+
+   <span style="background:#cccccc;border-radius:0.5em;padding-left:0.25em;padding-right:0.25em;font-weight:bold;font-family:'Courier New', Courier, monospace">python</span>
+
+.. |rhino| raw:: html
+
+   <span style="background:#cccccc;border-radius:0.5em;padding-left:0.25em;padding-right:0.25em;font-weight:bold;font-family:'Courier New', Courier, monospace">rhino</span>
+
+.. |--| unicode:: U+2013
+   :trim:
+

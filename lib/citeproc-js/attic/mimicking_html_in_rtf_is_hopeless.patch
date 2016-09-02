@@ -1,0 +1,200 @@
+diff -r 938050b612af src/formats.js
+--- a/src/formats.js	Tue Sep 11 04:33:17 2012 +0900
++++ b/src/formats.js	Tue Sep 11 07:31:42 2012 +0900
+@@ -142,8 +142,18 @@
+         }
+         return "  <div class=\"csl-entry\">" + str + "</div>\n" + insert;
+     },
+-    "@display/block": function (state, str) {
+-        return "\n\n    <div class=\"csl-block\">" + str + "</div>\n";
++    "@display/block": function(state, str, block_mode){
++        var before = "";
++        var after = "";
++        if (block_mode === 0) {
++            after = "\\line";
++        } else if (block_mode === 1) {
++            before = "\\line{}";
++            after = "\\line";
++        } else if (block_mode === 2) {
++            before = "\\line{}";
++        }
++        return "\r\n" + before + str + after + "\r\n";
+     },
+     "@display/left-margin": function (state, str) {
+         return "\n    <div class=\"csl-left-margin\">" + str + "</div>";
+@@ -165,6 +175,14 @@
+     }
+ };
+ 
++
++// XXX To restore after testing:
++//
++//    "@display/block": function (state, str) {
++//        return "\n\n    <div class=\"csl-block\">" + str + "</div>\n";
++//    },
++
++
+ /**
+  * Plain text output specification.
+  *
+@@ -302,8 +320,16 @@
+     "@quotes/false": false,
+     "bibstart":"{\\rtf ",
+     "bibend":"}",
+-    "@display/block": function(state, str){
+-        return str + "\\line\r\n";
++    "@display/block": function(state, str, output_before, nonblock_after){
++        var before = "\\line{}";
++        var after = "\\line";
++        if (!output_before) {
++            before = "";
++        }
++        if (nonblock_after) {
++            after = "";
++        }
++        return before + str + after + "\r\n";
+     },
+     "@bibliography/entry": function(state,str){
+         return str;
+diff -r 938050b612af src/obj_blob.js
+--- a/src/obj_blob.js	Tue Sep 11 04:33:17 2012 +0900
++++ b/src/obj_blob.js	Tue Sep 11 07:31:42 2012 +0900
+@@ -68,6 +68,9 @@
+         for (pos = 0; pos < len; pos += 1) {
+             this.decorations.push(token.decorations[pos].slice());
+         }
++        if ("boolean" === typeof token.top_block) {
++            this.block_check = token.block_check;
++        }
+     } else {
+         this.strings = {};
+         this.strings.prefix = "";
+diff -r 938050b612af src/obj_token.js
+--- a/src/obj_token.js	Tue Sep 11 04:33:17 2012 +0900
++++ b/src/obj_token.js	Tue Sep 11 07:31:42 2012 +0900
+@@ -171,6 +171,9 @@
+     if (token.variables) {
+         newtok.variables = token.variables.slice();
+     }
++    if ("boolean" === typeof token.block_check) {
++        newtok.block_check = token.block_check;
++    }
+     // Probably overkill; this is only used for cloning formatting
+     // tokens.
+     if (token.execs) {
+diff -r 938050b612af src/queue.js
+--- a/src/queue.js	Tue Sep 11 04:33:17 2012 +0900
++++ b/src/queue.js	Tue Sep 11 07:31:42 2012 +0900
+@@ -215,6 +215,9 @@
+     //SNIP-END
+         blob = new CSL.Blob(undefined, this.formats.value()[token], token);
+     }
++    if ("boolean" === typeof blob.block_check) {
++        print("  CHECK(openLevel): "+blob.block_check);
++    }
+     // OKAY! Replace affix parens here.
+     if (this.nestedBraces) {
+         blob.strings.prefix = blob.strings.prefix.replace(this.nestedBraces[0][0], this.nestedBraces[0][1]);
+@@ -317,6 +320,9 @@
+         }
+     }
+     blob = new CSL.Blob(str, token);
++    if ("boolean" === typeof blob.block_check) {
++        print("  CHECK(append): "+blob.block_check);
++    }
+     // OKAY! Replace affix parens here.
+     if (this.nestedBraces) {
+         blob.strings.prefix = blob.strings.prefix.replace(this.nestedBraces[0][0], this.nestedBraces[0][1]);
+@@ -430,6 +436,9 @@
+                 var blen = b.length;
+ 
+                 if (!state.tmp.suppress_decorations) {
++                    if ("boolean" === typeof blobjr.block_check) {
++                        print("display_block(1): "+blobjr.block_check);
++                    }
+                     for (j = 0, jlen = blobjr.decorations.length; j < jlen; j += 1) {
+                         params = blobjr.decorations[j];
+                         if (params[0] === "@showid") {
+@@ -438,7 +447,7 @@
+                         if (state.normalDecorIsOrphan(blobjr, params)) {
+                             continue;
+                         }
+-                        b = state.fun.decorate[params[0]][params[1]](state, b, params[2]);
++                        b = state.fun.decorate[params[0]][params[1]](state, b, params[2], block_mode);
+                     }
+                 }
+                 //
+@@ -449,6 +458,9 @@
+                 if (b && b.length) {
+                     b = txt_esc(blobjr.strings.prefix, state.tmp.nestedBraces) + b + txt_esc(blobjr.strings.suffix, state.tmp.nestedBraces);
+                     if (state.opt.development_extensions.csl_reverse_lookup_support && !state.tmp.suppress_decorations) {
++                        if ("boolean" === typeof blobjr.block_check) {
++                            print("display_block(4): "+blobjr.block_check);
++                        }
+                         for (j = 0, jlen = blobjr.decorations.length; j < jlen; j += 1) {
+                             params = blobjr.decorations[j];
+ 
+@@ -546,6 +558,9 @@
+     var blobs_start = state.output.renderBlobs(ret.slice(0, span_split), blob_delimiter);
+     if (blobs_start && blob && (blob.decorations.length || blob.strings.suffix || blob.strings.prefix)) {
+         if (!state.tmp.suppress_decorations) {
++            if ("boolean" === typeof blobjr.block_check) {
++                print("display_block(5): "+blobjr.block_check);
++            }
+             for (i = 0, ilen = blob.decorations.length; i < ilen; i += 1) {
+                 params = blob.decorations[i];
+                 if (["@bibliography", "@display", "@showid"].indexOf(params[0]) > -1) {
+@@ -571,12 +586,15 @@
+         }
+         blobs_start = b;
+         if (!state.tmp.suppress_decorations) {
++            if ("boolean" === typeof blob.block_check) {
++                print("display_block(3): "+blob.block_check);
++            }
+             for (i = 0, ilen = blob.decorations.length; i < ilen; i += 1) {
+                 params = blob.decorations[i];
+                 if (["@bibliography", "@display", "@showid"].indexOf(params[0]) === -1) {
+                     continue;
+                 }
+-                blobs_start = state.fun.decorate[params[0]][params[1]].call(blob, state, blobs_start, params[2]);
++                blobs_start = state.fun.decorate[params[0]][params[1]].call(blob, state, blobs_start, params[2], block_mode);
+             }
+         }
+     }
+@@ -687,13 +705,16 @@
+                 str = str.replace(/\.([^a-z]|$)/g, "$1");
+             }
+             if (!state.tmp.suppress_decorations) {
++                if ("boolean" === typeof blob.block_check) {
++                    print("display_block(2): "+blob.block_check);
++                }
+                 llen = blob.decorations.length;
+                 for (ppos = 0; ppos < llen; ppos += 1) {
+                     params = blob.decorations[ppos];
+                     if (state.normalDecorIsOrphan(blob, params)) {
+                         continue;
+                     }
+-                    str = state.fun.decorate[params[0]][params[1]](state, str, params[2]);
++                    str = state.fun.decorate[params[0]][params[1]](state, str, params[2], block_mode);
+                 }
+             }
+             str = txt_esc(blob.strings.prefix) + str + txt_esc(blob.strings.suffix);
+diff -r 938050b612af src/util_substitute.js
+--- a/src/util_substitute.js	Tue Sep 11 04:33:17 2012 +0900
++++ b/src/util_substitute.js	Tue Sep 11 07:31:42 2012 +0900
+@@ -119,6 +119,15 @@
+             bib_first.execs.push(func);
+             target.push(bib_first);
+         }
++        if (state.build.area === "bibliography") {
++            if (display === "block") {
++                print("Set block_check true");
++                this.block_check = true;
++            } else {
++                print("Set block_check false");
++                this.block_check = false;
++            }
++        }
+         state.build.cls = display;
+     }
+     state.build.render_nesting_level += 1;

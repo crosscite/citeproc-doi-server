@@ -1,0 +1,58 @@
+>>===== MODE =====>>
+citation
+<<===== MODE===== <<
+
+>>===== RESULT =====>>
+>>[0] 11-Oxygenated Steroids. “Maybe’s” ’ts XIII. Synthesis and “Proof” of Structure of Δ1;4-Pregnadiene-17α;21-diol-3;11;20-trione and Δ1;4-Pregnadiene-11β;17α;21-triol-3;20-dione <i>Xx</i>
+<<===== RESULT===== <<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "10gk1bpdes", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "index": 0, 
+                "noteIndex": 0
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS===== <<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded" default-locale="en-US">
+<!-- This style is made from JLME -->
+<info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+     <text variable="title" text-case="title"/>
+    </layout>
+  </citation>  
+</style>
+<<===== CSL===== <<
+
+>>===== INPUT =====>>
+[
+  {
+    "id": "ITEM-1",
+    "type": "article-journal",
+    "title": "<span    class=\"nocase\" >11-Oxygenated Steroids</span>. \"Maybe's\" 'ts <span class=\"nocase\">XIII</span>. <span class=\"nocase\">Synthesis</span> and 'proof' of structure of <span class=\"nocase\"><span class=\"nocase\">Δ1</span>;<span class=\"nocase\">4-Pregnadiene-17α</span>;21-diol-3;11;20-trione and <span class=\"nocase\">Δ1</span>;<span    class=\"nocase\" >4-Pregnadiene-11β</span>;17α;21-triol-3;20-dione</span> <i>xx</i>"
+  }
+]
+<<===== INPUT===== <<

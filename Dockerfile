@@ -13,7 +13,10 @@ FROM phusion/passenger-nodejs:0.9.19
 #FROM phusion/passenger-customizable:<VERSION>
 
 # Set correct environment variables.
-ENV HOME /home/app/webapp
+ENV HOME /home/app
+
+
+
 
 # Use runit to manage sidekiq workers
 # ENV RUNIT 1
@@ -35,6 +38,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
+
 # If you're using the 'customizable' variant, you need to explicitly opt-in
 # for features. Uncomment the features you want:
 #
@@ -49,7 +53,7 @@ RUN apt-get update && \
 #   Python support.
 #RUN /pd_build/python.sh
 #   Node.js and Meteor support.
-#RUN /pd_build/nodejs.sh
+# RUN /pd_build/nodejs.sh
 
 # ...put your own build instructions here...
 
@@ -72,12 +76,45 @@ COPY vendor/docker/ntp.conf /etc/ntp.conf
 COPY . /home/app/webapp/
 # RUN mkdir -p /home/app/webapp/tmp/pids && \
     # mkdir -p /home/app/webapp/vendor/bundle && \
+
+
+    # Replace shell with bash so we can source files
+    RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+    # Set debconf to run non-interactively
+    RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+
+
+    ## downgrading NodeJS
+    ENV NVM_DIR /usr/local/nvm
+    ENV NODE_VERSION 0.10.46
+    # ENV NODE_VERSION 0.6.12
+
+    WORKDIR /home/app/webapp/vendor
+    # Install nvm with node and npm
+    # RUN /sbin/setuser app cp nvm/bash_profile ~/.bash_profile \
+    RUN bash /home/app/webapp/vendor/nvm/install.sh\
+        && source $NVM_DIR/nvm.sh \
+        && nvm install $NODE_VERSION \
+        && nvm alias default $NODE_VERSION \
+        && nvm use default
+
+    # Set up our PATH correctly so we don't have to long-reference npm, node, &c.
+    ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
+    ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+
 RUN chown -R app:app /home/app/webapp && \
     chmod -R 755 /home/app/webapp
 
 # Install npm and bower packages
-WORKDIR /home/app/webapp/vendor
-RUN /sbin/setuser app npm install
+WORKDIR /home/app/webapp
+# RUN /sbin/setuser app npm install
+RUN  npm install
+# RUN  npm install connect@2.2.1  \
+ # && npm install  jsdom@0.2.14 \
+ # && npm install request@2.9.202
+
 # && \
     # npm install -g phantomjs-prebuilt
 
@@ -103,6 +140,8 @@ RUN mkdir -p /etc/my_init.d
 # COPY docker/70_precompile.sh /etc/my_init.d/70_precompile.sh #ToDo
 # COPY docker/80_cron.sh /etc/my_init.d/80_cron.sh
 # COPY docker/90_migrate.sh /etc/my_init.d/90_migrate.sh
+
+
 
 
 # Expose web

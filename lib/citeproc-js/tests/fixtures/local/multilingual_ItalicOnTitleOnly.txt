@@ -1,0 +1,110 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+<i>Ronbun</i>, Zasshi
+<<===== RESULT =====<<
+
+>>===== MULTIAFFIX =====>>
+[
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    "<i>", 
+    "</i>", 
+    null, 
+    null, 
+    "<i>", 
+    "</i>", 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null
+]
+<<===== MULTIAFFIX =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0"
+      default-locale="en-x-translit-ja-alalc97">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter=", ">
+        <text variable="title"/>
+        <text variable="container-title"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "論文", 
+        "multi": {
+          "_lsts": {
+            "title": ["ja-alalc97"],
+            "container-title": ["ja-alalc97"]
+          },
+          "_keys": {
+            "title": {
+               "ja-alalc97": "Ronbun"
+            },
+            "container-title": {
+               "ja-alalc97": "Zasshi"
+            }
+          }
+        },
+        "container-title": "雑誌",
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

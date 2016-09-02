@@ -1,0 +1,62 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+BoGUS (Bureau of Gaseous Unformed Stuff)
+<<===== RESULT =====<<
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "institution-part": {
+            "Bureau of Gaseous Unformed Stuff": "BoGUS"
+        }
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      default-locale="en">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <names variable="author">
+        <name/>
+        <institution institution-parts="short-long">
+          <institution-part name="long" if-short="true" prefix=" (" suffix=")"/>
+        </institution>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "literal": "Bureau of Gaseous Unformed Stuff"
+            }
+        ], 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

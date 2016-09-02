@@ -1,0 +1,225 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+Normalizes punctuation and grouping when multiple numbers are provided in input.
+
+>>===== RESULT =====>>
+[1st] edition --- ‘1’ --- ordinalized, numeric, singular
+[2nd–3rd] editions --- ‘2–3’ --- ordinalized, numeric, plural
+[4th &#38; 6th] editions --- ‘4 &#38; 6’ --- ordinalized, numeric, plural
+[7th, 8th &#38; 9th] editions --- ‘7, 8 &#38; 9’ --- ordinalized, numeric, plural
+[10th, 12th &#38; 14th] editions --- ‘10, 12 &#38; 14’ --- ordinalized, numeric, plural
+[15th, 17th, 19th, 20th, 21st] editions --- ‘15, 17, 19, 20, 21’ --- ordinalized, numeric, plural
+[16th, 28th, 30th, 31st, 32nd, 34th, 36th] editions --- ‘16, 28, 30, 31, 32, 34, 36’ --- ordinalized, numeric, plural
+[25th, 15th, 17th, 19th, 20th, 21st, 23rd, 24th] editions --- ‘25, 15, 17, 19, 20, 21, 23, 24’ --- ordinalized, numeric, plural
+[38th, 37th–40th] editions --- ‘38, 37–40’ --- ordinalized, numeric, plural
+[41st–43rd] editions --- ‘41–43’ --- ordinalized, numeric, plural
+[205th–2000th] editions --- ‘205–2000’ --- ordinalized, numeric, plural
+[1 vol + 1 CD] --- ‘1 vol + 1 CD’ --- not ordinalized, non-numeric
+[12nd] edition --- ‘12nd’ --- Suffix left untouched, not ordinalized, numeric, singular
+[12a-c] edition --- ‘12a-c’ --- Suffix left untouched, not ordinalized, numeric, singular
+[12th Yellow-tailed Wooly Monkey] --- ‘12th Yellow-tailed Wooly Monkey’ --- not ordinalized, non-numeric
+[T51] edition --- ‘T51’ --- not ordinalized, numeric, singular
+[Edition 1] --- ‘Edition 1’ --- not ordinalized, non-numeric
+[Editions 1-6] --- ‘Editions 1-6’ --- Normalized, non-numeric
+[‘42 editionX’] --- ‘42 editionX’ --- Normalized, quotes preserved, non-numeric
+[‘42-47 editionz’] --- ‘42-47 editionz’ --- Normalized, quotes preserved, non-numeric
+[edn. T51] --- ‘edn. T51’ --- Non-numeric (unrecognized label)
+[T51 &#38; T53] editions --- ‘T51 &#38; T53’ --- not ordinalized, numeric, plural
+[12:xx] edition --- ‘12:xx’ --- not ordinalized, numeric, singular
+[12 13] --- ‘12 13’ --- not ordinalized, non-numeric
+[12th folio] --- ‘12th folio’ --- Suffix left untouched, not ordinalized, non-numeric
+<<===== RESULT =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <locale>
+    <terms>
+      <term name="open-quote">‘</term>
+      <term name="close-quote">’</term>
+      <term name="open-inner-quote">“</term>
+      <term name="close-inner-quote">”</term>
+    </terms>
+  </locale>
+  <citation>
+    <layout delimiter="&#x0A;">
+      <group delimiter=" ">
+        <number variable="edition" form="ordinal" prefix="[" suffix="]"/>
+        <choose>
+          <if is-numeric="edition">
+            <label variable="edition"/>
+          </if>
+	    </choose>
+        <text variable="edition" prefix="--- " quotes="true"/>
+        <text variable="title" prefix="--- "/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+>>===== INPUT =====>>
+[
+    {
+        "edition": "1", 
+        "id": "ITEM-1", 
+        "title": "ordinalized, numeric, singular", 
+        "type": "book"
+    }, 
+    {
+        "edition": "2 - 3", 
+        "id": "ITEM-2", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "4 & 6", 
+        "id": "ITEM-3", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "7, 8 & 9", 
+        "id": "ITEM-4", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "10, 12 & 14", 
+        "id": "ITEM-5", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "15, 17, 19, 20, 21", 
+        "id": "ITEM-6", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "16, 28, 30, 31, 32, 34, 36", 
+        "id": "ITEM-8", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "25, 15, 17, 19, 20, 21, 23, 24", 
+        "id": "ITEM-7", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "38, 37 - 40", 
+        "id": "ITEM-9", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "41-43", 
+        "id": "ITEM-10", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "205 - 2000", 
+        "id": "ITEM-11", 
+        "title": "ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "1 vol + 1 CD", 
+        "id": "ITEM-12", 
+        "title": "not ordinalized, non-numeric", 
+        "type": "book"
+    }, 
+    {
+        "edition": "12nd", 
+        "id": "ITEM-13", 
+        "title": "Suffix left untouched, not ordinalized, numeric, singular", 
+        "type": "book"
+    }, 
+    {
+        "edition": "12a-c", 
+        "id": "ITEM-14", 
+        "title": "Suffix left untouched, not ordinalized, numeric, singular", 
+        "type": "book"
+    }, 
+    {
+        "edition": "12th Yellow-tailed Wooly Monkey", 
+        "id": "ITEM-15", 
+        "title": "not ordinalized, non-numeric", 
+        "type": "book"
+    }, 
+    {
+        "edition": "T51", 
+        "id": "ITEM-16", 
+        "title": "not ordinalized, numeric, singular", 
+        "type": "book"
+    }, 
+    {
+        "edition": "Edition 1", 
+        "id": "ITEM-17", 
+        "title": "not ordinalized, non-numeric", 
+        "type": "book"
+    }, 
+    {
+        "edition": "Editions 1 - 6", 
+        "id": "ITEM-18", 
+        "title": "Normalized, non-numeric", 
+        "type": "book"
+    }, 
+    {
+        "edition": "\"42 editionX\"", 
+        "id": "item-19", 
+        "title": "Normalized, quotes preserved, non-numeric", 
+        "type": "book"
+    }, 
+    {
+        "edition": "\"42 - 47 editionz\"", 
+        "id": "item-20", 
+        "title": "Normalized, quotes preserved, non-numeric", 
+        "type": "book"
+    }, 
+    {
+        "edition": "edn. T51", 
+        "id": "item-21", 
+        "title": "Non-numeric (unrecognized label)", 
+        "type": "book"
+    }, 
+    {
+        "edition": "T51 & T53", 
+        "id": "item-22", 
+        "title": "not ordinalized, numeric, plural", 
+        "type": "book"
+    }, 
+    {
+        "edition": "12:xx", 
+        "id": "item-23", 
+        "title": "not ordinalized, numeric, singular", 
+        "type": "book"
+    }, 
+    {
+        "edition": "12 13", 
+        "id": "item-24", 
+        "title": "not ordinalized, non-numeric", 
+        "type": "book"
+    }, 
+    {
+        "edition": "12th folio", 
+        "id": "item-25", 
+        "title": "Suffix left untouched, not ordinalized, non-numeric", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

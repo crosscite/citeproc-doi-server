@@ -1,0 +1,58 @@
+>>===== MODE =====>>
+citation
+<<===== MODE===== <<
+
+>>===== RESULT =====>>
+>>[0] <i>Salmonella</i> in (Quality) Pork (SALINPORK): <b>And</b> Pre-harvest and Harvest Control Options Based  on Epidemiologic, Diagnostic and Economic Research: Final Report
+<<===== RESULT===== <<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "10gk1bpdes", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "index": 0, 
+                "noteIndex": 0
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS===== <<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded" default-locale="en-US">
+<!-- This style is made from JLME -->
+<info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+     <text variable="title" text-case="title"/>
+    </layout>
+  </citation>  
+</style>
+<<===== CSL===== <<
+
+>>===== INPUT =====>>
+[
+  {
+    "id": "ITEM-1",
+    "type": "article-journal",
+    "title": "<i><span class=\"nocase\">Salmonella</span></i> in (quality) <span class=\"nocase\">Pork</span> (<span class=\"nocase\">SALINPORK</span>): <b>and</b> <span class=\"nocase\">Pre-harvest</span> and <span class=\"nocase\">Harvest Control Options Based </span> on <span class=\"nocase\">Epidemiologic</span>, <span class=\"nocase\">Diagnostic</span> and <span class=\"nocase\">Economic Research</span>: <span class=\"nocase\">Final Report</span>"
+  }
+]
+<<===== INPUT===== <<

@@ -1,0 +1,161 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+This test is requesting en-US as the default locale, and transliteration
+with the my-alalc97 language tag.
+
+The items test the following:
+
+ITEM-1: "en" item with no matching transliteration
+    Apply normal formatting to name
+
+ITEM-2: "en" item with match on explicit tag for headline field
+    Apply "my" formatting (sort ordering, full name)
+
+ITEM-3: "en" item with match on subfield tag
+    Apply "my" formatting (sort ordering, full name)
+
+ITEM-4: "en" item with non-romanesque content and no tag match
+    Apply processor's hard-wired non-romanesque formatting to name (sort ordering, short form ok)
+
+ITEM-5: "my" item with no tag match
+    Apply "my" formatting (sort ordering, full name)
+
+ITEM-6: "fr" item (alien language) and no tag match
+    Apply normal formatting to name
+
+
+>>===== RESULT =====>>
+Family Name; Family Name Given Name; Kyaw Zay Ya U; ဦး; Family Name Given Name; Family Name
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      default-locale="en-US-x-translit-my-alalc97">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+  <style-options 
+                 name-as-sort-order="ja zh kr my hu vi"
+                 name-never-short="ja zh kr my hu vi"/>
+  </locale>
+  <citation>
+    <layout delimiter="; ">
+      <names variable="author">
+        <name form="short"/>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Family Name", 
+                "given": "Given Name", 
+                "multi": {
+                    "_key": {
+                        "ja-alalc97": {
+                            "family": "Kyaw Zay Ya", 
+                            "given": "U"
+                        }
+                    }
+                }
+            }
+        ], 
+        "id": "ITEM-1", 
+        "language": "en", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Family Name", 
+                "given": "Given Name", 
+                "multi": {
+                    "_key": {
+                        "ja-alalc97": {
+                            "family": "Kyaw Zay Ya", 
+                            "given": "U"
+                        }
+                    }, 
+                    "main": "my-alalc97"
+                }
+            }
+        ], 
+        "id": "ITEM-2", 
+        "language": "en", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Family Name", 
+                "given": "Given Name", 
+                "multi": {
+                    "_key": {
+                        "my-alalc97": {
+                            "family": "Kyaw Zay Ya", 
+                            "given": "U"
+                        }
+                    }
+                }
+            }
+        ], 
+        "id": "ITEM-3", 
+        "language": "en", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "ဦး", 
+                "given": "ေက်ာ္ေဇယ်"
+            }
+        ], 
+        "id": "ITEM-4", 
+        "language": "en", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Family Name", 
+                "given": "Given Name"
+            }
+        ], 
+        "id": "ITEM-5", 
+        "language": "my", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Family Name", 
+                "given": "Given Name"
+            }
+        ], 
+        "id": "ITEM-6", 
+        "language": "fr-FR", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

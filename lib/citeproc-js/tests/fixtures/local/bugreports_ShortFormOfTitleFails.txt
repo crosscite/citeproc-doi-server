@@ -1,0 +1,57 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "title": {
+            "Journal of Irreproducible Results": "J. Irrep. Res."
+        }
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+
+>>== RESULT ==>>
+Minpō Japanese Civil Code.
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0"
+      default-locale="en-US-x-translit-ja-alalc97-x-translat-en">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout suffix=".">
+      <text variable="title"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "民法",
+        "type": "legislation",
+		"multi":{
+			"_keys":{
+				"title":{
+					"ja-alalc97":"Minpō",
+					"en":"Japanese Civil Code"
+				}
+			}
+		}
+    }
+]
+<<===== INPUT =====<<

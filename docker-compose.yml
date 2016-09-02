@@ -1,14 +1,15 @@
 version: '2'
 
 services:
-  crosscite:
+  citeproc-doi-server:
     # env_file: .env
     # image: datacite/volpino
     build: .
     ports:
       - "8080:80"
     volumes:
-      - ./app.js:/home/app/webapp/app.js
       - ./public:/home/app/webapp/public
+      - ./src:/home/app/webapp/src
+      - ./lib:/home/app/webapp/lib
       # - ./config:/home/app/webapp/config
       # - ./spec:/home/app/webapp/spec

@@ -1,8 +1,8 @@
 var connect = require('connect');
 var request = require('request');
-var citeproc = require('./public/src/citeproc');
-var doi = require('./public/src/doi');
-var settings = require('./public/src/settings');
+var citeproc = require('./src/citeproc');
+var doi = require('./src/doi');
+var settings = require('./src/settings');
 
 function init() {
 	console.log("creating server...");
@@ -59,7 +59,7 @@ function formatHandler(req, res) {
 	if (doi == undefined)
 		sendResponse(res, 400, "doi param required");
 	else {
-		require("./public/src/doi").resolve(
+		require("./src/doi").resolve(
 				doi,
 				function(data) {
 					try {

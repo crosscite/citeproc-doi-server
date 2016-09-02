@@ -1,0 +1,6 @@
+.*\.tar\.gz$
+^/std$
+^config$
+/machines$
+.*~$
+schemas.xml
