@@ -7,6 +7,10 @@
 <script type="text/javascript" src="./js/ui.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/ui.css" />
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
 <!--[if IE]>
   <link rel="stylesheet" type="text/css" href="css/ui_ie.css" />
 <![endif]-->
@@ -30,12 +34,106 @@
   <h1>
     DOI Citation Formatter
   </h1>
-  <div>
+  <!-- <div>
     <img src="https://mds.datacite.org/resources/images/dc-logo.gif"/>
     <img src="http://www.crossref.org/images/citation_linking_graphic_24x106_trans.png"/>
     <img src="img/medra.png"/>
     <img src="img/istic.gif" width="140px"/>
-  </div>
+  </div> -->
+
+<form id="form" action="">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <label for="doi">DOI:</label>
+            <input id="doi" type="text" class="form-control" />
+            <p class="help-block">Paste your DOI here.</p>
+          <!-- </br> -->
+            <!-- <a href="help.html">Format help</a> -->
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <label for="styles">Formatting Style:</label>
+            <select id="styles" class="form-control"></select>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <label for="locales">Language and Country:</label>
+            <select id="locales" class="form-control"></select>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        </br>
+            <input type="submit" value="Format" class="btn-lg btn-default" />
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</form>
+<div class="row" id="citation_row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <!-- Target -->
+        <div id="citation"></div>
+        <p class="help-block" id="doi_link"></p>
+
+
+        <!-- Trigger -->
+        <button class="btn-lg" data-clipboard-target="#citation" id="copy_citation">
+            Copy to clipboard
+        </button>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <a href="http://crosscite.org/cn/">Documentation</a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h3 class="section-heading">
+  						DOI providers
+  					</h3>
+        <hr class="primary">
+        <p>
+            <a href="http://datacite.org">
+                <img src="img/datacite.svg" width="180px" alt="DataCite">
+            </a>
+            <a href="http://crossref.org">
+                <img src="https://assets.crossref.org/logo/crossref-logo-landscape-200.svg" width="180px" alt="Crossref">
+            </a>
+            <a href="https://www.medra.org/">
+                <img src="img/medra.png" width="150px" alt="mEDRA">
+            </a>
+            <a href="http://www.cdlib.org">
+                <img src="img/istic.gif" width="150px" alt="CDL">
+            </a>
+        </p>
+    </div>
+</div>
+
+
+
+
+  <!--
   <form id="form" action="">
     <label for="doi">DOI:</label>
     <input id="doi" type="text" />
@@ -44,21 +142,20 @@
     <select id="styles"></select>
 
 
-    <!-- <input type="text" id="autocomplete" /> -->
 
 
     <label for="locales">Locale:</label>
     <select id="locales"></select>
 
     <input type="submit" value="Format"/>
-  </form>
+  </form> -->
     <!-- Target -->
-  <div id="citation"></div>
+  <!-- <div id="citation"></div> -->
 
   <!-- Trigger -->
-  <button class="btn" data-clipboard-target="#citation" id="copy_citation">
+  <!-- <button class="btn" data-clipboard-target="#citation" id="copy_citation">
       Copy to clipboard
-  </button>
+  </button> -->
 
 </body>
 </html>

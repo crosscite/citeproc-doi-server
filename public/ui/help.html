@@ -1,0 +1,188 @@
+<html>
+  <head>
+</head>
+ <body>
+   <div class='notifications top-left'></div>
+   <div class='container-fluid'>
+     <style>
+       .cr-red {
+         color: rgb(192, 70, 62);
+       }
+       .home-link, .home-link:visited, .home-link:hover {
+         text-decoration: none;
+         color: black;
+       }
+       .simple-nav {
+         font-size: 1.2em;
+         line-height: 1.1em;
+         margin-top: 1em;
+       }
+       .simple-nav a, .simple-nav a:visited {
+         color: grey;
+         padding-left: .4em;
+       }
+       .search-in-header {
+         position: relative;
+         margin-top: .5em;
+         margin-right: 16em;
+         width: 22em;
+       }
+       .search-in-header i {
+         position: absolute;
+         top: 0.35em;
+         left: 0.5em;
+         font-size: 1.8em;
+         color: #aaa;
+       }
+       .search-in-header input {
+         line-height: 1.2em;
+         height: 1.4em;
+         font-size: 1.6em;
+         width: 22em;
+         padding-left: 2em;
+       }
+       .span-header {
+         margin-top: 0.5em;
+         margin-bottom: -1em;
+       }
+       .simple-nav-outer {
+         position: relative;
+         width: 45em;
+       }
+       .simple-nav-bump-up {
+         margin-top: -1em;
+       }
+       .simple-nav {
+         position: absolute;
+         height: 2em;
+         top: 50%;
+         margin-top: 1em;
+         right: 0;
+       }
+       .simple-nav .pull-right {
+         margin-top: -0.05em;
+       }
+       .simple-nav .pull-right img {
+         margin-top: -0.2em;
+       }
+       .simple-nav > * {
+         margin-left: .4em;
+       }
+       .simple-nav.smaller {
+         font-size: 1em;
+         line-height: 2em;
+       }
+     </style>
+     <div class='row-fluid'>
+       <div class='span-header span3' style='padding-top: 0.7em;'>
+         <a class='home-link' href='/'>
+           <img src='http://assets.crossref.org/logo/crossref-logo-landscape-100.png'>
+         </a>
+       </div>
+       <div class='span-header span9'>
+         <div class='pull-right'>
+           <div class='simple-nav-outer'>
+             <div class='simple-nav smaller'>
+               <div class='pull-right'>
+                 <a class='sign-in-link' href='#'>
+                   <img src='/orcid_24x24.gif'>
+                   Sign in
+                 </a>
+                 <script>
+                   $(document).ready(function() {
+                     $('.sign-in-link').click(function(e) {
+                       $.oauthpopup({path: '/auth/orcid',
+                                     callback: function() {
+                                       document.location.reload(true);
+                                     }});
+                       e.preventDefault();
+                       return false;
+                     });
+                   });
+                 </script>
+               </div>
+               <a href='/funding'>Funding Data</a>
+               <a href='/references'>Link References</a>
+               <a href='/help/status'>Status</a>
+               <a href='http://api.crossref.org'>API</a>
+               <a href='/help/search'>Help</a>
+             </div>
+           </div>
+         </div>
+         <form action='/' id='search-form' method='GET'>
+           <div class='search-in-header'>
+             <input class='input input-xlarge search-input' id='search-input' name='q' placeholder='Title, author, DOI, ORCID iD, etc.' type='text'>
+             <i class='icon-search'></i>
+           </div>
+         </form>
+       </div>
+     </div>
+     <div class='row-fluid'>
+       <div class='span2'></div>
+       <div class='span8'>
+         <h2>Example Queries</h2>
+         <style>
+           dl, dd, dt {
+             line-height: 1.6em;
+           }
+           dd {
+             margin-bottom: 0.4em;
+           }
+         </style>
+         <script>
+           $(document).ready(function() {
+             $('.example-link').click(function(e) {
+               var $searchInput = $('.search-input');
+               $searchInput.val($(this).text());
+               $searchInput.focus();
+               $('html, body').animate({scrollTop:0});
+             });
+           });
+         </script>
+         <dl class='lead'>
+           <dt>
+             <a class='example-link' href='#'>Palmer ontologies publishing</a>
+           </dt>
+           <dd>Find your own works by searching for your name and something else, such as part of a title.</dd>
+           <dt>
+             <a class='example-link' href='#'>galaxy classification</a>
+           </dt>
+           <dd>Discover new articles by searching for query terms.</dd>
+           <dt>
+             <a class='example-link' href='#'>+galaxy +bayesian !lensing</a>
+           </dt>
+           <dd>Put a + in front of a query term to force it to appear in search results (or a ! to exclude it).</dd>
+           <dt>
+             <a class='example-link' href='#'>10.2331/suisan.32.804</a>
+           </dt>
+           <dd>Find a particular work by searching for its DOI.</dd>
+           <dt>
+             <a class='example-link' href='#'>10/ct8vzd</a>
+           </dt>
+           <dd>
+             Find a particular work by searching for its
+             <a href='http://shortdoi.org' target='_blank'>short DOI</a>
+             .
+           </dd>
+           <dt>
+             <a class='example-link' href='#'>0000-0001-5556-6616</a>
+           </dt>
+           <dd>Find works related to an ORCID.</dd>
+           <dt>
+             <a class='example-link' href='#'>1740-8776</a>
+           </dt>
+           <dd>Find articles within a journal by searching for an ISSN.</dd>
+           <dt>
+             <a class='example-link' href='#'>RSG-09-276-01-CSM</a>
+           </dt>
+           <dd>Find works funded by a particular grant by searching for the grant / award number.</dd>
+           <dt>
+             <a class='example-link' href='#'>M. Henrion, D. J. Mortlock, D. J. Hand, and A. Gandy, "A Bayesian approach to star-galaxy classification," Monthly Notices of the Royal Astronomical Society, vol. 412, no. 4, pp. 2286-2302, Apr. 2011.</a>
+           </dt>
+           <dd>Find a particular work by searching for a full citation.</dd>
+         </dl>
+       </div>
+     </div>
+   </div>
+ </body>
+</html>

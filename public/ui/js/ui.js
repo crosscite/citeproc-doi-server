@@ -4,9 +4,9 @@ function init() {
 	$("#locales").loadSelect("locales").val("en-US");
 	$("#styles").combobox();
 	$("#locales").combobox();
-	new Clipboard('.btn');
-	$("#citation").hide();
-	$("#copy_citation").hide();
+	new Clipboard('.btn-lg');
+	$("#citation_row").hide();
+	// $("#copy_citation").hide();
 }
 
 $.fn.loadSelect = function(url) {
@@ -35,24 +35,26 @@ function arrayToSelectOptions(array) {
 }
 
 function submit() {
-	$("#citation").hide();
+	$("#citation_row").hide();
 	var doi = $("#doi").val();
 	$.ajax({
 		url : "format",
 		data : {
 			doi : doi,
 			style : $("#styles").val(),
-			// style : $("#autocomplete").val(),
 			lang : $("#locales").val()
 		},
 		dataType : "text",
 		success : function(data) {
 			$("#citation").text(data);
-			$("#citation").show();
-			$("#copy_citation").show();
+			$("#citation_row").show();
+			// $("#citation").show();
+			// $("#copy_citation").show();
+			$("#doi_link").text("http://data.datacite.org/"+doi);
+			$("#doi_link").href("http://data.datacite.org/"+doi);
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
-			$("#copy_citation").hide();
+			$("#citation_row").hide();
 			alert(jqXHR.responseText);
 		}
 	});

@@ -3,7 +3,7 @@ body {
     color: #666666;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: left;
     padding-top: 50px;
 }
 
@@ -14,6 +14,7 @@ h1,h2,h3 {
 h1 {
     font-weight: normal;
     font-size: 50px;
+    text-align: center;
 }
 
 small {
@@ -49,20 +50,25 @@ a:hover {
   margin-right: auto;
   max-width: 800px;
   padding: 5pt;
+  /*display: none; /* only show on demand */
+}
+
+#citation_row {
   display: none; /* only show on demand */
 }
 
 input#doi {
-    width: 300px;
+    /*width: 300px;*/
 }
 
+
 select#styles {
-    width: 100px;
+    /*width: 100%;*/
 }
 
 .custom-combobox {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 .custom-combobox-toggle {
   position: absolute;
@@ -74,4 +80,5 @@ select#styles {
 .custom-combobox-input {
   margin: 0;
   padding: 5px 10px;
+  width: 95%;
 }
