@@ -42,7 +42,7 @@ a:hover {
 	color: #77C9EA;
 }
 
-#citation { 
+#citation {
   background-color: #eeeeee;
   margin-top: 30px;
   margin-left: auto;
@@ -58,4 +58,20 @@ input#doi {
 
 select#styles {
     width: 100px;
+}
+
+.custom-combobox {
+  position: relative;
+  display: inline-block;
+}
+.custom-combobox-toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-left: -1px;
+  padding: 0;
+}
+.custom-combobox-input {
+  margin: 0;
+  padding: 5px 10px;
 }
