@@ -1,0 +1,37 @@
+language: javascript
+nvm:
+
+
+before_install:
+  - set -e
+  # - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  #     AWS_BUCKET="stats.datacite.org";
+  #   elif [ "$TRAVIS_BRANCH" == "labs" ]; then
+  #     AWS_BUCKET="stats.labs.datacite.org";
+  #   else
+  #     exit 1;
+  #   fi
+  - nvm install v0.10.46
+
+before_script:
+  # - cd vendor && npm install
+  # - cd ../
+
+script:
+  - npm start
+
+# deploy:
+#   provider: s3
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
+#   bucket: $AWS_BUCKET
+#   local-dir: build
+#   acl: public_read
+#   skip_cleanup: true
+#   region: eu-west-1
+#   detect_encoding: true
+#   on:
+#     all_branches: true
+
+notifications:
+  slack: datacite:Wt8En0ALoTA6Kjc5EOKNDWxN

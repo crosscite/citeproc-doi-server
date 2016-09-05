@@ -2,6 +2,7 @@
 <head>
 <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="./js/ui.js"></script>
+
 <link rel="stylesheet" type="text/css" href="./css/ui.css" />
 <!--[if IE]>
   <link rel="stylesheet" type="text/css" href="css/ui_ie.css" />
@@ -20,10 +21,11 @@
   })();
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 </head>
 <body>
   <h1>
-    DOI Citation Formatter <small>beta</small>
+    DOI Citation Formatter
   </h1>
   <div>
     <img src="https://mds.datacite.org/resources/images/dc-logo.gif"/>
@@ -43,6 +45,13 @@
 
     <input type="submit" value="Format"/>
   </form>
+    <!-- Target -->
   <div id="citation"></div>
+
+  <!-- Trigger -->
+  <button class="btn" data-clipboard-target="#citation" id="copy_citation">
+      Copy to clipboard
+  </button>
+
 </body>
 </html>

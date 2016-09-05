@@ -2,7 +2,9 @@ function init() {
 	$("#form").submit(submit);
 	$("#styles").loadSelect("styles").val("apa");
 	$("#locales").loadSelect("locales").val("en-US");
+	new Clipboard('.btn');
 	$("#citation").hide();
+	$("#copy_citation").hide();
 }
 
 $.fn.loadSelect = function(url) {
@@ -44,8 +46,10 @@ function submit() {
 		success : function(data) {
 			$("#citation").text(data);
 			$("#citation").show();
+			$("#copy_citation").show();
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
+			$("#copy_citation").hide();
 			alert(jqXHR.responseText);
 		}
 	});
