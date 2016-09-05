@@ -48,10 +48,9 @@ function submit() {
 		success : function(data) {
 			$("#citation").text(data);
 			$("#citation_row").show();
-			// $("#citation").show();
-			// $("#copy_citation").show();
-			$("#doi_link").text("http://data.datacite.org/"+doi);
-			$("#doi_link").href("http://data.datacite.org/"+doi);
+
+			// $("#doi_link").text("http://data.datacite.org/"+doi);
+			// $("#doi_link").href ="http://data.datacite.org/"+doi;
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			$("#citation_row").hide();
