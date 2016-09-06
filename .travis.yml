@@ -1,9 +1,9 @@
-language: javascript
-nvm:
-
+language: node_js
+node_js:
+  - "0.10.x"
 
 before_install:
-  - set -e
+  # - set -e
   # - if [ "$TRAVIS_BRANCH" == "master" ]; then
   #     AWS_BUCKET="stats.datacite.org";
   #   elif [ "$TRAVIS_BRANCH" == "labs" ]; then
@@ -11,11 +11,10 @@ before_install:
   #   else
   #     exit 1;
   #   fi
-  - nvm install v0.10.46
+  # - nvm install v0.10.46
 
 before_script:
-  # - cd vendor && npm install
-  # - cd ../
+   - npm install
 
 script:
   - npm start
