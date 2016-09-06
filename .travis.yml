@@ -17,7 +17,7 @@ before_script:
    - npm install
 
 script:
-  - npm start
+  # - npm start
 
 # deploy:
 #   provider: s3
@@ -34,3 +34,4 @@ script:
 
 notifications:
   slack: datacite:Wt8En0ALoTA6Kjc5EOKNDWxN
+  email: false
