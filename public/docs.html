@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <title>DOI Content Negotiation</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="title" content="DOI Content Negotiation" />
+    <meta name="generator" content="Org-mode" />
+    <meta name="generated" content="2014-06-18T11:31+0100" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <style type="text/css">
+        <!--
+        /*--><![CDATA[/*><!--*/
+
+        html {
+            font-family: Times, serif;
+            font-size: 12pt;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .todo {
+            color: red;
+        }
+
+        .done {
+            color: green;
+        }
+
+        .tag {
+            background-color: #add8e6;
+            font-weight: normal
+        }
+
+        .target {}
+
+        .timestamp {
+            color: #bebebe;
+        }
+
+        .timestamp-kwd {
+            color: #5f9ea0;
+        }
+
+        .right {
+            margin-left: auto;
+            margin-right: 0px;
+            text-align: right;
+        }
+
+        .left {
+            margin-left: 0px;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        p.verse {
+            margin-left: 3%
+        }
+
+        pre {
+            border: 1pt solid #AEBDCC;
+            background-color: #F3F5F7;
+            padding: 5pt;
+            font-family: courier, monospace;
+            font-size: 90%;
+            overflow: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            vertical-align: top;
+        }
+
+        th.right {
+            text-align: center;
+        }
+
+        th.left {
+            text-align: center;
+        }
+
+        th.center {
+            text-align: center;
+        }
+
+        td.right {
+            text-align: right;
+        }
+
+        td.left {
+            text-align: left;
+        }
+
+        td.center {
+            text-align: center;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        div.figure {
+            padding: 0.5em;
+        }
+
+        div.figure p {
+            text-align: center;
+        }
+
+        div.inlinetask {
+            padding: 10px;
+            border: 2px solid gray;
+            margin: 10px;
+            background: #ffffcc;
+        }
+
+        textarea {
+            overflow-x: auto;
+        }
+
+        .linenr {
+            font-size: smaller
+        }
+
+        .code-highlighted {
+            background-color: #ffff00;
+        }
+
+        .org-info-js_info-navigation {
+            border-style: none;
+        }
+
+        #org-info-js_console-label {
+            font-size: 10px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .org-info-js_search-highlight {
+            background-color: #ffff00;
+            color: #000000;
+            font-weight: bold;
+        }
+        /*]]>*/
+
+        -->
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .example {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 150%;
+        }
+    </style>
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .example {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        /*
+        @licstart  The following is the entire license notice for the
+        JavaScript code in this tag.
+
+        Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+        The JavaScript code in this tag is free software: you can
+        redistribute it and/or modify it under the terms of the GNU
+        General Public License (GNU GPL) as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option)
+        any later version.  The code is distributed WITHOUT ANY WARRANTY;
+        without even the implied warranty of MERCHANTABILITY or FITNESS
+        FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+        As additional permission under GNU GPL version 3 section 7, you
+        may distribute non-source (e.g., minimized or compacted) forms of
+        that code without the copy of the GNU GPL normally required by
+        section 4, provided you include this license notice and a URL
+        through which recipients can access the Corresponding Source.
+
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this tag.
+        */
+        <!--/*--><![CDATA[/*><!--*/
+        function CodeHighlightOn(elem, id) {
+            var target = document.getElementById(id);
+            if (null != target) {
+                elem.cacheClassElem = elem.className;
+                elem.cacheClassTarget = target.className;
+                target.className = "code-highlighted";
+                elem.className = "code-highlighted";
+            }
+        }
+
+        function CodeHighlightOff(elem, id) {
+            var target = document.getElementById(id);
+            if (elem.cacheClassElem)
+                elem.className = elem.cacheClassElem;
+            if (elem.cacheClassTarget)
+                target.className = elem.cacheClassTarget;
+        }
+        /*]]>*/ //-->
+    </script>
+
+</head>
+
+<body>
+
+    <div id="preamble">
+
+    </div>
+
+    <div id="content">
+        <h1 class="title">DOI Content Negotiation</h1>
+
+
+        <div class="container">
+
+
+            <div id="table-of-contents">
+                <h2>Table of Contents</h2>
+                <div id="text-table-of-contents">
+                    <ul>
+                        <li><a href="#sec-1">1 Introduction</a></li>
+                        <li><a href="#sec-2">2 Redirection</a></li>
+                        <li><a href="#sec-3">3 What is Content Negotiation?</a>
+                            <ul>
+                                <li><a href="#sec-3-1">3.1 The Accept Header</a></li>
+                                <li><a href="#sec-3-2">3.2 Response Codes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#sec-4">4 Supported Content Types</a>
+                            <ul>
+                                <li><a href="#sec-4-1">4.1 Formatted Citations</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#sec-5">5 Link-based Content Type Requests</a></li>
+                        <li><a href="#sec-6">6 Getting Help</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="outline-container-1" class="outline-2">
+                <h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+                <div class="outline-text-2" id="text-1">
+
+
+                    <p>
+                        DOIs provide a persistent link to content. They identify many types of work, from journal articles to research data sets. Typically, someone interacting with DOIs will be a researcher, who will resolve DOIs found in scholarly references to content using
+                        a <a href='http://dx.doi.org'>DOI resolver</a>. Such researchers may not even realise they are using DOIs and a DOI resolver since they may follow links with embedded DOIs.
+                    </p>
+                    <p>
+                        Yet DOIs can provide more than a permanent, indirect link to content. DOI registration agencies such as CrossRef, DataCite and mEDRA collect bibliographic metadata about the works they link to. This metadata can be retrieved from a DOI resolver too, using
+                        content negotiation to request a particular representation of the metadata.
+                    </p>
+                    <p>
+                        For some DOIs content negotiation can be used to retrieve different representations of a work. For example, some DataCite DOIs identify data sets that may be available in a number of data formats and container formats.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="outline-container-2" class="outline-2">
+                <h2 id="sec-2"><span class="section-number-2">2</span> Redirection</h2>
+                <div class="outline-text-2" id="text-2">
+
+
+                    <p>
+                        The DOI resolver at doi.org will normally redirect a user to the resource location of a DOI. For example, the DOI "10.1126/science.169.3946.635" redirects to a landing page describing the article, "The Structure of Ordinary Water". Content negotiated
+                        requests to dx.doi.org that ask for a content type which isn't "text/html" will be redirected to a metadata service hosted by the DOI's registration agency. CrossRef, DataCite and mEDRA support content negotiated DOIs via
+                        <a
+                            href="http://data.crossref.org">http://data.crossref.org</a>,
+                            <a href="http://data.datacite.org">http://data.datacite.org</a> and <a href="http://data.medra.org">http://data.medra.org</a> respectively.
+                    </p>
+
+
+                    <div class="row">
+                        <div class="span6 offset3">
+
+                            <pre class="example">       GET "Accept: text/html"
+http://dx.doi.org/10.1126/science.169.3946.635
+
+                   |
+                   |
+                   |
+                   V
+
+       Publisher landing page
+http://www.sciencemag.org/content/169/3946/635
+</pre>
+
+                        </div>
+                    </div>
+
+                    <p>
+                        Normal browser requests or explicit requests for text/html redirect to the content's landing page.
+                    </p>
+
+
+                    <div class="row">
+                        <div class="span6 offset3">
+
+                            <pre class="example">       GET "Accept: application/rdf+xml"
+http://dx.doi.org/10.1126/science.169.3946.635
+
+                   |
+                   |
+                   |
+                   V
+
+       CrossRef metadata service
+http://data.crossref.org/10.1126/science.169.3946.635
+</pre>
+
+                        </div>
+                    </div>
+
+                    <p>
+                        Requests for a data type redirect to a registration agency's metadata service.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="outline-container-3" class="outline-2">
+                <h2 id="sec-3"><span class="section-number-2">3</span> What is Content Negotiation?</h2>
+                <div class="outline-text-2" id="text-3">
+
+
+                    <p>
+                        Content negotiation allows a user to request a particular representation of a web resource. DOI resolvers use content negotiation to provide different representations of metadata associated with DOIs.
+                    </p>
+                    <p>
+                        A content negotiated request to a DOI resolver is much like a standard HTTP request, except server-driven negotiation will take place based on the list of acceptable content types a client provides.
+                    </p>
+
+                </div>
+
+                <div id="outline-container-3-1" class="outline-3">
+                    <h3 id="sec-3-1"><span class="section-number-3">3.1</span> The Accept Header</h3>
+                    <div class="outline-text-3" id="text-3-1">
+
+
+                        <p>
+                            Making a content negotiated request requires the use of a HTTP header, "Accept". Content types that are acceptable to the client (those that it knows how to parse), each with an optional "quality" value indicating its relative suitability. For example,
+                            a client that wishes to receive citeproc JSON if it is available, but which can also handle RDF XML if citeproc JSON is unavailable, would make a request with an Accept header listing both "application/citeproc+json" and "application/rdf+xml":
+                        </p>
+
+
+
+                        <pre class="example">$ curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" http://dx.doi.org/10.1126/science.169.3946.635
+
+{
+  "volume" : "169",
+  "issue" : "3946",
+  "DOI" : "10.1126/science.169.3946.635",
+  "URL" : "http://dx.doi.org/10.1126/science.169.3946.635",
+  "title" : "The Structure of Ordinary Water: New data and interpretations are
+           yielding new insights into this fascinating substance",
+  "container-title" : "Science",
+  "publisher" : "American Association for the Advancement of Science AAAS (Science)",
+  "issued" : { "date-parts" : [ [ 1970,8,14 ] ] },
+  "author" : [ { "family" : "Frank", "given" : "H. S."} ],
+  "editor" : [],
+  "page" : "635-641",
+  "type" : "article-journal"
+}
+</pre>
+
+
+                        <p>
+                            This request favours citeproc JSON but will accept RDF XML if citeproc is unavailable. The q values are optional. The request could have been written without them. The order of content types then becomes important; more suitable content types should be
+                            placed at the front of the Accept header.
+                        </p>
+
+
+
+                        <pre class="example">$ curl -LH "Accept: application/vnd.citationstyles.csl+json, application/rdf+xml" http://dx.doi.org/10.1126/science.169.3946.635
+</pre>
+
+
+                    </div>
+
+                </div>
+
+                <div id="outline-container-3-2" class="outline-3">
+                    <h3 id="sec-3-2"><span class="section-number-3">3.2</span> Response Codes</h3>
+                    <div class="outline-text-3" id="text-3-2">
+
+
+                        <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" class="table table-bordered table-striped">
+                            <colgroup>
+                                <col class="right" />
+                                <col class="left" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="right">Code</th>
+                                    <th scope="col" class="left">Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="right">200</td>
+                                    <td class="left">The request was OK.</td>
+                                </tr>
+                                <tr>
+                                    <td class="right">204</td>
+                                    <td class="left">The request was OK but there was no metadata available.</td>
+                                </tr>
+                                <tr>
+                                    <td class="right">404</td>
+                                    <td class="left">The DOI requested doesn't exist.</td>
+                                </tr>
+                                <tr>
+                                    <td class="right">406</td>
+                                    <td class="left">Can't serve any requested content type.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <p>
+                            Individual RA metadata services may utilise additional response codes but they will always use the response codes above in event of the case described.
+                        </p>
+                        <p>
+                            If multiple content types specified by the client are supported by a DOI then the content type with the highest "q" value (or, if no "q" values are specified, the one that appears first in the "accept" header) will be returned.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="outline-container-4" class="outline-2">
+                <h2 id="sec-4"><span class="section-number-2">4</span> Supported Content Types</h2>
+                <div class="outline-text-2" id="text-4">
+
+
+                    <p>
+                        Currently three DOI registration agencies have implemented content negotation for their DOIs: CrossRef, DataCite and mEDRA. They support a number of metadata content types, some of which are common to the three RAs.
+                    </p>
+                    <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" class="table table-bordered table-striped">
+                        <colgroup>
+                            <col class="left" />
+                            <col class="left" />
+                            <col class="left" />
+                            <col class="left" />
+                            <col class="left" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="left">Format</th>
+                                <th scope="col" class="left">Content Type</th>
+                                <th scope="col" class="left">CrossRef</th>
+                                <th scope="col" class="left">DataCite</th>
+                                <th scope="col" class="left">mEDRA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="left"><a href='http://www.w3.org/TR/rdf-syntax-grammar/'>RDF XML</a></td>
+                                <td class="left">application/rdf+xml</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://www.w3.org/TeamSubmission/turtle/'>RDF Turtle</a></td>
+                                <td class="left">text/turtle</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://gsl-nagoya-u.net/http/pub/citeproc-doc.html'>Citeproc JSON</a></td>
+                                <td class="left">application/vnd.citationstyles.csl+json</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://citationstyles.org/'>Formatted text citation</a></td>
+                                <td class="left">text/x-bibliography</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://en.wikipedia.org/wiki/RIS_(file_format)'>RIS</a></td>
+                                <td class="left">application/x-research-info-systems</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://en.wikipedia.org/wiki/BibTeX'>BibTeX</a></td>
+                                <td class="left">application/x-bibtex</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://www.crossref.org/schema/documentation/unixref1.1/unixref1.1.html'>CrossRef Unixref XML</a></td>
+                                <td class="left">application/vnd.crossref.unixref+xml</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://schema.datacite.org/'>DataCite XML</a></td>
+                                <td class="left">application/vnd.datacite.datacite+xml</td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                            </tr>
+                            <tr>
+                                <td class="left"><a href='http://www.medra.org/en/schema.htm'>ONIX for DOI</a></td>
+                                <td class="left">application/vnd.medra.onixdoi+xml</td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <p>
+                        Using content negotiation it is possible to make a request that favours content types specific to a particular registration agency but which will also degrade to respond with a more standard content type for other registration agencies. For example:
+                    </p>
+
+
+
+                    <pre class="example">$ curl -LH "Accept: application/vnd.crossref.unixref+xml;q=1, application/rdf+xml;q=0.5" http://dx.doi.org/10.1126/science.169.3946.635
+</pre>
+
+
+                    <p>
+                        This request will return CrossRef XML for CrossRef DOIs and RDF XML for non-CrossRef DOIs, such as DataCite DOIs.
+                    </p>
+
+                </div>
+
+                <div id="outline-container-4-1" class="outline-3">
+                    <h3 id="sec-4-1"><span class="section-number-3">4.1</span> Formatted Citations</h3>
+                    <div class="outline-text-3" id="text-4-1">
+
+
+                        <p>
+                            CrossRef, DataCite and mEDRA support formatted citations via the text/bibliography content type. These are the output of the
+                            <a href='http://citationstyles.org/'>Citation Style Language</a> processor, citeproc-js. The content type can take two additional parameters to customise its response format. A "style" can be chosen from the list of style names
+                            found in the <a href='https://github.com/citation-style-language/styles'>CSL style
+  repository</a>. Many styles are supported, including common styles such as apa and harvard3:
+                        </p>
+
+
+
+                        <pre class="example">$ curl -LH "Accept: text/x-bibliography; style=apa" http://dx.doi.org/10.1126/science.169.3946.635
+
+Frank, H. S. (1970). The Structure of Ordinary Water: New data and interpretations are yielding
+  new insights into this fascinating substance. Science, 169(3946), 635-641. American Association
+  for the Advancement of Science AAAS (Science). doi:10.1126/science.169.3946.635
+</pre>
+
+
+                        <p>
+                            A locale can also be specified. Use one of the locale names from the
+                            <a href='https://github.com/citation-style-language/locales'>CSL locales
+  repository</a>:
+                        </p>
+
+
+
+                        <pre class="example">$ curl -LH "Accept: text/x-bibliography; style=harvard3; locale=fr-FR" http://dx.doi.org/10.1126/science.169.3946.635
+
+Frank, HS 1970, « The Structure of Ordinary Water: New data and interpretations are yielding new
+  insights into this fascinating substance ». Science, vol. 169, no. 3946, p. 635-641. Consulté
+  de http://dx.doi.org/10.1126/science.169.3946.635
+</pre>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="outline-container-5" class="outline-2">
+                <h2 id="sec-5"><span class="section-number-2">5</span> Link-based Content Type Requests</h2>
+                <div class="outline-text-2" id="text-5">
+
+
+                    <p>
+                        DataCite supports link-based content type requests, for example:
+                    </p>
+
+
+
+                    <pre class="example">$ curl http://data.datacite.org/application/x-datacite+text/10.5524/100005
+</pre>
+
+
+                    <p>
+                        For documentation see <a href="http://data.datacite.org">http://data.datacite.org</a>.
+                    </p>
+                    <p>
+                        CrossRef also supports link-based content type requests via their REST API:
+                    </p>
+
+
+
+                    <pre class="example">$ curl http://api.crossref.org/works/10.5555/12345678/transform/application/x-bibtex
+</pre>
+
+
+                    <p>
+                        For documentation see <a href="http://api.crossref.org">http://api.crossref.org</a>.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="outline-container-6" class="outline-2">
+                <h2 id="sec-6"><span class="section-number-2">6</span> Getting Help</h2>
+                <div class="outline-text-2" id="text-6">
+
+
+                    <p>
+                        Please contact labs@crossref.org, tech@datacite.org or medrastaff@cineca.it for support.
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

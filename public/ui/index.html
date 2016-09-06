@@ -5,10 +5,10 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script type="text/javascript" src="./js/ui.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/ui.css" />
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="./css/ui.css" />
 
 
 <!--[if IE]>
@@ -43,73 +43,74 @@
 
 <form id="form" action="">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-xs-6 col-md-4">
         </div>
-        <div class="col-md-4">
-            <label for="doi">DOI:</label>
-            <input id="doi" type="text" class="form-control" />
-            <p class="help-block">Paste your DOI here.</p>
+        <div class="col-xs-6 col-md-4">
+            <label for="doi">Paste your DOI:</label>
+            <input id="doi" type="text" required class="form-control" />
+            <p class="help-block">E.g. 10.1145/2783446.2783605 </p>
           <!-- </br> -->
             <!-- <a href="help.html">Format help</a> -->
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-6 col-md-4">
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <label for="styles">Formatting Style:</label>
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4">
+            <label for="styles">Search for Formatting Style:</label>
             <select id="styles" class="form-control"></select>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-xs-6 col-md-4"></div>
     </div>
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <label for="locales">Language and Country:</label>
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4">
+            <label for="locales">Search for Language and Country:</label>
             <select id="locales" class="form-control"></select>
-            <p class="help-block">Find you preferred style and languge.</p>
+            <p class="help-block">Type in you preferred style (e.g. Chicago or IEEE) and language (e.g. GB for Britain, RU for Russian).</p>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-xs-6 col-md-4"></div>
     </div>
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4">
         </br>
             <input type="submit" value="Format" class="btn-lg btn-default" />
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-xs-6 col-md-4"></div>
     </div>
 </form>
 <div class="row" id="citation_row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <!-- <div class="col-xs-6 col-md-4"></div> -->
+    <!-- <div class="col-xs-6 col-md-4"> -->
+      <div class="col-md-12">
         <!-- Target -->
         <div id="citation"></div>
         <!-- <a  id="doi_link"></a> -->
 
-
+      </br>
         <!-- Trigger -->
-        <button class="btn-lg" data-clipboard-target="#citation" id="copy_citation">
+        <button class="btn-lg center-block" data-clipboard-target="#citation" id="copy_citation">
             Copy to clipboard
         </button>
     </div>
-    <div class="col-md-4"></div>
+    <!-- <div class="col-xs-6 col-md-4"></div> -->
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-xs-6 col-md-4">
     </div>
-    <div class="col-md-4">
+    <div class="col-xs-6 col-md-4">
     </div>
-    <div class="col-md-4">
-      <a href="http://crosscite.org/cn/">Documentation</a>
+    <div class="col-xs-6 col-md-4">
+      <a href="docs.html">Documentation</a>
     </div>
 </div>
 
 
 <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 text-center">
+    <div class="col-xs-12 col-lg-8 col-lg-offset-2 text-center">
         <h3 class="section-heading">
   						DOI providers
   					</h3>
