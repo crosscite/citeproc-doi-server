@@ -1,0 +1,189 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+This test supports a proposal for extending CSL's conditional attributes.
+The proposal introduces two new nodes and associated schema adjustments:
+
+  * A cs:conditions element, as an optional first child of cs:if or cs:else-if,
+    with a sole match attribute. When cs:conditions is used, its parent (cs:if 
+    or cs:else-if) must have no attributes. Only cs:condition elements are permitted
+    as children of cs:condition, and there must be at least one such child. 
+
+  * A cs:condition element, with the same attributes as cs:if or cs:else-if.
+
+The proposal also introduces a new value "nand" for the match attribute.
+
+Under the proposal, conditional evaluation would take place as
+follows:
+
+  (1) cs:if and cs:else-if elements with attributes process exactly as under the
+      current schema and specification.
+
+  (2) cs:if and cs:else-if element with no attributes apply the conditions
+      provided by the immediate cs:conditions child and its cs:condition
+      children. The cs:condition children are evaluated first, according
+      to the same logic as cs:if and cs:else-if. The results are then
+      combined according to the match element on cs:conditions, returning
+      a single boolean result for the parent cs:fi or cs:else-if element.
+
+This change makes it possible to reduce the bulk of CSL code. As one example,
+the construct below is found in several styles in the CSL repository:
+
+    <macro name="year-date">
+      <choose>
+        <if type="webpage">
+          <choose>
+            <if variable="issued">
+              <date variable="issued">
+                <date-part name="year"/>
+              </date>
+            </if>
+            <else>
+              <date variable="accessed">
+                <date-part name="year"/>
+              </date>
+            </else>
+          </choose>
+        </if>
+        <else>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else>
+      </choose>
+    </macro>
+
+What the code does is to print the "accessed" date if the item is a
+webpage and has no "issued" date, and otherwise to print the "issued"
+date, regardless of item type. A nested cs:choose statement is needed,
+because negative and positive conditions cannot be declared together
+on the same cs:if or cs:else-if element.
+
+With the proposed syntax, the code sample above can be rewritten as a
+single cs:choose statement:
+
+    <macro name="year-date">
+      <choose>
+        <if>
+          <conditions match="all">
+            <condition type="webpage" match="all"/>
+            <condition variable="issued" match="none"/>
+          </conditions>
+          <date variable="accessed">
+            <date-part name="year"/>
+          </date>
+        </if>
+        <else>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else>
+      </choose>
+    </macro>
+
+>>===== RESULT =====>>
+Item One is not an ARTICLE-JOURNAL, and has an EDITION
+Item Two is a BOOK, but has no EDITION
+Item Three is a CHAPTER, and has an AUTHOR
+Item Four is an ARTICLE-JOURNAL with both VOLUME and ISSUE, but one of them is non-numeric
+Item Five is an ARTICLE-JOURNAL with both VOLUME and ISSUE, and both of them are numeric
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout delimiter="&#x0A;">
+      <group delimiter=" ">
+        <text variable="title"/>
+          <choose>
+            <if>
+              <conditions match="all">
+                <condition type="article-journal" variable="volume issue" match="all"/>
+                <condition variable="volume issue" match="all"/>
+                <condition is-numeric="volume issue" match="nand"/>
+              </conditions>
+              <text value="is an ARTICLE-JOURNAL with both VOLUME and ISSUE, but one of them is non-numeric"/>
+            </if>
+            <else-if match="all" type="article-journal" variable="volume issue" is-numeric="volume issue">
+              <text value="is an ARTICLE-JOURNAL with both VOLUME and ISSUE, and both of them are numeric"/>
+            </else-if>
+            <else-if>
+              <conditions match="all">
+                <condition type="article-journal" match="none"/>
+                <condition variable="edition" match="all"/>
+              </conditions>
+              <text value="is not an ARTICLE-JOURNAL, and has an EDITION"/>
+            </else-if>
+            <else-if>
+              <conditions match="all">
+                <condition type="book"/>
+                <condition variable="edition" match="none"/>
+              </conditions>
+              <text value="is a BOOK, but has no EDITION"/>
+            </else-if>
+            <else-if type="chapter" variable="author" match="all">
+              <text value="is a CHAPTER, and has an AUTHOR"/>
+            </else-if>
+          </choose>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "edition": "5", 
+        "id": "ITEM-1", 
+        "title": "Item One", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-2", 
+        "title": "Item Two", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Snoapes", 
+                "given": "John"
+            }
+        ], 
+        "id": "ITEM-3", 
+        "title": "Item Three", 
+        "type": "chapter"
+    }, 
+    {
+        "id": "ITEM-4", 
+        "issue": "1", 
+        "title": "Item Four", 
+        "type": "article-journal", 
+        "volume": "Supplement"
+    }, 
+    {
+        "id": "ITEM-5", 
+        "issue": "4", 
+        "title": "Item Five", 
+        "type": "article-journal", 
+        "volume": "2"
+    }
+]
+<<===== INPUT =====<<

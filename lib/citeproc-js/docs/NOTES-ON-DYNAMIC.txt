@@ -1,0 +1,19 @@
+Some thoughts on the dynamic cites demo
+
+1. Not sure how to set this up to integrate with tinyMCE
+   (or whether that is possible). tinyMCE does have a
+   hook for responding to events, but not sure if an
+   object can easily be injected into its context,
+   or operate on the iframe DOM.
+
+2. Placeholder insertion at the chevrons is a cheat,
+   and the current code is bound tightly to that
+   method. Would be better to hang thd menu off of the
+   html:citation span itself, and just blow it away when
+   the citation text is inserted or the operation is
+   cancelled. Two birds with one stone.
+
+3. Again thinking tinyMCE, not sure where the menu should
+   run---in the page DOM, or inside tinyMCE itself (again,
+   if that is possible). Currently it's running in page
+   context.

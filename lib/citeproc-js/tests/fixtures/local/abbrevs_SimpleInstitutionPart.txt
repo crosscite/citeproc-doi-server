@@ -1,0 +1,83 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "classic": {}, 
+        "collection-title": {}, 
+        "container-phrase": {}, 
+        "container-title": {}, 
+        "hereinafter": {}, 
+        "institution-entire": {}, 
+        "institution-part": {
+            "Bureau of Labor Statistics": "BLS", 
+            "Society of Cable Telecommunications Engineers": "SCTE", 
+            "Society of Motion Picture and Television Engineers": "SMPTE", 
+            "Standard Occupational Classification Policy Committee": "SOCPC"
+        }, 
+        "nickname": {}, 
+        "number": {}, 
+        "place": {}, 
+        "title": {}, 
+        "title-phrase": {}
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+
+>>== RESULT ==>>
+SMPTE.
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout suffix="." delimiter="; ">
+      <names variable="author">
+        <name form="short"/>
+        <institution institution-parts="short">
+        </institution>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+	{
+		"id": 471,
+		"type": "book",
+		"key": "SNPVN9XB",
+		"title": "Report Thing",
+		"author": [
+			{
+				"literal": "Society of Motion Picture and Television Engineers"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2000
+				]
+			]
+		}
+	}
+]
+<<===== INPUT =====<<

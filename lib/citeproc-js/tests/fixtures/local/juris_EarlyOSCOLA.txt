@@ -1,0 +1,394 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+>>===== OPTIONS =====>>
+{
+  "require_explicit_legal_case_title_short": true
+}
+<<===== OPTIONS =====<<
+
+>>===== ABBREVIATIONS =====>>
+{
+    "default": {
+        "container-title": {
+            "A.C.": "!jurisdiction>>>A.C.", 
+            "E.W.C.A. Civ.": "!jurisdiction>>>E.W.C.A. Civ.", 
+            "H&N": "!jurisdiction>>>H&N"
+        }, 
+        "institution-part": {
+            "Court of Appeal": "C.A.", 
+            "House of Lords": "H.L."
+        }
+    }
+}
+<<===== ABBREVIATIONS =====<<
+
+>>===== RESULT =====>>
+..[0] <i>Donoghue v Stevenson</i> [1932] AC 562 (HL) 563
+..[1] ibid 566
+..[2] DUMMY: <i>Bogus Book</i>
+..[3] <i>Donoghue</i> (n 1) 563
+..[4] ibid
+..[5] <i>Callery v Gray</i> [2001] EWCA Civ 1117 [12]
+..[6] ibid [15]
+..[7] DUMMY: <i>Bogus Book</i> (n 3)
+..[8] <i>Callery</i> (n 6) [16]
+..[9] <i>Boulton v Jones</i> (1857) 2 H&#38;N 564
+>>[10] <i>Stubbs v Sayer</i> (CA, 8 November 1990)
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1",
+                    "locator": "563",
+                    "label": "page"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1",
+                    "locator": "566",
+                    "label": "page"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [["CITATION-1",1]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-4", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1",
+                    "locator": "563",
+                    "label": "page"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 4
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-5", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1",
+                    "locator": "563",
+                    "label": "page"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 5
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3],["CITATION-4",4]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-6", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3",
+                    "locator": "12",
+                    "label": "paragraph"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 6
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3],["CITATION-4",4],["CITATION-5",5]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-7", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3",
+                    "locator": "15",
+                    "label": "paragraph"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 7
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3],["CITATION-4",4],["CITATION-5",5],["CITATION-6",6]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-8", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 8
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3],["CITATION-4",4],["CITATION-5",5],["CITATION-6",6],["CITATION-7",7]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-9", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3",
+                    "label": "paragraph",
+                    "locator": "16"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 9
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3],["CITATION-4",4],["CITATION-5",5],["CITATION-6",6],["CITATION-7",7],["CITATION-8",8]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-10", 
+            "citationItems": [
+                {
+                    "id": "ITEM-4"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 10
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3],["CITATION-4",4],["CITATION-5",5],["CITATION-6",6],["CITATION-7",7],["CITATION-8",8],["CITATION-9",9]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-11", 
+            "citationItems": [
+                {
+                    "id": "ITEM-5"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 11
+            }
+        }, 
+        [["CITATION-1",1],["CITATION-2",2],["CITATION-3",3],["CITATION-4",4],["CITATION-5",5],["CITATION-6",6],["CITATION-7",7],["CITATION-8",8],["CITATION-9",9],["CITATION-10",10]], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      default-locale="en-GB">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="paragraph" form="static">[%s]</term>
+    </terms>
+  </locale>
+  <macro name="juris-title">
+    <text variable="title" font-style="italic" prefix="DUMMY: "/>
+  </macro>
+  <macro name="juris-title-short">
+    <choose>
+      <if variable="title-short">
+        <text variable="title-short" font-style="italic" prefix="DUMMY: "/>
+      </if>
+      <else>
+        <text variable="title" font-style="italic" prefix="DUMMY: "/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="juris-main">
+    <text value=""/>
+  </macro>
+  <macro name="juris-main-short">
+    <text value=""/>
+  </macro>
+  <macro name="juris-tail">
+    <text value=""/>
+  </macro>
+  <macro name="juris-tail-short">
+    <text value=""/>
+  </macro>
+  <macro name="juris-locator">
+    <text value=""/>
+  </macro>
+  <citation>
+    <layout>
+      <choose>
+        <if position="first">
+          <group delimiter=", ">
+            <group delimiter=" ">
+              <choose>
+                <if type="book">
+                  <text macro="juris-title" strip-periods="true"/>
+                </if>
+                <else>
+                  <text macro="juris-title" strip-periods="true" font-style="italic"/>
+                </else>
+              </choose>
+              <text macro="juris-main" strip-periods="true"/>
+              <text macro="juris-locator"/>
+            </group>
+          </group>
+        </if>
+        <else-if position="ibid-with-locator">
+          <group delimiter=" ">
+            <text term="ibid" text-case="lowercase" strip-periods="true"/>
+            <text macro="juris-locator"/>
+          </group>
+        </else-if>
+        <else-if position="ibid">
+          <text term="ibid" text-case="lowercase" strip-periods="true"/>
+        </else-if>
+        <else-if position="subsequent">
+          <group delimiter=" ">
+            <choose>
+              <if type="book">
+                <text macro="juris-title-short" strip-periods="true"/>
+              </if>
+              <else>
+                <text macro="juris-title-short" strip-periods="true" font-style="italic"/>
+              </else>
+            </choose>
+            <text variable="first-reference-note-number" prefix="(n " suffix=")"/>
+            <text macro="juris-locator"/>
+          </group>
+        </else-if>
+      </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "legal_case",
+        "title": "Donoghue v. Stevenson",
+        "title-short": "Donoghue",
+        "authority": "House of Lords",
+        "collection-number": "1932",
+        "container-title": "A.C.",
+        "page": "562",
+        "jurisdiction": "gb",
+        "issued": {
+          "date-parts": [
+            [1932]
+          ]
+        }
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "book",
+        "title": "Bogus Book"
+    },
+    {
+        "id": "ITEM-3", 
+        "type": "legal_case",
+        "title": "Callery v. Gray",
+        "title-short": "Callery",
+        "collection-number": "2001",
+        "container-title": "E.W.C.A. Civ.",
+        "page": "1117",
+        "jurisdiction": "gb",
+        "issued": {
+          "date-parts": [
+            [2001]
+          ]
+        }
+    },
+    {
+        "id": "ITEM-4", 
+        "type": "legal_case",
+        "title": "Boulton v Jones",
+        "title-short": "Boulton",
+        "container-title": "H&N",
+        "volume": "2",
+        "page": "564",
+        "jurisdiction": "gb",
+        "issued": {
+          "date-parts": [
+            [1857]
+          ]
+        }
+    },
+    {
+        "id": "ITEM-5", 
+        "type": "legal_case",
+        "title": "Stubbs v. Sayer",
+        "title-short": "Stubbs",
+        "jurisdiction": "gb",
+        "authority": "Court of Appeal",
+        "issued": {
+          "date-parts": [
+            [1990, 11, 8]
+          ]
+        }
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,122 @@
+#integrator-notes li {
+    margin-bottom: 1em;
+    background: #efefef;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+.footnote-mark::before {
+    content: '[';
+}
+.footnote-mark::after {
+    content: ']';
+}
+#cite-menu .menu {
+    line-height: 0.5em;
+}
+.footnote-header {
+    margin-bottom: 1em;
+}
+.footnote {
+    padding-left: 1.3em;
+    text-indent: -1.3em;
+    margin-bottom: 0.5em;
+}
+.footnote-number {
+    background: #dddddd;
+    margin-right: 0.2em;
+}
+.footnote-number::before {
+    content: '[';
+}
+.footnote-number::after {
+    content: ']';
+}
+.citation {
+    background: #dddddd;
+}
+#csl-outer-block {
+    position: absolute;
+    height: 0px;
+    max-width: 40em;
+}
+#csl-inner-block {
+    max-width: 40em;
+    height: 15em;
+    position: relative;
+    bottom: 17em;
+    left: 2em;
+}
+#csl-content-block {
+    background:white;
+    border: solid black 1px;
+    overflow-y: scroll;
+    padding: 0.5em;
+    box-shadow: 10px 10px 5px #888888;
+}
+.csl-hide {
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+    -webkit-transition-delay: 0.25s;
+    -moz-transition-delay: 0.25s;
+    -ms-transition-delay: 0.25s;
+    -o-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+}
+.csl-show {
+    -webkit-opacity: 100;
+    -moz-opacity: 100;
+    opacity: 100;
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;      
+}
+.csl-entry {
+    margin-bottom: 0.5em;
+}
+.csl-left-margin {
+    vertical-align: top;
+    right: 0.3em;
+    top: 0px;
+}
+#dynamic-editing, #my-amazing-bibliography {
+    padding:1em;
+    border: 1px solid #999999;
+    background: #efefef;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+#dynamic-editing p {
+    line-height: 2em;
+}
+.citeme {
+    display: inline;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #aaaaaa;
+    border-radius: 2px;
+    margin: 0px 5px 0px 2px;
+    padding: 0px 2px 0px 2px;
+}
+#cite-menu {
+    position: absolute;
+    display: inline-block;
+}
+#cite-menu .menu {
+    position: relative;
+    top: 0px;
+    /* left: 0px; */
+    width: 135px;
+    background: white;
+    padding: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    z-index: 100;
+}

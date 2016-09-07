@@ -1,0 +1,98 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">Email</div>
+  <div class="csl-entry">Instant message</div>
+  <div class="csl-entry">Letter</div>
+  <div class="csl-entry">Handwritten note</div>
+  <div class="csl-entry">Letter</div>
+</div>
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="instant-message">instant message</term>
+      <term name="email">email</term>
+    </terms>
+  </locale>
+  <citation>
+    <layout>
+      <text value="NONE"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <choose>
+        <if type="personal_communication"
+            genre="instant-message" match="all">
+          <text term="instant-message" text-case="capitalize-first"/>
+        </if>
+        <else-if type="personal_communication"
+                 genre="email" match="all">
+          <text term="email" text-case="capitalize-first"/>
+        </else-if>
+        <else-if>
+          <conditions match="all">
+            <condition type="personal_communication"/>
+            <condition variable="genre" match="none"/>
+          </conditions>
+          <text term="letter" text-case="capitalize-first"/>
+        </else-if>
+        <else>
+          <text variable="genre" text-case="capitalize-first"/>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "genre": "email", 
+        "id": "ITEM-1", 
+        "type": "personal_communication"
+    }, 
+    {
+        "genre": "instant message", 
+        "id": "ITEM-2", 
+        "type": "personal_communication"
+    }, 
+    {
+        "genre": "letter", 
+        "id": "ITEM-3", 
+        "type": "personal_communication"
+    }, 
+    {
+        "genre": "handwritten note", 
+        "id": "ITEM-4", 
+        "type": "personal_communication"
+    }, 
+    {
+        "id": "ITEM-5", 
+        "type": "personal_communication"
+    }
+]
+<<===== INPUT =====<<

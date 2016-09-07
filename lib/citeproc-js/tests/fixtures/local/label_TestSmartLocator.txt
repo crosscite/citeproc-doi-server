@@ -1,0 +1,473 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] Story..10 [99]
+..[1] Story..10 § 99
+..[2] Story..10 at 99
+..[3] Story..10, art. 99
+..[4] Story..10, 99
+..[5] 5..Act [99]
+..[6] 5..Act § 99
+..[7] 5..Act at 99
+..[8] 5..Act, art. 99
+>>[9] 5..Act, 99
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "label": "paragraph", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "label": "section", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "label": "folio", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-4", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "label": "page", 
+                    "locator": "art. 99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 4
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-5", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "label": "page", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 5
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-6", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "label": "paragraph", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 6
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-7", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "label": "section", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 7
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-8", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "label": "folio", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 8
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ], 
+            [
+                "CITATION-7", 
+                7
+            ]
+        ], 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-9", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "label": "page", 
+                    "locator": "art. 99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 9
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ], 
+            [
+                "CITATION-7", 
+                7
+            ], 
+            [
+                "CITATION-8", 
+                8
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-10", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "label": "page", 
+                    "locator": "99"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 10
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ], 
+            [
+                "CITATION-4", 
+                4
+            ], 
+            [
+                "CITATION-5", 
+                5
+            ], 
+            [
+                "CITATION-6", 
+                6
+            ], 
+            [
+                "CITATION-7", 
+                7
+            ], 
+            [
+                "CITATION-8", 
+                8
+            ], 
+            [
+                "CITATION-9", 
+                9
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="paragraph" form="static">[%s]</term>
+      <term name="article">art.</term>
+      <term name="article" form="short">art.</term>
+    </terms>
+  </locale>
+  <macro name="my-locator">
+    <group delimiter=" ">
+      <choose>
+        <if locator="paragraph">
+          <label variable="locator" form="static"/>
+        </if>
+        <else-if locator="folio">
+          <text value="at"/>
+        </else-if>
+        <else-if locator="page"/>
+        <else>
+          <label variable="locator"/>
+        </else>
+      </choose>
+      <number variable="locator"/>
+    </group>
+  </macro>
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=" ">
+        <group delimiter=", ">
+          <group delimiter="...">
+            <choose>
+              <if type="legislation">
+                <number variable="volume"/>
+                <text variable="title"/>
+              </if>
+              <else>
+                <text variable="title"/>
+                <number variable="page"/>
+              </else>
+            </choose>
+          </group>
+          <group require="comma-safe">
+            <text macro="my-locator" label-form="symbol"/>
+          </group>
+        </group>
+        <group reject="comma-safe">
+          <text macro="my-locator" label-form="symbol"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "book",
+        "title": "Story",
+        "volume": "5",
+        "page": "10"
+    }, 
+    {
+        "id": "ITEM-2", 
+        "type": "legislation",
+        "title": "Act",
+        "volume": "5",
+        "page": "10"
+    }
+]
+<<===== INPUT =====<<

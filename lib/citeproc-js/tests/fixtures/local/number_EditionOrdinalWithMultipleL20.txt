@@ -1,0 +1,56 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+Normalizes punctuation and grouping when multiple numbers are provided in input.
+
+>>===== RESULT =====>>
+‘42-47 editionz’ --- ‘42-47 editionz’ --- Normalized, quotes preserved, non-numeric
+<<===== RESULT =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <locale>
+    <terms>
+      <term name="open-quote">‘</term>
+      <term name="close-quote">’</term>
+      <term name="open-inner-quote">“</term>
+      <term name="close-inner-quote">”</term>
+    </terms>
+  </locale>
+  <citation>
+    <layout delimiter="&#x0A;">
+      <group delimiter=" ">
+        <number variable="edition" form="ordinal"/>
+        <choose>
+          <if is-numeric="edition">
+            <label variable="edition"/>
+          </if>
+	    </choose>
+        <text variable="edition" prefix="--- " quotes="true"/>
+        <text variable="title" prefix="--- "/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+>>===== INPUT =====>>
+[
+    {
+        "edition": "\"42 - 47 editionz\"", 
+        "id": "item-20", 
+        "title": "Normalized, quotes preserved, non-numeric", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

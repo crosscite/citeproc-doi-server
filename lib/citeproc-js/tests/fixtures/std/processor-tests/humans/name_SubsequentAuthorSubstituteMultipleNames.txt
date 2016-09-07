@@ -1,0 +1,121 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">Bumke, Courtly Culture: Literature and Society in the High Middle Ages, Dunlap tran.</div>
+  <div class="csl-entry">-----, Höfische</div>
+</div>
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <text value="Bogus"/>
+    </layout>
+  </citation>
+  <bibliography subsequent-author-substitute="-----">
+    <layout>
+      <group delimiter=", ">
+        <names variable="author">
+          <name form="short" and="text"/>
+        </names>
+        <text variable="title"/>
+        <names variable="translator">
+          <name form="short" and="text"/>
+          <label form="short" prefix=" "/>
+        </names>
+      </group>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+
+>>===== INPUT =====>>
+[
+	{
+		"id": "ITEM-1",
+		"type": "book",
+		"title": "Courtly Culture: Literature and Society in the High Middle Ages",
+		"author": [
+			{
+				"family": "Bumke",
+				"given": "Joachim"
+			}
+		],
+		"translator": [
+			{
+				"family": "Dunlap",
+				"given": "Thomas"
+			}
+		]
+	},
+	{
+		"id": "ITEM-2",
+		"type": "book",
+		"title": "Höfische",
+		"author": [
+			{
+				"family": "Bumke",
+				"given": "Joachim"
+			}
+		]
+	}
+]
+<<===== INPUT =====<<

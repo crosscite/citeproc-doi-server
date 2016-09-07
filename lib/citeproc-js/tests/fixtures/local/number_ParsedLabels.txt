@@ -1,0 +1,54 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+chappie 15; ch’ppie 15
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <locale>
+    <terms>
+      <term name="chapter">chappie</term>
+      <term form="short" name="chapter">ch'ppie</term>
+    </terms>
+  </locale>
+  <citation>
+    <layout>
+      <group delimiter="; ">
+        <group delimiter=" ">
+          <label variable="number" form="long"/>
+          <number variable="number"/>
+        </group>
+        <group delimiter=" ">
+          <label variable="number" form="short"/>
+          <number variable="number"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "number": "ch. 15", 
+        "type": "legislation"
+    }
+]
+<<===== INPUT =====<<

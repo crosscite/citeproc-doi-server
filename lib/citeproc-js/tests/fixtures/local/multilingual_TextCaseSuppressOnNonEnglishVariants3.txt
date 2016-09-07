@@ -1,0 +1,89 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+My title in Chinese [Ye Olde Title in English]
+<<===== RESULT =====<<
+
+>>===== LANGPARAMS =====>>
+{
+    "institutions": [
+        "translit"
+    ], 
+    "persons": [
+        "translit"
+    ], 
+    "places": [
+        "translat"
+    ], 
+    "publishers": [
+        "translat"
+    ], 
+    "titles": [
+        "orig", 
+        "translat"
+    ]
+}
+<<===== LANGPARAMS =====<<
+
+>>===== MULTIAFFIX =====>>
+[
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null," [","]",
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null
+]
+<<===== MULTIAFFIX =====<<
+
+Input data for this test included a key with irregular capitalization.
+This option controls for it.
+
+>>===== OPTIONS =====>>
+{
+  "normalize_lang_keys_to_lowercase": true
+}
+<<===== OPTIONS =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0"
+      default-locale="EN-x-translat-en">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <text variable="title" text-case="title"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "My title in Chinese", 
+		"multi":{
+			"_keys":{
+				"title":{
+					"en":"Ye olde title in English"
+				}
+			}
+		},
+        "language":"zh",
+        "type": "book",
+        "note": "Headline entry should not capitalise, English variant should do."
+    }
+]
+<<===== INPUT =====<<

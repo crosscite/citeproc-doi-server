@@ -1,0 +1,67 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+Miyamoto Musashi
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="ja">
+    <style-options name-as-sort-order="ja" name-never-short="ja"/>
+  </locale>
+  <citation>
+    <layout>
+      <names variable="author">
+        <name />
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Miyamoto", 
+                "given": "Musashi", 
+                "multi": {
+                    "_key": {}, 
+                    "main": "ja"
+                }
+            }
+        ], 
+        "id": "simple-sticky-name-1", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1645", 
+                    "12", 
+                    "27"
+                ]
+            ]
+        }, 
+        "title": "A Book of Five Rings", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

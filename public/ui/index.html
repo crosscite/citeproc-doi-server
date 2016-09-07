@@ -1,0 +1,163 @@
+<html>
+<head>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<!-- <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="./js/ui.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="./css/ui.css" />
+
+
+<!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="css/ui_ie.css" />
+<![endif]-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22806196-3']);
+  _gaq.push(['_setDomainName', 'crosscite.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+</head>
+<body>
+  <h1>
+    DOI Citation Formatter
+  </h1>
+  <!-- <div>
+    <img src="https://mds.datacite.org/resources/images/dc-logo.gif"/>
+    <img src="http://www.crossref.org/images/citation_linking_graphic_24x106_trans.png"/>
+    <img src="img/medra.png"/>
+    <img src="img/istic.gif" width="140px"/>
+  </div> -->
+
+<form id="form" action="">
+    <div class="row top-buffer">
+        <div class="col-xs-6 col-md-4">
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <label for="doi">Paste your DOI:</label>
+            <input id="doi" type="text" required class="form-control" />
+            <p class="help-block">E.g. 10.1145/2783446.2783605 </p>
+          <!-- </br> -->
+            <!-- <a href="help.html">Format help</a> -->
+        </div>
+        <div class="col-xs-6 col-md-4">
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4">
+            <label for="styles">Search for Formatting Style:</label>
+            <select id="styles" class="form-control"></select>
+        </div>
+        <div class="col-xs-6 col-md-4"></div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4">
+            <label for="locales">Search for Language and Country:</label>
+            <select id="locales" class="form-control"></select>
+            <p class="help-block">Type in you preferred style (e.g. Chicago or IEEE) and language (e.g. GB for Britain, RU for Russian).</p>
+        </div>
+        <div class="col-xs-6 col-md-4"></div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4">
+        </br>
+            <input type="submit" value="Format" class="btn-lg btn-default" />
+        </div>
+        <div class="col-xs-6 col-md-4"></div>
+    </div>
+</form>
+<div class="row top-buffer" id="citation_row">
+    <!-- <div class="col-xs-6 col-md-4"></div> -->
+    <!-- <div class="col-xs-6 col-md-4"> -->
+      <div class="col-md-12">
+        <!-- Target -->
+        <div id="citation"></div>
+        <!-- <a  id="doi_link"></a> -->
+
+      </br>
+        <!-- Trigger -->
+        <button class="btn-lg center-block" data-clipboard-target="#citation" id="copy_citation">
+            Copy to clipboard
+        </button>
+    </div>
+    <!-- <div class="col-xs-6 col-md-4"></div> -->
+</div>
+
+<div class="row top-buffer">
+    <div class="col-xs-6 col-md-4">
+    </div>
+    <div class="col-xs-6 col-md-4">
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <a href="ui/docs.html">Documentation</a>
+    </div>
+</div>
+
+
+<div class="row top-buffer">
+    <div class="col-xs-12 col-lg-8 col-lg-offset-2 text-center">
+        <h3 class="section-heading">
+  						DOI providers
+  					</h3>
+        <hr class="primary">
+        <p>
+            <a href="http://datacite.org">
+                <img src="img/datacite.svg" width="180px" id="datacite_logo" alt="DataCite">
+            </a>
+            <a href="http://crossref.org">
+                <img src="https://assets.crossref.org/logo/crossref-logo-landscape-200.svg" width="180px" id="crossref_logo" alt="Crossref">
+            </a>
+            <a href="https://www.medra.org/">
+                <img src="img/medra.png" width="150px" id="medra_logo" alt="mEDRA">
+            </a>
+            <a href="http://www.cdlib.org">
+                <img src="img/istic.gif" width="150px" id="istic_logo" alt="CDL">
+            </a>
+        </p>
+    </div>
+</div>
+
+
+
+
+  <!--
+  <form id="form" action="">
+    <label for="doi">DOI:</label>
+    <input id="doi" type="text" />
+
+    <label for="styles">Style:</label>
+    <select id="styles"></select>
+
+
+
+
+    <label for="locales">Locale:</label>
+    <select id="locales"></select>
+
+    <input type="submit" value="Format"/>
+  </form> -->
+    <!-- Target -->
+  <!-- <div id="citation"></div> -->
+
+  <!-- Trigger -->
+  <!-- <button class="btn" data-clipboard-target="#citation" id="copy_citation">
+      Copy to clipboard
+  </button> -->
+
+</body>
+</html>

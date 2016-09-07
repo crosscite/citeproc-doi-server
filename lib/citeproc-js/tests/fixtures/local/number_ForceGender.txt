@@ -1,0 +1,57 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+Both number and chapter-number have the same default gender in this example (feminine, I think)
+default(chapter-number): 1<sup>e</sup>
+forced to masculine(number): 1<sup>e</sup><sup>r</sup>
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      default-locale="fr">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter="&#x0A;">
+        <text value="Both number and chapter-number have the same default gender in this example (feminine, I think)"/>
+        <group delimiter=" ">
+          <text value="default(chapter-number):"/>
+          <number form="ordinal" variable="chapter-number"/>
+        </group>
+        <group delimiter=" ">
+          <text value="forced to masculine(number):"/>
+          <number gender="masculine" form="ordinal" variable="number"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "chapter-number": "1", 
+        "id": "ITEM-1", 
+        "number": "1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

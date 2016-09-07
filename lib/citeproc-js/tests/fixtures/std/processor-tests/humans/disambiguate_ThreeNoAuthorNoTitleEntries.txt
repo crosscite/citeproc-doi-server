@@ -1,0 +1,149 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+This test was cast to debug a crash in citeproc-js, when three
+items without title or author were submitted for names disambiguation.
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">BleagleA, 2000</div>
+  <div class="csl-entry">BleagleB, 2000</div>
+  <div class="csl-entry">BleagleC, 2000</div>
+</div>
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-names="true">
+    <layout>
+      <group delimiter=", ">
+        <choose>
+          <if position="subsequent">
+            <names variable="author">
+              <name/>
+            </names>
+          </if>
+          <else-if position="first">
+            <names variable="author">
+              <name/>
+            </names>
+            <text variable="container-title"/>
+            <date variable="issued" form="text" date-parts="year"/>
+          </else-if>
+        </choose>
+      </group>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <group delimiter=", ">
+        <names variable="author">
+          <name/>
+        </names>
+        <text variable="container-title"/>
+        <date variable="issued" form="text" date-parts="year"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "book",
+        "container-title": "BleagleA",
+        "issued": {"date-parts":[[2000]]}
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "book",
+        "container-title": "BleagleB",
+        "issued": {"date-parts":[[2000]]}
+    },
+    {
+        "id": "ITEM-3", 
+        "type": "book",
+        "container-title": "BleagleC",
+        "issued": {"date-parts":[[2000]]}
+    }
+]
+<<===== INPUT =====<<

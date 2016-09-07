@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  citeproc-doi-server:
+    # env_file: .env
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/home/app/webapp/public
+      - ./src:/home/app/webapp/src
+      - ./lib:/home/app/webapp/lib

@@ -1,0 +1,39 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>== RESULT ==>>
+The XYZ of Cong Rec and OpenCongress.org
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+  <citation>
+    <layout>
+      <text strip-periods="true" macro="title"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "The X.Y.Z. of Cong. Rec. and OpenCongress.org", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

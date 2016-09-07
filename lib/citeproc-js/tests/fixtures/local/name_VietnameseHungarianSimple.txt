@@ -1,0 +1,91 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+Vietnamese On Item; Vietnamese On Name; Hungarian On Item; Hungarian On Name
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <style-options name-as-sort-order="hu vi"/>
+  </locale>
+  <citation>
+    <layout delimiter="; ">
+      <names variable="author">
+        <name/>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Vietnamese", 
+                "given": "On Item"
+            }
+        ], 
+        "id": "ITEM-1", 
+        "language": "vi", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Vietnamese", 
+                "given": "On Name", 
+                "multi": {
+                    "main": "vi"
+                }
+            }
+        ], 
+        "id": "ITEM-2", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Hungarian", 
+                "given": "On Item"
+            }
+        ], 
+        "id": "ITEM-3", 
+        "language": "hu", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Hungarian", 
+                "given": "On Name", 
+                "multi": {
+                    "main": "hu"
+                }
+            }
+        ], 
+        "id": "ITEM-4", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

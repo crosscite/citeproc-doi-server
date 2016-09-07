@@ -1,0 +1,247 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+1965年6月1日+10月 (Japan)
+1 juin 1965+octobre (France)
+June 1, 1965+October (US English)
+1. Juni 1965+Oktober (Austria)
+1. Juni 1965+Oktober (Austria)
+1965年6月1日+10月 (Mainland China)
+1965年6月1日+10月 (Taiwan)
+1 de Junho de 1965+Outubro (Portugal)
+1 de Junho de 1965+Outubro (Portugal)
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="de-AT">
+    <terms>
+      <term name="month-10">Oktober (Austria)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="de-DE">
+    <terms>
+      <term name="month-10">Oktober (Germany)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="en-US">
+    <terms>
+      <term name="month-10">October (US English)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="fr-FR">
+    <terms>
+      <term name="month-10">octobre (France)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="ja-JP">
+    <terms>
+      <term name="month-10">10月 (Japan)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="pt-BR">
+    <terms>
+      <term name="month-10">outubro (Brazil)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="pt-PT">
+    <terms>
+      <term name="month-10">Outubro (Portugal)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="zh-CN">
+    <terms>
+      <term name="month-10">10月 (Mainland China)</term>
+    </terms>
+  </locale>
+  <locale xml:lang="zh-TW">
+    <terms>
+      <term name="month-10">10月 (Taiwan)</term>
+    </terms>
+  </locale>
+  <macro name="cite">
+    <group delimiter=" ">
+      <names variable="author">
+        <name />
+      </names>
+      <date variable="issued" form="text" date-parts="year-month-day"/>
+    </group>
+    <text term="month-10" prefix="+"/>
+  </macro>
+  <citation>
+    <layout locale="ja" delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+    <layout locale="fr" delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+    <layout locale="de-AT de" delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+    <layout locale="at" delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+    <layout locale="pt" delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+    <layout locale="zh-CH" delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+    <layout locale="zh-TW" delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+    <layout delimiter="&#x0A;">
+      <text macro="cite"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "ja", 
+        "title": "His Anonymous Life", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-2", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "fr", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-3", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-4", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "de-DE", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-5", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "de-AT", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-6", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "zh-CH", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-7", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "zh-TW", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-8", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "pt-BR", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-9", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965", 
+                    "6", 
+                    "1"
+                ]
+            ]
+        }, 
+        "language": "pt-PT", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

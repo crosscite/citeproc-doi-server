@@ -1,0 +1,95 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+Prior to the 1.0.97 release of citeproc-js, this produced the result
+"Beato T., T. Kitano, R. Atkinson". New API provides
+more intuitive control over formatting of transliterated
+names, but cannot be tested through the standard test suit
+machinery.
+
+Among other things, this test illustrates the effect of the
+expect_and_symbol_form on the citeproc-js CSL processor. When the
+option is set, the symbol (&) is drawn from a term, rather than
+being hard-wired into the processor.
+
+(The semantics of the punctuation in the result are completely
+wrong, but this is correctly following the CSL markup.)
+
+>>===== RESULT =====>>
+葉俊榮, 台大法律系, 林子儀, 簡資修、中研院法律所
+<<===== RESULT =====<<
+
+>>===== OPTIONS =====>>
+{
+    "expect_and_symbol_form": true
+}
+<<===== OPTIONS =====<<
+
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="and" form="long">與</term>
+      <term name="and" form="symbol">、</term>
+    </terms>
+  </locale>
+  <citation>
+    <layout delimiter="; ">
+      <names variable="author">
+        <name and="symbol"/>
+        <institution and="text"/>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "葉俊", 
+                "given": "榮"
+            }, 
+            {
+                "family": "台大法律系", 
+                "given": "",
+                "isInstitution": "true"
+            }, 
+            { 
+                "family":"林",
+                "given":"子儀"
+            },
+            {
+                "family":"簡",
+                "given":"資修"
+            },
+            {
+                "family":"中研院法律所",
+                "given":"",
+                "isInstitution": "true"
+            }
+        ], 
+        "id": "ITEM-1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

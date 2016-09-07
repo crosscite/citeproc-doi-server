@@ -1,0 +1,67 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+1st (1)
+2nd (2)
+10th (10)
+11th–20th (11–20)
+12th (12)
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <sort>
+      <key variable="volume"/>
+    </sort>
+    <layout delimiter="&#x0A;">
+      <number variable="volume" form="ordinal"/>
+      <text variable="volume" prefix=" (" suffix=")"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "book", 
+        "volume": "12"
+    }, 
+    {
+        "id": "ITEM-2", 
+        "type": "book", 
+        "volume": "11 - 20"
+    }, 
+    {
+        "id": "ITEM-3", 
+        "type": "book", 
+        "volume": "10"
+    }, 
+    {
+        "id": "ITEM-4", 
+        "type": "book", 
+        "volume": "2"
+    }, 
+    {
+        "id": "ITEM-5", 
+        "type": "book", 
+        "volume": "1"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,115 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+Huang Huaixin 黄懷信, Zhang Maorong 張懋鎔, Tian Xudong 田旭東, et al. eds.
+<<===== RESULT =====<<
+
+
+>>===== LANGPARAMS =====>>
+{
+    "institutions": [
+        "orig"
+    ], 
+    "persons": [
+        "translit", 
+        "orig"
+    ], 
+    "places": [
+        "orig"
+    ], 
+    "publishers": [
+        "orig"
+    ], 
+    "titles": [
+        "orig"
+    ]
+}
+<<===== LANGPARAMS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      default-locale="en-x-translit-zh-alalc97">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <style-options
+                   name-as-sort-order="ja zh kr my hu vi"
+                   name-never-short="ja zh kr my hu vi"/>
+  </locale>
+  <citation et-al-min="4" et-al-use-first="3">
+    <layout>
+      <names variable="editor">
+        <name />
+        <label form="short" prefix=" "/>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "editor": [
+            {
+                "family": "黄", 
+                "given": "懷信",
+                "multi":{
+                  "_key": {
+                    "zh-alalc97": {
+                      "family": "Huang",
+                      "given":"Huaixin" 
+                    }
+                  }  
+                }
+            },
+            {
+                "family": "張",
+                "given": "懋鎔", 
+                "multi":{
+                  "_key": {
+                    "zh-alalc97": {
+                      "family": "Zhang",
+                      "given":"Maorong" 
+                    }
+                  }  
+                }
+            },
+            {
+                "family": "田", 
+                "given": "旭東",
+                "multi":{
+                  "_key": {
+                    "zh-alalc97": {
+                      "family": "Tian",
+                      "given":"Xudong" 
+                    }
+                  }  
+                }
+            },
+            {
+                "family": "Smith", 
+                "given": "John"
+            }
+        ], 
+        "id": "ITEM-1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,96 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+>>[0] 10, § 100
+<<===== RESULT =====<<
+
+>>===== OPTIONZ =====>>
+{
+   "static_statute_locator":false,
+   "clobber_locator_if_no_statute_section":false,
+   "handle_parallel_articles": false
+}
+<<===== OPTIONZ =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "label": "page", 
+                    "locator": "sec. 100"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      demote-non-dropping-particle="display-and-sort">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="x-juris-locator">
+    <group delimiter=" ">
+      <choose>
+        <if locator="page"/>
+        <else>
+          <label variable="locator"/>
+        </else>
+      </choose>
+      <number variable="locator"/>
+    </group>
+  </macro>
+  <citation>
+    <layout>
+      <group delimiter=", ">
+        <number variable="page"/>
+        <group delimiter=" ">
+          <text value="at"/>
+          <group require="empty-label">
+            <text macro="x-juris-locator" label-form="symbol"/>
+          </group>
+        </group>
+        <group reject="empty-label">
+          <text macro="x-juris-locator" label-form="symbol"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+	{
+		"id": "ITEM-1",
+		"type": "legislation",
+		"page": "10"
+	}
+]
+<<===== INPUT =====<<

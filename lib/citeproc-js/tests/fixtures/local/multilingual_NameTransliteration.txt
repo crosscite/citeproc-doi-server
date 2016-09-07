@@ -1,0 +1,91 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+Prior to the 1.0.97 release of citeproc-js, this produced the result
+"Beato T., T. Kitano, R. Atkinson". New API provides
+more intuitive control over formatting of transliterated
+names, but cannot be tested through the standard test suit
+machinery.
+
+Yay-ho. At processor revision 1.0.511, we have fine-grained
+control over name formatting, and the original test result
+is again valid.
+
+>>===== RESULT =====>>
+Beato Takeshi, T. Kitano, R. Atkinson
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      default-locale="en-US-x-translit-ja-alalc97-x-translit-en">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+      <style-options name-as-sort-order="ja zh kr my hu vi"
+                     name-never-short="ja zh kr my hu vi"/>
+  </locale>
+  <citation>
+    <sort>
+      <key variable="author"/>
+    </sort>
+    <layout delimiter="; ">
+      <names variable="author">
+        <name initialize-with=". " delimiter=", "/>
+      </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "ビート", 
+                "given": "たけし", 
+                "multi": {
+                    "_key": {
+                        "ja-alalc97": {
+                            "family": "Beato", 
+                            "given": "Takeshi"
+                        }
+                    }
+                }
+            }, 
+            {
+                "family": "北野", 
+                "given": "武", 
+                "multi": {
+                    "_key": {
+                        "en": {
+                            "family": "Kitano", 
+                            "given": "Takeshi"
+                        }
+                    }
+                }
+            }, 
+            {
+                "family": "Atkinson", 
+                "given": "Rowan"
+            }
+        ], 
+        "id": "ITEM-1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

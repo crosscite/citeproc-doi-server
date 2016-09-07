@@ -1,0 +1,50 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+
+
+
+>>== RESULT ==>>
+I.R. Wildlife Series
+<<== RESULT ==<<
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "collection-title": {
+            "International Rescue Wildlife Series": "I.R. Wildlife Series"
+        }
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <text variable="collection-title" form="short"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "collection-title": "International Rescue Wildlife Series", 
+        "id": "ITEM-1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<
