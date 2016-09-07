@@ -27,10 +27,12 @@ function loadDir(dir, regexp) {
 }
 
 exports.getStyles = function() {
+		// TODO: instead of taking the styles and locales from the file names, it should get into the CSL and XML files and extract the <title> from each file and add that into the array. Those titles are Human readeable. You will need to parse the files content tho.
 	return Object.keys(styles);
 };
 
 exports.getLocales = function() {
+		// TODO: instead of taking the styles and locales from the file names, it should get into the CSL and XML files and extract the <title> from each file and add that into the array. Those titles are Human readeable. You will need to parse the files content tho.
 	return Object.keys(locales);
 };
 

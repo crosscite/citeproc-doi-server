@@ -5,6 +5,7 @@ function init() {
 	$("#styles").combobox();
 	$("#locales").combobox();
 	new Clipboard('.btn-lg');
+	// TODO: there is an issue in order to get plain-text right-of-thebox in github https://github.com/zenorocha/clipboard.js/issues/299
 	$("#citation_row").hide();
 	// $("#copy_citation").hide();
 }
@@ -48,9 +49,6 @@ function submit() {
 		success : function(data) {
 			$("#citation").text(data);
 			$("#citation_row").show();
-
-			// $("#doi_link").text("http://data.datacite.org/"+doi);
-			// $("#doi_link").href ="http://data.datacite.org/"+doi;
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			$("#citation_row").hide();
