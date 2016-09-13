@@ -5,7 +5,7 @@ services:
     # env_file: .env
     build: .
     ports:
-      - "8080:80"
+      - "9020:80"
     volumes:
       - ./public:/home/app/webapp/public
       - ./src:/home/app/webapp/src
