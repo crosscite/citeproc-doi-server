@@ -64,6 +64,7 @@ RUN npm install
 # Process templates using ENV variables
 RUN mkdir -p /etc/my_init.d
 COPY vendor/docker/70_templates.sh /etc/my_init.d/70_templates.sh
+COPY vendor/docker/80_submodules.sh /etc/my_init.d/80_submodules.sh
 
 # Expose web
 EXPOSE 80
