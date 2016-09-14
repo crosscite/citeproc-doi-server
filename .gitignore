@@ -1,7 +1,6 @@
-config.json
+public/locales/*
+public/styles/*
 node_modules/
-.project
-*.log
 .env
 .env.*
 !.env.example
