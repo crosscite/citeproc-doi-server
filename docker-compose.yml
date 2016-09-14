@@ -4,9 +4,11 @@ services:
   citeproc:
     env_file: .env.example
     image: crosscite/citeproc-doi-server:labs
+    # build: .
     ports:
       - "9020:80"
     volumes:
       - ./public:/home/app/webapp/public
       - ./src:/home/app/webapp/src
       - ./lib:/home/app/webapp/lib
+      - ./vendor:/home/app/webapp/vendor
