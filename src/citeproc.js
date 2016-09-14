@@ -6,11 +6,11 @@ var locales = {};
 
 function init() {
 	console.log("loading styles...");
-	styles = loadDir("./public/styles/", /(.*)\.csl$/);
+	styles = loadDir("./styles/", /(.*)\.csl$/);
 	console.log(Object.keys(styles).length + " styles loaded.");
 
 	console.log("loading locales...");
-	locales = loadDir("./public/locales/", /locales-(.*)\.xml$/);
+	locales = loadDir("./locales/", /locales-(.*)\.xml$/);
 	console.log(Object.keys(locales).length + " locales loaded.");
 }
 
