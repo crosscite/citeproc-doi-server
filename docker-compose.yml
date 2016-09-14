@@ -1,9 +1,9 @@
 version: '2'
 
 services:
-  citeproc-doi-server:
-    # env_file: .env
-    build: .
+  citeproc:
+    env_file: .env.example
+    image: crosscite/citeproc-doi-server:labs
     ports:
       - "9020:80"
     volumes:
