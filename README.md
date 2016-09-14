@@ -68,7 +68,7 @@ npm config set prefix /usr/local
 
 ## Configuration
 
-Copy `config.json.example` to `config.json` and change it to your needs.
+Copy `.env.example` to `.env` and change it to your needs.
 
 ## Running
 
