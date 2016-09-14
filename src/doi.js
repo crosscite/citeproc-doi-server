@@ -1,11 +1,10 @@
 var request = require('request');
-var settings = require('./settings');
 
 // callback = function(data)
 // errback = function(code, msg)
 exports.resolve = function(doi, callback, errback, mediaType) {
 	options = {
-		uri : settings.doiProxy + "/" + doi,
+		uri : "https://doi.org/" + doi,
 		headers : {}
 	};
 

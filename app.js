@@ -1,8 +1,8 @@
+// load .env file if it exists
 var connect = require('connect');
 var request = require('request');
 var citeproc = require('./src/citeproc');
 var doi = require('./src/doi');
-var settings = require('./src/settings');
 
 function init() {
 	console.log("creating server...");
@@ -10,7 +10,7 @@ function init() {
 	var server = connect();
 	server.use(connect.query());
 	server.use(connect.logger());
-	server.use(connect.static('./public/ui'));
+	server.use(connect.static('./public'));
 	server.use(connect.json());
 
 	server.use('/styles', listHandler(citeproc.getStyles()));
@@ -18,8 +18,7 @@ function init() {
 	server.use('/format', method("GET", formatHandler));
 	server.use('/format', method("POST", formatPostHandler));
 
-	server.listen(settings.port);
-	console.log("server listening on port " + settings.port + ".");
+	server.listen();
 }
 
 function listHandler(array) {

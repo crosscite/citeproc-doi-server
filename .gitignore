@@ -2,3 +2,7 @@ config.json
 node_modules/
 .project
 *.log
+.env
+.env.*
+!.env.example
+!.env.travis
