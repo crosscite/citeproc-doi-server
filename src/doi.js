@@ -16,10 +16,10 @@ exports.resolve = function(doi, callback, errback, mediaType) {
 		if (error)
 			errback(500, "unknown error");
 		else if (response.statusCode == 404)
-			errback(404, "doi not found");
+			errback(404, "DOI not found");
 		else if (response.statusCode == 406
 				|| !responseType.startsWith(mediaType))
-			errback(404, "metadata for doi not found");
+			errback(404, "metadata for DOI not found");
 		else if (response.statusCode == 200)
 			callback(body);
 		else {
