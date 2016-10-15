@@ -1,6 +1,7 @@
 # DOI Formating service (citeproc)
 
 [![Build Status](https://travis-ci.org/crosscite/citeproc-doi-server.svg)](https://travis-ci.org/crosscite/citeproc-doi-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/crosscite/citeproc-doi-server.svg)](https://hub.docker.com/r/crosscite/citeproc-doi-server/)
 
 An online tool for formatting DOIs from a DataCite, CrossRef, mEDRA, and in various styles. It allows user to format DOIs bilbiographic information in the desired format. It uses content negotiation to get the "application/vnd.citationstyles.csl+json" representation of a DOI. With the default dx.doi.org resolver this is supported by all DataCite and CrossRef DOIs.
 
