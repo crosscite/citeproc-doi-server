@@ -1,21 +1,28 @@
-# Overview
+# DOI Formating service (citeproc)
 
-citeproc-doi-server is a simple server, which formats a DOI's metadata in various styles.
+[![Build Status](https://travis-ci.org/crosscite/citeproc-doi-server.svg)](https://travis-ci.org/crosscite/citeproc-doi-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/crosscite/citeproc-doi-server.svg)](https://hub.docker.com/r/crosscite/citeproc-doi-server/)
 
-It uses content negotiation to get the "application/vnd.citationstyles.csl+json" representation of a DOI.
-With the default dx.doi.org resolver this is supported by all DataCite and CrossRef DOIs.
+An online tool for formatting DOIs from a DataCite, CrossRef, mEDRA, and in various styles. It allows user to format DOIs bilbiographic information in the desired format. It uses content negotiation to get the "application/vnd.citationstyles.csl+json" representation of a DOI. With the default dx.doi.org resolver this is supported by all DataCite and CrossRef DOIs.
 
-# Usage
 
-By default the server listen on localhost:8000.
+## Installation
 
-## User Interface
+Using Docker.
 
-On `/` there is a simple web formular to format a DOI with given style and language.
+```
+docker run -p 8000:80 crosscite/citeproc-doi-server
+```
 
-## API
+You can now point your browser to `http://localhost:8000` and use the application.
 
-You can format a given DOI via
+![Screenshot](https://raw.githubusercontent.com/crosscite/citeproc-doi-server/master/public/img/start.png)
+
+
+
+### API
+
+Additionally you can use the server as a API. You can format a given DOI via
 
 ```
     GET /format?doi=<doi>&style=<style>&lang=<locale>
@@ -41,70 +48,19 @@ respectively
     GET /locales
 ```
 
-# Installation
 
-## Cloning this repository
-
-The CSL styles and locales are added as a git submodule. So to clone this repos you should do
-
-    git clone --recursive git://....
-
-or in case you already have cloned non-recursivly:
-
-    git submodule init
-    git submodule update
-
-## Node.js on ubuntu:
-
-Installing latest (`v0.10.46`) node.js on ubuntu:
-
-```shell
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs npm
-npm config set prefix /usr/local
-```
+## Development
 
 
-## Configuration
+Follow along via [Github Issues](https://github.com/crosscite/citeproc-doi-server/issues).
 
-Copy `.env.example` to `.env` and change it to your needs.
+### Note on Patches/Pull Requests
 
-## Running
+* Fork the project
+* Write tests for your new feature or a test that reproduces a bug
+* Implement your feature or make a bug fix
+* Do not mess with Rakefile, version or history
+* Commit, push and make a pull request. Bonus points for topical branches.
 
-### Local
-
-Do `npm install` once to install all required modules. Then run it via
-
-    npm start
-
-### Global
-
-Do `sudo npm install -g` to install everyting to `/usr/local/`. Then run it via
-
-    /usr/local/bin/citeproc-doi-server
-
-# Using Docker
-
-This repository contains **Dockerfile** of [Crosscite website](http://redis.io/) for [Docker](https://www.docker.com/)'s [automated build](https://registry.hub.docker.com/u/dockerfile/redis/) published to the public [Docker Hub Registry](https://registry.hub.docker.com/).
-
-
-### Base Docker Image
-
-* [phusion/passenger-nodejs](https://hub.docker.com/r/phusion/passenger-nodejs/)
-
-
-### Installation
-
-1. Install [Docker](https://www.docker.com/).
-
-2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/redis/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/redis`
-
-   (alternatively, you can build an image from Dockerfile: `docker build -t="crosscite/citeproc-doi-server" github.com/dockerfile/redis`)
-
-
-### Usage
-
-#### Run `citeproc-doi-server`
-
-    docker run -p 8080:80 crosscite/citeproc-doi-server
+## License
+**citeproc-doi-server** is released under the [MIT License](LICENSE.md).

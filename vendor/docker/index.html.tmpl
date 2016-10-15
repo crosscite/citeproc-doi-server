@@ -46,121 +46,92 @@
 
 <form id="form" action="">
     <div class="row top-buffer">
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-3 col-md-4">
         </div>
         <div class="col-xs-6 col-md-4">
             <label for="doi">Paste your DOI:</label>
             <input id="doi" type="text" required class="form-control" />
-            <p class="help-block">E.g. 10.1145/2783446.2783605 </p>
+            <p class="help-block">For example 10.1145/2783446.2783605</p>
           <!-- </br> -->
             <!-- <a href="help.html">Format help</a> -->
         </div>
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-3 col-md-4">
         </div>
     </div>
     <div class="row top-buffer">
-        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-3 col-md-4"></div>
         <div class="col-xs-6 col-md-4">
-            <label for="styles">Search for Formatting Style:</label>
+            <label for="styles">Select Formatting Style:</label>
             <select id="styles" class="form-control"></select>
+            <p class="help-block">Begin typing (e.g. Chicago or IEEE.) or use the drop down menu.</p>
         </div>
-        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-3 col-md-4"></div>
     </div>
     <div class="row top-buffer">
-        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-3 col-md-4"></div>
         <div class="col-xs-6 col-md-4">
-            <label for="locales">Search for Language and Country:</label>
+            <label for="locales">Select Language and Country:</label>
             <select id="locales" class="form-control"></select>
-            <p class="help-block">Type in you preferred style (e.g. Chicago or IEEE) and language (e.g. GB for Britain, RU for Russian).</p>
+            <p class="help-block">Begin typing (e.g. en-GB for English, Great Britain)  or use the drop down menu.</p>
         </div>
-        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-3 col-md-4"></div>
     </div>
     <div class="row top-buffer">
-        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-3 col-md-4"></div>
         <div class="col-xs-6 col-md-4">
         </br>
-            <input type="submit" value="Format" class="btn-lg btn-default" />
+            <input type="submit" value="Format" class="btn-lg btn-default center-block" />
         </div>
-        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-3 col-md-4"></div>
     </div>
 </form>
 <div class="row top-buffer" id="citation_row">
-    <!-- <div class="col-xs-6 col-md-4"></div> -->
-    <!-- <div class="col-xs-6 col-md-4"> -->
+
       <div class="col-md-12">
-        <!-- Target -->
         <div id="citation"></div>
-        <!-- <a  id="doi_link"></a> -->
 
       </br>
-        <!-- Trigger -->
         <button class="btn-lg center-block" data-clipboard-target="#citation"  onClick ="_gaq.push(['_trackEvent', 'copytoclipb', 'click', 'Copied Ref', 10, false]);" id="copy_citation">
             Copy to clipboard
         </button>
     </div>
-    <!-- <div class="col-xs-6 col-md-4"></div> -->
 </div>
 
 <div class="row top-buffer">
-    <div class="col-xs-6 col-md-4">
+    <div class="col-xs-3 col-md-4">
     </div>
-    <div class="col-xs-6 col-md-4">
+    <div class="col-xs-6 col-md-4 text-center">
+      <p class="help-block">Do you want to integrate this service? Check the
+      <a href="/docs.html"> Documentation</a> </p>
     </div>
-    <div class="col-xs-6 col-md-4">
-      <a href="/docs.html">Documentation</a>
+    <div class="col-xs-3 col-md-4">
     </div>
 </div>
 
 
 <div class="row top-buffer">
     <div class="col-xs-12 col-lg-8 col-lg-offset-2 text-center">
+      <hr class="primary">
+
         <h3 class="section-heading">
-              DOI providers
+              DOI Registration Agencies
             </h3>
-        <hr class="primary">
         <p>
-            <a href="http://datacite.org">
-                <img src="img/datacite.svg" width="180px" id="datacite_logo" alt="DataCite">
+            <a href="http://datacite.org" target="_blank">
+                <img src="img/datacite.svg"  width="180px" id="datacite_logo" alt="DataCite">
             </a>
-            <a href="http://crossref.org">
-                <img src="https://assets.crossref.org/logo/crossref-logo-landscape-200.svg" width="180px" id="crossref_logo" alt="Crossref">
+            <a href="http://crossref.org" target="_blank">
+                <img src="https://assets.crossref.org/logo/crossref-logo-landscape-200.svg" width="180px"  id="crossref_logo" alt="Crossref">
             </a>
-            <a href="https://www.medra.org/">
+            <a href="https://www.medra.org/" target="_blank">
                 <img src="img/medra.png" width="150px" id="medra_logo" alt="mEDRA">
             </a>
-            <a href="http://www.cdlib.org">
-                <img src="img/istic.gif" width="150px" id="istic_logo" alt="CDL">
+            <a href="http://www.doi.org.cn/portal/index.htm" target="_blank">
+                <img src="img/istic.gif"  width="150px" id="istic_logo" alt="CDL">
             </a>
         </p>
     </div>
 </div>
-
-
-
-
-  <!--
-  <form id="form" action="">
-    <label for="doi">DOI:</label>
-    <input id="doi" type="text" />
-
-    <label for="styles">Style:</label>
-    <select id="styles"></select>
-
-
-
-
-    <label for="locales">Locale:</label>
-    <select id="locales"></select>
-
-    <input type="submit" value="Format"/>
-  </form> -->
-    <!-- Target -->
-  <!-- <div id="citation"></div> -->
-
-  <!-- Trigger -->
-  <!-- <button class="btn" data-clipboard-target="#citation" id="copy_citation">
-      Copy to clipboard
-  </button> -->
 
 </body>
 </html>

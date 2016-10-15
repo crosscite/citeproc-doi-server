@@ -37,7 +37,7 @@ function arrayToSelectOptions(array) {
 
 function submit() {
 	$("#citation_row").hide();
-	var doi = $("#doi").val();
+	var doi = $("#doi").val().trim();
 	$.ajax({
 		url : "format",
 		data : {
