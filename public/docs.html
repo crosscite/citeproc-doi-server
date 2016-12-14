@@ -276,7 +276,7 @@
 
                     <p>
                         DOIs provide a persistent link to content. They identify many types of work, from journal articles to research data sets. Typically, someone interacting with DOIs will be a researcher, who will resolve DOIs found in scholarly references to content using
-                        a <a href='http://dx.doi.org'>DOI resolver</a>. Such researchers may not even realise they are using DOIs and a DOI resolver since they may follow links with embedded DOIs.
+                        a <a href='https://doi.org'>DOI resolver</a>. Such researchers may not even realise they are using DOIs and a DOI resolver since they may follow links with embedded DOIs.
                     </p>
                     <p>
                         Yet DOIs can provide more than a permanent, indirect link to content. DOI registration agencies such as CrossRef, DataCite and mEDRA collect bibliographic metadata about the works they link to. This metadata can be retrieved from a DOI resolver too, using
@@ -296,7 +296,7 @@
 
                     <p>
                         The DOI resolver at doi.org will normally redirect a user to the resource location of a DOI. For example, the DOI "10.1126/science.169.3946.635" redirects to a landing page describing the article, "The Structure of Ordinary Water". Content negotiated
-                        requests to dx.doi.org that ask for a content type which isn't "text/html" will be redirected to a metadata service hosted by the DOI's registration agency. CrossRef, DataCite and mEDRA support content negotiated DOIs via
+                        requests to doi.org that ask for a content type which isn't "text/html" will be redirected to a metadata service hosted by the DOI's registration agency. CrossRef, DataCite and mEDRA support content negotiated DOIs via
                         <a
                             href="http://data.crossref.org">http://data.crossref.org</a>,
                             <a href="http://data.datacite.org">http://data.datacite.org</a> and <a href="http://data.medra.org">http://data.medra.org</a> respectively.
@@ -307,7 +307,7 @@
                         <div class="span6 offset3">
 
                             <pre class="example">       GET "Accept: text/html"
-http://dx.doi.org/10.1126/science.169.3946.635
+https://doi.org/10.1126/science.169.3946.635
 
                    |
                    |
@@ -315,7 +315,7 @@ http://dx.doi.org/10.1126/science.169.3946.635
                    V
 
        Publisher landing page
-http://www.sciencemag.org/content/169/3946/635
+https://www.sciencemag.org/content/169/3946/635
 </pre>
 
                         </div>
@@ -330,7 +330,7 @@ http://www.sciencemag.org/content/169/3946/635
                         <div class="span6 offset3">
 
                             <pre class="example">       GET "Accept: application/rdf+xml"
-http://dx.doi.org/10.1126/science.169.3946.635
+https://doi.org/10.1126/science.169.3946.635
 
                    |
                    |
@@ -377,13 +377,13 @@ http://data.crossref.org/10.1126/science.169.3946.635
 
 
 
-                        <pre class="example">$ curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" http://dx.doi.org/10.1126/science.169.3946.635
+                        <pre class="example">$ curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" https://doi.org/10.1126/science.169.3946.635
 
 {
   "volume" : "169",
   "issue" : "3946",
   "DOI" : "10.1126/science.169.3946.635",
-  "URL" : "http://dx.doi.org/10.1126/science.169.3946.635",
+  "URL" : "https://doi.org/10.1126/science.169.3946.635",
   "title" : "The Structure of Ordinary Water: New data and interpretations are
            yielding new insights into this fascinating substance",
   "container-title" : "Science",
@@ -404,7 +404,7 @@ http://data.crossref.org/10.1126/science.169.3946.635
 
 
 
-                        <pre class="example">$ curl -LH "Accept: application/vnd.citationstyles.csl+json, application/rdf+xml" http://dx.doi.org/10.1126/science.169.3946.635
+                        <pre class="example">$ curl -LH "Accept: application/vnd.citationstyles.csl+json, application/rdf+xml" https://doi.org/10.1126/science.169.3946.635
 </pre>
 
 
@@ -566,7 +566,7 @@ http://data.crossref.org/10.1126/science.169.3946.635
 
 
 
-                    <pre class="example">$ curl -LH "Accept: application/vnd.crossref.unixref+xml;q=1, application/rdf+xml;q=0.5" http://dx.doi.org/10.1126/science.169.3946.635
+                    <pre class="example">$ curl -LH "Accept: application/vnd.crossref.unixref+xml;q=1, application/rdf+xml;q=0.5" https://doi.org/10.1126/science.169.3946.635
 </pre>
 
 
@@ -590,7 +590,7 @@ http://data.crossref.org/10.1126/science.169.3946.635
 
 
 
-                        <pre class="example">$ curl -LH "Accept: text/x-bibliography; style=apa" http://dx.doi.org/10.1126/science.169.3946.635
+                        <pre class="example">$ curl -LH "Accept: text/x-bibliography; style=apa" https://doi.org/10.1126/science.169.3946.635
 
 Frank, H. S. (1970). The Structure of Ordinary Water: New data and interpretations are yielding
   new insights into this fascinating substance. Science, 169(3946), 635-641. American Association
@@ -606,11 +606,11 @@ Frank, H. S. (1970). The Structure of Ordinary Water: New data and interpretatio
 
 
 
-                        <pre class="example">$ curl -LH "Accept: text/x-bibliography; style=harvard3; locale=fr-FR" http://dx.doi.org/10.1126/science.169.3946.635
+                        <pre class="example">$ curl -LH "Accept: text/x-bibliography; style=harvard3; locale=fr-FR" https://doi.org/10.1126/science.169.3946.635
 
 Frank, HS 1970, « The Structure of Ordinary Water: New data and interpretations are yielding new
   insights into this fascinating substance ». Science, vol. 169, no. 3946, p. 635-641. Consulté
-  de http://dx.doi.org/10.1126/science.169.3946.635
+  de https://doi.org/10.1126/science.169.3946.635
 </pre>
 
 
