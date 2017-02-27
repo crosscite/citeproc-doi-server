@@ -9,6 +9,8 @@ ENV NODE_VERSION 0.10.46
 # ENV NODE_VERSION 0.6.12 #version in the old server
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+ENV SHELL /bin/bash
+ENV TERM xterm-256color
 
 # Use baseimage-docker's init process
 CMD ["/sbin/my_init"]
@@ -65,6 +67,7 @@ RUN npm install
 RUN mkdir -p /etc/my_init.d
 COPY vendor/docker/70_templates.sh /etc/my_init.d/70_templates.sh
 COPY vendor/docker/80_submodules.sh /etc/my_init.d/80_submodules.sh
+RUN echo "alias ls='ls -AlhF --color=auto'" >> ~/.bashrc
 
 # Expose web
 EXPOSE 80

@@ -5,13 +5,13 @@ var styles = {};
 var locales = {};
 
 function init() {
-	console.log("loading styles...");
+	// console.log("loading styles...");
 	styles = loadDir("./public/styles/", /(.*)\.csl$/);
-	console.log(Object.keys(styles).length + " styles loaded.");
+	// console.log(Object.keys(styles).length + " styles loaded.");
 
-	console.log("loading locales...");
+	// console.log("loading locales...");
 	locales = loadDir("./public/locales/", /locales-(.*)\.xml$/);
-	console.log(Object.keys(locales).length + " locales loaded.");
+	// console.log(Object.keys(locales).length + " locales loaded.");
 }
 
 function loadDir(dir, regexp) {

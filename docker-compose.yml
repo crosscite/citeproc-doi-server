@@ -8,7 +8,9 @@ services:
     ports:
       - "9020:80"
     volumes:
-      - ./public:/home/app/webapp/public
+      # - ./public:/home/app/webapp/public
       - ./src:/home/app/webapp/src
       - ./lib:/home/app/webapp/lib
       - ./vendor:/home/app/webapp/vendor
+      # - ./locales:/home/app/webapp/locales
+      # - ./styles:/home/app/webapp/styles
