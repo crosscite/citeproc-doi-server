@@ -1,6 +1,5 @@
 public/locales/*
 public/styles/*
-public/index.html
 node_modules/
 .env
 .env.*
