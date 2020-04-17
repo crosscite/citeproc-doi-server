@@ -42,14 +42,84 @@ function arrayToSelectOptions(array) {
 function submit() {
 	$("#citation_row").hide();
 	var doi = $("#doi").val().trim();
+	// $.ajax({
+	// 	url : "format",
+	// 	data : {
+	// 		doi : doi,
+	// 		style : $("#styles").val(),
+	// 		lang : $("#locales").val()
+	// 	},
+	// 	dataType : "text",
+	// 	success : function(data) {
+	// 		$("#citation").text(data);
+	// 		$("#citation_row").show();
+	// 	},
+	// 	error : function(jqXHR, textStatus, errorThrown) {
+	// 		$("#citation_row").hide();
+	// 		alert(jqXHR.responseText);
+	// 	}
+	// });
+
+
+	// // //graphql Approach it works its just a slow API
+	// $.ajax({
+	// 	method: "POST",
+	// 	url: "https://api.datacite.org/graphql",
+	// 	contentType: "application/json",
+	// 	data: JSON.stringify({
+	// 				query: `query ($doi: ID!, $locale: String!, $style: String!) 
+	// 				{
+	// 					work(id: $doi){
+	// 							formattedCitation(locale: $locale, style: $style)
+	// 					}
+	// 				}`,
+	// 		variables: {
+	// 			"doi": doi,
+	// 			"locale": $("#locales").val() || "en-US",
+	// 			"style": $("#styles").val() || "apa",
+	// 		}
+	// 	}),
+	// 	success : function(data) {
+	// 		$("#citation").text(data.data.work.formattedCitation);
+	// 		$("#citation_row").show();
+	// 	},
+	// 	error : function(jqXHR, textStatus, errorThrown) {
+	// 		$("#citation_row").hide();
+	// 		alert(jqXHR.responseText);
+	// 	}
+	// }); 
+
+	
+	// /// same backend
+	// let locale = $("#locales").val() || "en";
+	// let style = $("#styles").val() || "apa";
+
+	// let url = "https://data.crosscite.org/text/x-bibliography/"+doi+"?style="+style+"&locale="+locale;
+
+	// $.ajax({
+	// 	method: "GET",
+	// 	url: url,
+	// 	contentType: "text",
+	// 	success : function(data) {
+	// 		$("#citation").text(data);
+	// 		$("#citation_row").show();
+	// 	},
+	// 	error : function(jqXHR, textStatus, errorThrown) {
+	// 		$("#citation_row").hide();
+	// 		alert(jqXHR.responseText);
+	// 	}
+	// }); 
+
+
+	let locale = $("#locales").val() || "en";
+	let style = $("#styles").val() || "apa";
+
+	let url = "https://api.datacite.org/dois/"+doi+"?style="+style+"&locale="+locale;
+
 	$.ajax({
-		url : "format",
-		data : {
-			doi : doi,
-			style : $("#styles").val(),
-			lang : $("#locales").val()
-		},
-		dataType : "text",
+		method: "GET",
+		url: url,
+		headers: {"Accept": "text/x-bibliography"},
 		success : function(data) {
 			$("#citation").text(data);
 			$("#citation_row").show();
@@ -58,7 +128,7 @@ function submit() {
 			$("#citation_row").hide();
 			alert(jqXHR.responseText);
 		}
-	});
+	}); 
 	return false;
 }
 
