@@ -1,4 +1,4 @@
-var CSL = require("../lib/citeproc-js/citeproc").CSL;
+var CSL = require("../lib/citeproc-js/citeproc_commonjs");
 var fs = require("fs");
 
 var styles = {};
