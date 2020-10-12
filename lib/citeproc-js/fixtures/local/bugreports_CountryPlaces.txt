@@ -1,0 +1,112 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+California Work is from the United States.
+US Work is from the United States.
+Mexican Work is NOT from the US, but from Mexico.
+<<===== RESULT =====<<
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-1"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-2"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-3"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+>>===== ABBREVIATIONS =====>>
+{
+  "default": {
+    "place": {
+      "MX": "Mexico",
+      "US": "United States"
+    }
+  }
+}
+<<===== ABBREVIATIONS =====<<
+
+>>===== CSL =====>>
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" demote-non-dropping-particle="sort-only" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation disambiguate-add-names="true" et-al-min="4" et-al-use-first="1">
+    <layout delimiter="; " suffix=".">
+      <choose>
+        <if country="us">
+          <group delimiter=" ">
+            <text variable="title"/>
+            <text value="is from the"/>
+            <text variable="country" form="short"/>
+          </group>
+        </if>
+        <else>
+          <group delimiter=" ">
+            <text variable="title"/>
+            <text value="is NOT from the US, but from"/>
+            <text variable="country" form="short"/>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1",
+        "title": "California Work",
+        "jurisdiction": "us:ca",
+        "multi": {
+            "_keys": {}, 
+            "main": {}
+        }
+    },
+    {
+        "id": "ITEM-2",
+        "title": "US Work",
+        "jurisdiction": "us",
+        "multi": {
+            "_keys": {}, 
+            "main": {}
+        }
+    },
+    {
+        "id": "ITEM-3",
+        "title": "Mexican Work",
+        "jurisdiction": "mx",
+        "multi": {
+            "_keys": {}, 
+            "main": {}
+        }
+    }
+]
+<<===== INPUT =====<<
+</if>
+</choose>

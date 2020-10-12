@@ -1,0 +1,10 @@
+groupID: 2319948
+path:
+    styletests: fixtures/styles
+    local: fixtures/local
+    std: fixtures/std/processor-tests/humans
+    src: src
+    locale: locale
+    modules: juris-modules
+    cslschema: csl-schemata/csl.rnc
+    cslmschema: csl-schemata/csl-mlz.rnc

@@ -1,0 +1,73 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== ABBREVIATIONS =====>>
+{
+  "default": {
+      "container-title": {
+          "N.Y.S.2d": "!authority:N.Y.>>>N.Y.S.2d"
+      },
+      "institution-part": {
+          "N.Y. Ct. App.": "N.Y. Ct. App."
+      }
+  }
+}
+<<===== ABBREVIATIONS =====<<
+
+
+>>===== RESULT =====>>
+N.Y.S.2d (Ct. App.)
+<<===== RESULT =====<<
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-1"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter=" ">
+        <text variable="container-title" form="short"/>
+        <names variable="authority" prefix="(" suffix=")">
+          <name/>
+          <institution institution-parts="short"/>
+        </names>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "legal_case",
+        "container-title": "N.Y.S.2d",
+        "authority": "N.Y. Ct. App."
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,120 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+>>===== OPTIONS =====>>
+{
+  "main_title_from_short_title": true
+}
+<<===== OPTIONS =====<<
+
+
+>>===== RESULT =====>>
+full: First main title: First subtitle
+short: First main title
+main: First main title
+sub: First subtitle
+
+full: Second main title: second subtitle
+short: Second main title
+main: Second main title
+sub: second subtitle
+
+full: Third main title—Third subtitle
+short: Third main title
+main: Third main title
+sub: Third subtitle
+
+full: Fourth main title? Fourth subtitle
+short: Fourth main title?
+main: Fourth main title?
+sub: Fourth subtitle
+
+<<===== RESULT =====<<
+
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+                {
+                    "id": "ITEM-1"
+                }
+    ], 
+    [
+                {
+                    "id": "ITEM-2"
+                }
+    ], 
+    [
+                {
+                    "id": "ITEM-3"
+                }
+    ], 
+    [
+                {
+                    "id": "ITEM-4"
+                }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter="&#x0A;" suffix="&#x0A;">
+      <text variable="title" prefix="full: "/>
+      <text variable="title" form="short" prefix="short: "/>
+      <text variable="title-main" prefix="main: "/>
+      <text variable="title-sub" prefix="sub: "/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "book",
+		"title": "First main title: First subtitle",
+		"title-short": "First main title"
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "book",
+		"title": "Second main title : second subtitle",
+		"title-short": "Second main title"
+    },
+    {
+        "id": "ITEM-3", 
+        "type": "book",
+		"title": "Third main title -- Third subtitle",
+		"title-short": "Third main title"
+    },
+    {
+        "id": "ITEM-4", 
+        "type": "book",
+		"title": "Fourth main title? Fourth subtitle",
+		"title-short": "Fourth main title?"
+    }
+]
+<<===== INPUT =====<<
+
+

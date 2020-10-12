@@ -1,0 +1,49 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+Then: This parse used to break by throwing a mismatched
+      straight single quote and properly formatted double
+      quotes.
+
+Now: The string is passed back verbatim. As the parse
+     breaks completely (there are no matching pairs),
+     that is the better behavior.
+
+2017-02-04
+
+>>== RESULT ==>>
+'"Black Power”, and the Roots of the African American Freedom Struggle
+<<== RESULT ==<<
+
+mhra.csl
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+       <text variable="title"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "'\"Black Power”, and the Roots of the African American Freedom Struggle", 
+        "type": "article"
+    }
+]
+<<===== INPUT =====<<

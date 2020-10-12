@@ -1,0 +1,131 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>== ABBREVIATIONS ==>>
+{
+  "us:oh": {
+    "institution-entire": {
+      "supreme.court": "Ohio"
+    }
+  }
+}
+<<== ABBREVIATIONS ==<<
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1"
+        }, 
+        {
+            "id": "ITEM-2"
+        }, 
+        {
+            "id": "ITEM-3"
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>== RESULT ==>>
+Go v. Stop, 10 Journal One 111; 20 Journal Two 222 (Books Ltd. 2000); 30 Journal Three 333 (Reprints Ltd. 2000)
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="paragraph">paragraph</term>
+      <term name="paragraph" form="symbol">¶</term>
+    </terms>
+  </locale>
+  <citation disambiguate-add-givenname="true" et-al-min="3" et-al-use-first="1" near-note-distance="5">
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <group parallel-first="title">
+          <text variable="title"/>
+        </group>
+        <group delimiter=" ">
+          <group delimiter=" ">
+            <number variable="volume"/>
+            <text variable="container-title"/>
+            <number variable="page"/>
+          </group>
+          <group parallel-first="title">
+            <text variable="collection-title"/>
+          </group>
+          <group parallel-last="publisher issued" delimiter=" " prefix="(" suffix=")">
+            <text variable="publisher"/>
+            <date variable="issued" form="text" date-parts="year"/>
+          </group>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+  {
+      "id": "ITEM-1",
+      "type": "article-journal",
+      "title": "Go v. Stop",
+      "publisher": "Books Ltd.",
+      "volume": "10",
+      "container-title": "Journal One",
+      "page": "111",
+      "issued": { "date-parts": [[2000]] },
+      "seeAlso": [
+        "ITEM-1",
+        "ITEM-2",
+        "ITEM-3"
+      ]
+   },
+   {
+      "id": "ITEM-2",
+      "type": "article-journal",
+      "title": "Go v. Stop",
+      "volume": "20",
+      "container-title": "Journal Two",
+      "page": "222",
+      "publisher": "Books Ltd.",
+      "issued": { "date-parts": [[2000]] },
+      "seeAlso": [
+        "ITEM-1",
+        "ITEM-2",
+        "ITEM-3"
+      ]
+   },
+   {
+      "id": "ITEM-3",
+      "type": "article-journal",
+      "title": "Go v. Stop",
+      "volume": "30",
+      "container-title": "Journal Three",
+      "page": "333",
+      "publisher": "Reprints Ltd.",
+      "issued": { "date-parts": [[2000]] },
+      "seeAlso": [
+        "ITEM-1",
+        "ITEM-2",
+        "ITEM-3"
+      ]
+   }
+]
+<<===== INPUT =====<<
+
+
+

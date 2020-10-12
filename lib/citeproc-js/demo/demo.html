@@ -2,38 +2,35 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="local.css" />
-    <script type="text/javascript" src="../xmldom.js"></script>
     <script type="text/javascript" src="../citeproc.js"></script>
     <script type='text/javascript' src='demo.js'></script>
   </head>
-
-  <body onload="renderBib()">
+  
+  <body>
     <h1>CSL Bibliography Samples</h1>
-
+    
     <p>
-      This page displays bibliography entries and citations rendered
-      by <span style="font-family: courier, monospace">citeproc-js</span>,
-      an implementation of the
-      <a href="http://citationstyles.org">Citation Style Language</a>.
-      For more details on the processor, see the
-      <a href="http://gsl-nagoya-u.net/http/pub/citeproc-doc.html">processor
-        manual</a>.
+      This page displays citations rendered by <span style="font-family: courier, monospace">citeproc-js</span>.
     </p>
-    <p>If parsing fails and you do not see bibliography listings below,
-      please send mail to
-      <a href="mailto:biercenator@gmail.com">biercenator@gmail.com</a>, so
-      we can adjust things to work with your browser.
-    </p>
+
+    <input type="button" onclick="renderBib()" value="Start"/>
+    
+    <hr/>
+    
+    <h2>Citations</h2>
+    
+    <div id="cite-div"></div>
 
     <hr/>
 
-    <h2>Bibliography: Chicago Manual of Style (Full Note)</h2>
-    <!--
-      The bibliography will be rendered here.  The 'data-csl' attribute
-      specifies the CSL style that will be used.
-    -->
-    <div class="bib-div" data-csl="chicago-fullnote-bibliography">
+    <div id="time-div" hidden="true">
+      <b>Time:</b> <span id="time-span"></span>
     </div>
-
+    
+    <hr/>
+    
+    <h2>Bibliography</h2>
+    <div id="bib-div"></div>
+    
   </body>
 </html>

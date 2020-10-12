@@ -1,0 +1,90 @@
+>>== MODE ==>>
+bibliography
+<<== MODE ==<<
+
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "classic": {
+            "Bankton, Institute II": "Bankton <sc>Institute</sc> II", 
+            "Blackstone, Commentaries": "Bl Comm"
+        }
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+
+>>== RESULT ==>>
+<div class="csl-bib-body">
+  <div class="csl-entry">Bl Comm</div>
+  <div class="csl-entry">Bankton <span style="font-variant:small-caps;">Institute</span> II</div>
+  <div class="csl-entry">Karphlat Zoggs Book of things</div>
+</div>
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout suffix="." delimiter="; ">
+      <group delimiter=" ">
+        <names variable="author"/>
+        <text variable="title"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <group delimiter=" ">
+        <names variable="author"/>
+        <text variable="title"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+           {
+              "family": "Blackstone"
+           }
+        ],
+        "type": "classic",
+        "id": "ITEM-1", 
+        "title": "Commentaries"
+    },
+    {
+        "author": [
+           {
+              "family": "Bankton"
+           }
+        ],
+        "type": "classic",
+        "id": "ITEM-2", 
+        "title": "Institute II"
+    },
+    {
+        "author": [
+           {
+              "family": "Zoggs",
+              "given": "Karphlat"
+           }
+        ],
+        "type": "book",
+        "id": "ITEM-3", 
+        "title": "Book of things"
+    }
+]
+<<===== INPUT =====<<

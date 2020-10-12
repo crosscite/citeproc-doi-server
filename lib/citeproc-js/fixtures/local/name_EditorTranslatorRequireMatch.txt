@@ -1,0 +1,152 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">Tiger, T. (ed.). Title. G. Gerbil (tran.)</div>
+  <div class="csl-entry">Ostrich, O. (ed. &#38; tran.). Title</div>
+  <div class="csl-entry">Cow, C. (tran.). Title</div>
+  <div class="csl-entry">Hippo, H. (ed.). Title</div>
+</div>
+<<===== RESULT =====<<
+
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }, 
+                {
+                    "id": "ITEM-2"
+                }, 
+                {
+                    "id": "ITEM-3"
+                }, 
+                {
+                    "id": "ITEM-4"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <text value="BOGUS"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <group delimiter=". ">
+        <names variable="editor translator" delimiter=", " require-match="true">
+          <name initialize-with=". " name-as-sort-order="first"/>
+          <label form="short" prefix=" (" suffix=")"/>
+          <substitute>
+            <names variable="editor"/>
+            <names variable="translator"/>
+          </substitute>
+        </names>
+        <text variable="title"/>
+        <names variable="editor">
+          <name initialize-with=". "/>
+          <label form="short" prefix=" (" suffix=")"/>
+          <substitute>
+            <names variable="translator"/>
+          </substitute>
+        </names>
+      </group>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "title": "Title",
+        "translator": [
+            {
+                "family": "Gerbil", 
+                "given": "Gary"
+            }
+        ], 
+        "editor": [
+            {
+                "family": "Tiger", 
+                "given": "Teddy" 
+            }
+        ], 
+        "id": "ITEM-1", 
+        "type": "book"
+
+    },
+    {
+        "title": "Title",
+        "translator": [
+            {
+                "family": "Ostrich", 
+                "given": "Olivia" 
+            }
+        ], 
+        "editor": [
+            {
+                "family": "Ostrich", 
+                "given": "Olivia" 
+            }
+        ], 
+        "id": "ITEM-2", 
+        "type": "book"
+
+    },
+    {
+        "title": "Title",
+        "translator": [
+            {
+                "family": "Cow", 
+                "given": "Cecil"
+            }
+        ], 
+        "id": "ITEM-3", 
+        "type": "book"
+    }, 
+    {
+        "title": "Title",
+        "editor": [
+            {
+                "family": "Hippo", 
+                "given": "Harold" 
+            }
+        ], 
+        "id": "ITEM-4", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

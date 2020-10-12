@@ -1,0 +1,158 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">[J. Smith] John Smith, Title One</div>
+  <div class="csl-entry">[R. Smith] Robert Smith, Title Two</div>
+  <div class="csl-entry">[G. Jones Two] Gary Jones, Title Three</div>
+  <div class="csl-entry">[G. Jones Four] Gary Jones, Title Four</div>
+</div>
+<<===== RESULT =====<<
+
+>>===== ABBREVIATIONS =====>>
+{
+    "default": {
+        "title": {
+            "Title Five": "Five", 
+            "Title Four": "Four", 
+            "Title One": "One", 
+            "Title Three": "Two"
+        }
+    }
+}
+<<===== ABBREVIATIONS =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }, 
+                {
+                    "id": "ITEM-2"
+                }, 
+                {
+                    "id": "ITEM-3"
+                }, 
+                {
+                    "id": "ITEM-4"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0"
+      et-al-use-first="1"
+      et-al-min="2">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <macro name="citation-macro">
+    <group delimiter=" ">
+      <choose>
+        <if disambiguate="true">
+          <names variable="author">
+            <name initialize-with=". "/>
+          </names>
+        </if>
+        <else>
+          <names variable="author">
+            <name initialize-with=". " form="short"/>
+          </names>
+        </else>
+      </choose>
+      <choose>
+        <if disambiguate="true">
+          <text variable="title" form="short"/>
+        </if>
+      </choose>
+    </group>
+  </macro>
+  <citation>
+    <layout>
+      <text macro="citation-macro" prefix="(" suffix=")"/>
+    </layout>
+  </citation>
+  <bibliography givenname-disambiguation-rule="all-names-with-initials" disambiguate-add-givenname="true">
+    <group delimiter=" ">
+      <text macro="citation-macro" prefix="[" suffix="]"/>
+      <group delimiter=", ">
+        <names variable="author"/>
+        <text variable="title"/>
+      </group>
+    </group>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Smith", 
+                "given": "John"
+            }
+        ],
+        "title": "Title One",
+        "id": "ITEM-1", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Smith", 
+                "given": "Robert" 
+            }
+        ], 
+        "title": "Title Two",
+        "id": "ITEM-2", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Jones", 
+                "given": "Gary" 
+            }
+        ], 
+        "title": "Title Three",
+        "id": "ITEM-3", 
+        "type": "book"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Jones", 
+                "given": "Gary" 
+            }
+        ], 
+        "title": "Title Four",
+        "id": "ITEM-4", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

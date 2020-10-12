@@ -1,0 +1,85 @@
+>>===== OPTIONS =====>>
+{
+    "spoof_institutional_affiliations": true
+}
+<<===== OPTIONS =====<<
+
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">Prawn, Christopher the (as primary author) -- Merwe, Wikus van der, Multi-National United</div>
+</div>
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <locale>
+    <terms>
+      <term name="and others"></term>
+    </terms>
+  </locale>
+  <citation>
+    <layout>
+      <names variable="author">
+        <name/>
+      </names>
+    </layout>
+  </citation>
+  <bibliography et-al-min="2" et-al-use-first="1">
+    <layout>
+      <group delimiter=" -- ">
+        <names variable="author" suffix=" (as primary author)">
+          <name sort-separator=", " name-as-sort-order="first" et-al-min="1"/>
+          <et-al term="and others"/>
+        </names>
+        <group delimiter=" ">
+          <names variable="author">
+            <name sort-separator=", " name-as-sort-order="all" et-al-min="0"/>
+          </names>
+        </group>
+      </group>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Merwe", 
+                "given": "Wikus", 
+                "non-dropping-particle": "van der", 
+                "static-ordering": false
+            }, 
+            {
+                "literal": "Multi-National United"
+            }, 
+            {
+                "dropping-particle": "the", 
+                "family": "Prawn", 
+                "given": "Christopher", 
+                "static-ordering": false
+            }
+        ], 
+        "id": "ITEM-1", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

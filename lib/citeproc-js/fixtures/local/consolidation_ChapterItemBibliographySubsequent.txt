@@ -1,0 +1,136 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">My Chapter One in Compendium (2000)</div>
+  <div class="csl-entry">My Chapter Two in Compendium</div>
+  <div class="csl-entry">Article Zero in Bundle of Articles (2000)</div>
+</div>
+<<===== RESULT =====<<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [["CITATION-1", 1]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [["CITATION-1", 1],["CITATION-2", 2]], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.1mlz1" track-containers="chapter">
+  <info>
+    <title>Australian Guide to Legal Citation</title>
+    <title-short>AGLC</title-short>
+    <id>http://www.zotero.org/styles/australian-guide-to-legal-citation</id>
+    <link href="http://www.zotero.org/styles/australian-guide-to-legal-citation" rel="self"/>
+    <link href="https://forums.zotero.org/discussion/4841/new-australian-legal-citation-style/?Focus=20831#Comment_20831" rel="documentation"/>
+    <author>
+      <name>Sebastian Karcher</name>
+    </author>
+    <category citation-format="note"/>
+    <category field="law"/>
+    <summary>A modification of the Bluebook legal citation style for Australian conditions.</summary>
+    <updated>2015-11-10T00:40:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <text value="BOGUS"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <choose>
+        <if container-subsequent="true">
+          <group delimiter=" ">
+            <text variable="title"/>
+            <text value="in"/>
+            <text variable="container-title"/>
+          </group>
+        </if>
+        <else>
+          <group delimiter=" ">
+            <text variable="title"/>
+            <text value="in"/>
+            <text variable="container-title"/>
+            <date variable="issued" form="text" date-parts="year" prefix="(" suffix=")"/>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "My Chapter One",
+        "container-title": "Compendium",
+        "type": "chapter",
+        "issued": { "date-parts": [[2000]]}
+    },
+    {
+        "id": "ITEM-2", 
+        "title": "My Chapter Two",
+        "container-title": "Compendium",
+        "type": "chapter",
+        "issued": { "date-parts": [[2000]]}
+    },
+    {
+        "id": "ITEM-3", 
+        "title": "Article Zero",
+        "container-title": "Bundle of Articles",
+        "type": "chapter",
+        "issued": { "date-parts": [[2000]]}
+    }
+]
+<<===== INPUT =====<<

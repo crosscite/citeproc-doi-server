@@ -1,0 +1,133 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] Section 100
+>>[1] At [999], note 1
+<<===== RESULT =====<<
+
+>>===== OPTIONZ =====>>
+{
+   "consolidate_legal_items":false,
+   "clobber_locator_if_no_statute_section":false,
+   "handle_parallel_articles": false
+}
+<<===== OPTIONZ =====<<
+
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "sec. 100"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "label": "paragraph", 
+                    "locator": "999, n. 1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+            
+        
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      demote-non-dropping-particle="display-and-sort">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="paragraph" form="static">[%s]</term>
+      <term name="ibid" form="long">at</term>
+      <term name="section" form="long">section</term>
+    </terms>
+  </locale>
+  <macro name="x-juris-locator">
+    <group delimiter=" ">
+      <choose>
+        <if locator="page"/>
+        <else>
+          <label variable="locator" form="static"/>
+        </else>
+      </choose>
+      <number variable="locator"/>
+    </group>
+  </macro>
+  <citation>
+    <layout>
+      <group delimiter=", ">
+        <group delimiter=" ">
+          <text term="ibid"/>
+          <group require="empty-label-no-decor">
+            <text macro="x-juris-locator" label-form="symbol"/>
+          </group>
+        </group>
+        <group reject="empty-label-no-decor">
+          <text macro="x-juris-locator" label-form="long" label-capitalize-if-first="true"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+	{
+		"id": "ITEM-1",
+		"type": "legislation",
+		"page": "10"
+	},
+	{
+		"id": "ITEM-2",
+		"type": "legislation"
+	}
+]
+<<===== INPUT =====<<

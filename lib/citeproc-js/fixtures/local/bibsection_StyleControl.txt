@@ -1,0 +1,88 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">Item One</div>
+  <div class="csl-entry">Item Two</div>
+  <div class="csl-entry">Item Seven</div>
+</div>
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <text value="Oops"/>
+    </layout>
+  </citation>
+  <bibliography exclude-types="chapter paper-conference" exclude-with-fields="jurisdiction translator">
+    <layout>
+      <text variable="title" />
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "Item One", 
+        "type": "book"
+    }, 
+    {
+        "id": "ITEM-2", 
+        "title": "Item Two", 
+        "type": "article-journal"
+    }, 
+    {
+        "id": "ITEM-3", 
+        "title": "Item Three", 
+        "type": "chapter"
+    }, 
+    {
+        "id": "ITEM-4", 
+        "title": "Item Four", 
+        "type": "paper-conference"
+    }, 
+    {
+        "id": "ITEM-5", 
+        "jurisdiction": "us:ca", 
+        "title": "Item Five", 
+        "type": "article-newspaper"
+    }, 
+    {
+        "id": "ITEM-6", 
+        "title": "Item Six", 
+        "translator": [
+            {
+                "family": "Tracey", 
+                "given": "Dick"
+            }
+        ], 
+        "type": "article-newspaper"
+    }, 
+    {
+        "id": "ITEM-7", 
+        "title": "Item Seven", 
+        "type": "article-newspaper"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,104 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>== ABBREVIATIONS ==>>
+{
+  "us:ca": {
+    "container-title": {
+      "Cal. 2d": "!authority>>>Cal. 2d"
+    }
+  }
+}
+<<== ABBREVIATIONS ==<<
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1"
+        }, 
+        {
+            "id": "ITEM-2"
+        }, 
+        {
+            "id": "ITEM-3"
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>== RESULT ==>>
+Parallel v. Divergent, 379 P. 2d 513, 479 Cal. 2d 613, 579 Frank Rep. 713.
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout delimiter="; " suffix=".">
+          <group delimiter=", ">
+            <group parallel-first="title" parallel-delimiter-override=", ">
+              <text variable="title"/>
+            </group>
+            <group delimiter=" ">
+              <number variable="volume"/>
+              <text variable="container-title" form="short"/>
+              <group delimiter=", ">
+                <number variable="page"/>
+                <number variable="locator"/>
+              </group>
+            </group>
+          </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+   {
+      "id": "ITEM-1",
+      "type": "legal_case",
+      "title": "Parallel v. Divergent",
+      "container-title": "P. 2d",
+      "page": "513",
+      "volume": "379",
+      "seeAlso": [
+        "ITEM-2", "ITEM-3"
+      ]
+   },
+   {
+      "id": "ITEM-2",
+      "type": "legal_case",
+      "title": "Parallel v. Divergent",
+      "container-title": "Cal. 2d",
+      "page": "613",
+      "volume": "479",
+      "seeAlso": [
+        "ITEM-1", "ITEM-3"
+      ]
+   },
+   {
+      "id": "ITEM-3",
+      "type": "legal_case",
+      "title": "Parallel v. Divergent",
+      "container-title": "Frank Rep.",
+      "page": "713",
+      "volume": "579",
+      "seeAlso": [
+        "ITEM-1", "ITEM-2"
+      ]
+   }
+]
+<<===== INPUT =====<<

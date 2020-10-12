@@ -1,0 +1,179 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== ABBREVIATIONS =====>>
+{
+    "us:oh:d11": {
+      "institution-entire": {
+         "court.appeals": "Ohio"
+      },
+      "institution-part": {
+        "court.appeals": "11th Dist."
+      }
+    }
+}
+<<===== ABBREVIATIONS =====<<
+
+>>===== DESCRIPTION =====>>
+Initial test checkin
+<<===== DESCRIPTION =====<<
+
+>>===== RESULT =====>>
+<i>Byer v. Wright</i>, 160 Ohio App.3d 472, 2005-Ohio-1797, 827 N.E.2d 835 (11th Dist.)
+<<===== RESULT =====<<
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "MSTQ7IAJ",
+      "position": 0
+    },
+    {
+      "id": "8QRFPHJ8",
+      "position": 0
+    },
+    {
+      "id": "3W3F7YNR",
+      "position": 0
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation year-suffix-delimiter=", ">
+    <layout delimiter=", ">
+      <group delimiter=" ">
+        <group delimiter=", ">
+          <group parallel-first="title">
+            <text variable="title" font-style="italic"/>
+          </group>
+          <choose>
+            <if>
+              <conditions match="all">
+                <condition match="all" variable="authority page collection-number"/>
+                <condition match="none" variable="container-title archive"/>
+              </conditions>
+              <group delimiter="-" parallel-last-to-first="issued">
+                <number variable="collection-number"/>
+                <names variable="authority">
+                  <name/>
+                  <institution form="short"/>
+                </names>
+                <number variable="page"/>
+              </group>
+            </if>
+            <else>
+              <group delimiter=" ">
+                <number variable="volume"/>
+                <text variable="container-title"/>
+                <number variable="page"/>
+              </group>
+            </else>
+          </choose>
+        </group>
+        <group delimiter=" " prefix="(" suffix=")">
+          <choose>
+            <if>
+              <conditions match="all">
+                <condition match="all" variable="authority page collection-number"/>
+                <condition match="none" variable="container-title archive"/>
+              </conditions>
+            </if>
+            <else>
+              <group parallel-last="authority">
+                <names variable="authority">
+                  <name/>
+                  <institution institution-parts="short"/>
+                </names>
+              </group>
+              <group parallel-last="issued">
+                <date variable="issued" form="text" date-parts="year"/>
+              </group>
+            </else>
+          </choose>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+  {
+    "id": "MSTQ7IAJ",
+    "type": "legal_case",
+    "title": "Byer v. Wright",
+    "container-title": "Ohio App.3d",
+    "volume": "160",
+    "authority": "court.appeals",
+    "page": "472",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "jurisdiction": "us:oh:d11",
+    "seeAlso": [
+      "3W3F7YNR",
+      "8QRFPHJ8"
+    ]
+  },
+  {
+    "id": "8QRFPHJ8",
+    "type": "legal_case",
+    "title": "Byer v. Wright",
+    "authority": "court.appeals",
+    "page": "1797",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "jurisdiction": "us:oh:d11",
+    "collection-number": "2005",
+    "seeAlso": [
+      "3W3F7YNR",
+      "MSTQ7IAJ"
+    ]
+  },
+  {
+    "id": "3W3F7YNR",
+    "type": "legal_case",
+    "title": "Byer v. Wright",
+    "container-title": "N.E.2d",
+    "volume": "827",
+    "authority": "court.appeals",
+    "page": "835",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "jurisdiction": "us:oh:d11",
+    "seeAlso": [
+      "8QRFPHJ8",
+      "MSTQ7IAJ"
+    ]
+  }
+]
+<<===== INPUT =====<<

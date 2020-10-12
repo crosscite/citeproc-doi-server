@@ -1,0 +1,142 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+H. Schreiber, M. Bleistift, A German Title, H. Herausgeber, Hrsg., Deutsches werk.
+P. Writer, J. Scriber, An English Title, K. Editor, ed., English Work.
+<<===== RESULT =====<<
+
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+                {
+                    "id": "ITEM-1"
+                }
+  ],
+  [
+                {
+                    "id": "ITEM-2"
+                }
+  ] 
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>===== CSL =====>>
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.1mlz1" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <info>
+    <title>JM Turabian 8th edition (full note, Dutch multilingual) HACKED</title>
+    <id>http://juris-m.github.io/jm-styles/jm-turabian-fullnote-bibliography-nl-multi</id>
+    <link href="http://juris-m.github.io/jm-styles/jm-turabian-fullnote-bibliography-nl-multi" rel="self"/>
+    <link href="http://www.press.uchicago.edu/books/turabian/turabian_citationguide.html" rel="documentation"/>
+    <author>
+      <name>Elena Razlogova</name>
+      <email>elena.razlogova@gmail.com</email>
+    </author>
+    <contributor>
+      <name>Sebastian Karcher</name>
+    </contributor>
+    <contributor>
+      <name>Frank Bennett</name>
+    </contributor>
+    <category citation-format="note"/>
+    <category field="history"/>
+    <summary>Turabian note style, a variant of Chicago for students</summary>
+    <updated>2012-10-25T21:15:26+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="editor">
+    <names variable="editor">
+      <name initialize-with=". "/>
+      <label form="short" prefix=", "/>
+    </names>
+  </macro>
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-names="true">
+    <layout suffix="." delimiter="; ">
+      <group delimiter=", ">
+        <choose>
+        <names variable="author">
+          <name initialize-with=". "/>
+          <label form="short" prefix=", "/>
+          <substitute>
+            <names variable="editor"/>
+          </substitute>
+        </names>
+        <text variable="title"/>
+        <choose>
+          <if locale="de">
+            <text macro="editor"/>
+          </if>
+          <else>
+            <text macro="editor"/>
+          </else>
+        </choose>
+        <text variable="container-title"/>       
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+            {
+                "family": "Schreiber", 
+                "given": "Hans"
+            },
+            {
+                "family": "Bleistift", 
+                "given": "Marc"
+            }
+        ], 
+        "editor": [
+            {
+                "family": "Herausgeber", 
+                "given": "Hubert"
+            }
+        ], 
+        "publisher-place": "Berlin",
+        "publisher": "Plopke",
+        "id": "ITEM-1", 
+        "title": "A German Title",
+        "container-title": "Deutsches werk",
+        "issued": { "date-parts": [[2002]]},
+        "type": "chapter",
+        "language": "de"
+    }, 
+    {
+        "author": [
+            {
+                "family": "Writer", 
+                "given": "Pim"
+            },
+            {
+                "family": "Scriber", 
+                "given": "Judith"
+            }
+        ], 
+        "editor": [
+            {
+                "family": "Editor", 
+                "given": "Kees"
+            }
+        ], 
+        "publisher-place": "Londen",
+        "publisher": "Slopke",
+        "id": "ITEM-2", 
+        "title": "An English Title",
+        "container-title": "English Work",
+        "issued": { "date-parts": [[2002]]},
+        "type": "chapter",
+        "language": "en"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,146 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] 2011, 123
+>>[1] (12.04.2011) 123
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "123"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "locator": "123"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ] 
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="year-date">
+    <date variable="issued">
+      <date-part name="year" form="long"/>
+    </date>
+  </macro>
+  <macro name="full-date">
+    <date variable="issued">
+      <date-part name="day" form="numeric-leading-zeros" suffix="."/>
+      <date-part name="month" form="numeric-leading-zeros" suffix="."/>
+      <date-part name="year" form="long"/>
+    </date>
+  </macro>
+  <macro name="container-date-page">
+    <group delimiter=", ">
+      <group delimiter="/" prefix="(" suffix=")">
+        <number variable="issue"/>
+        <text macro="full-date"/>
+      </group>
+      <number variable="page"/>
+    </group>
+  </macro>
+  <citation>
+    <layout>
+      <group delimiter=" ">
+        <group delimiter=", ">
+          <choose>
+            <if type="book">
+              <text macro="year-date"/>
+            </if>
+            <else>
+              <text macro="container-date-page"/>
+            </else>
+          </choose>
+          <group require="comma-safe-numbers-only">
+            <number variable="locator"/>
+          </group>
+        </group>
+        <group reject="comma-safe-numbers-only">
+          <number variable="locator"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "issued": {
+          "date-parts": [
+            [
+              2011,
+              4,
+              12
+            ]
+          ]
+        },
+        "type": "book"
+    },
+    {
+        "id": "ITEM-2", 
+        "issued": {
+          "date-parts": [
+            [
+              2011,
+              4,
+              12
+            ]
+          ]
+        },
+        "type": "article-newspaper"
+    }
+]
+<<===== INPUT =====<<

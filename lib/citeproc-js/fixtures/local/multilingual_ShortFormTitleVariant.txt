@@ -1,0 +1,226 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] Transliterated title with good short-title variant: subtitle [Translation of good title]
+..[1] Transliterated title with good short-title variant
+..[2] Transliterated title without short-title variant: subtitle [Translation of bad title]
+..[3] Transliterated title without short-title variant: subtitle
+..[4] Original title with no variant of its own
+>>[5] Original title set on title-short
+<<===== RESULT =====<<
+
+>>===== LANGPARAMS =====>>
+{
+    "institutions": [
+        "orig"
+    ],
+    "persons": [
+        "orig"
+    ],
+    "titles": [
+        "translit",
+        "translat"
+    ],
+    "journals": [
+        "orig"
+    ],
+    "places": [
+        "orig"
+    ],
+    "publishers": [
+        "orig"
+    ]
+}
+<<===== LANGPARAMS =====<<
+
+>>===== MULTIAFFIX =====>>
+[
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null," [","]",
+  null,null," [","]",null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null
+]
+<<===== MULTIAFFIX =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [["CITATION-1", 1]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [["CITATION-1", 1],["CITATION-2", 2]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-4", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 4
+            }
+        }, 
+        [["CITATION-1", 1],["CITATION-2", 2],["CITATION-3", 3]],
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-5", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 5
+            }
+        }, 
+        [["CITATION-1", 1],["CITATION-2", 2],["CITATION-3", 3],["CITATION-4", 4]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-6", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 6
+            }
+        }, 
+        [["CITATION-1", 1],["CITATION-2", 2],["CITATION-3", 3],["CITATION-4", 4],["CITATION-5", 5]],
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.1mlz1" class="note" default-locale="ja-x-translat-en-x-translit-alalc97">
+  <info>
+    <title>United States</title>
+    <id>http://juris-m.github.io/modules/juris-us</id>
+    <link href="http://juris-m.github.io/modules/juris-us" rel="self"/>
+    <link href="http://juris-m.github.io" rel="documentation"/>
+    <author>
+      <name>Frank Bennett</name>
+      <email>bennett@law.nagoya-u.ac.jp</email>
+    </author>
+    <category citation-format="note"/>
+    <category field="law"/>
+    <summary>Juris-M style module for the United States</summary>
+    <updated>2013-01-26T22:06:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <choose>
+        <if position="subsequent">
+          <text variable="title" form="short"/>
+        </if>
+        <else>
+          <text variable="title"/>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "type": "book",
+        "multi": {
+            "_keys": {
+                "title": {
+                    "alalc97": "Transliterated title with good short-title variant: subtitle",
+                    "en": "Translation of good title"
+                },
+                "title-short": {
+                    "alalc97": "Transliterated title with good short-title variant",
+                    "en": "TRANSLATION OF SHORT TITLE SHOULD NOT BE PRINTED"
+                }
+            }
+        },
+        "id": "ITEM-1",
+        "title": "ORIGINAL SHOULD NOT BE PRINTED: EVER",
+        "title-short": "ORIGINAL SHOULD NOT BE PRINTED"
+    },
+    {
+        "type": "book",
+        "multi": {
+            "_keys": {
+                "title": {
+                    "alalc97": "Transliterated title without short-title variant: subtitle",
+                    "en": "Translation of bad title"
+                }
+            }
+        },
+        "id": "ITEM-2",
+        "title": "ORIGINAL SHOULD NOT BE PRINTED: EVER",
+        "title-short": "ORIGINAL SHOULD NOT BE PRINTED"
+    },
+    {
+        "type": "book",
+        "multi": {
+            "_keys": {}
+        },
+        "id": "ITEM-3",
+        "title": "Original title with no variant of its own",
+        "title-short": "Original title set on title-short"
+    }
+]
+<<===== INPUT =====<<

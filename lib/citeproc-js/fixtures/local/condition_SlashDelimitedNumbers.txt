@@ -1,0 +1,74 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== RESULT =====>>
+Is numeric: no. 123/456/789
+<<===== RESULT =====<<
+
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1"
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <locale>
+    <terms>
+      <term name="number">
+        <single>number</single>
+        <multiple>numbers</multiple>
+      </term>
+      <term name="number" form="short">
+        <single>no.</single>
+        <multiple>nos.</multiple>
+      </term>
+    </terms>
+  </locale>
+  <citation>
+    <layout>
+      <group delimiter=" ">
+        <choose>
+          <if is-numeric="number">
+            <text value="Is numeric:"/>
+            <label variable="number" form="short"/>
+            <number variable="number"/>
+          </if>
+          <else>
+            <text value="Is NOT numeric:"/>
+            <label variable="number" form="short"/>
+            <number variable="number"/>
+          </else>
+        </choose>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "number": "123/456/789",
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

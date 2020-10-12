@@ -1,0 +1,72 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+The "classic" abbreviation is applied to items of the "classic" type
+based on the author and title of the item, separated by a comma. The
+rendered form in the CSL layout is used as a default, but is not
+relevant to the match.
+
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "classic": {
+            "Bankton, Institute II": "Bankton <sc>Institute</sc> II", 
+            "Blackstone, Commentaries": "Bl Comm"
+        }
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+
+>>== RESULT ==>>
+Bl Comm; Bankton <span style="font-variant:small-caps;">Institute</span> II.
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout suffix="." delimiter="; ">
+      <group delimiter=" ">
+        <names variable="author"/>
+        <text variable="title"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "author": [
+           {
+              "family": "Blackstone"
+           }
+        ],
+        "type": "classic",
+        "id": "ITEM-1", 
+        "title": "Commentaries"
+    },
+    {
+        "author": [
+           {
+              "family": "Bankton"
+           }
+        ],
+        "type": "classic",
+        "id": "ITEM-2", 
+        "title": "Institute II"
+    }
+]
+<<===== INPUT =====<<

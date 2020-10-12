@@ -1,0 +1,89 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== OPTIONS =====>>
+{
+  "main_title_from_short_title": true,
+  "uppercase_subtitles": true
+}
+<<===== OPTIONS =====<<
+
+
+>>===== LANGPARAMS =====>>
+{
+    "persons":["translat","orig"],
+    "institutions":["translat","orig"],
+    "titles":["translit","orig"],
+    "journals":["translit","orig"],
+    "publishers":["translat"],
+    "places":["translat"]
+}
+<<===== LANGPARAMS =====<<
+
+
+>>===== MULTIAFFIX =====>>
+[
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null," [","]",null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null
+]
+<<===== MULTIAFFIX =====<<
+
+
+>>===== RESULT =====>>
+<i>Ein wichtiges Buch</i>: <i>Mit einem interessanten Untertitel</i> vs. <i>Ein wichtiges Buch: Mit einem interessanten Untertitel</i>
+<<===== RESULT =====<<
+
+
+/*
+*/
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+                {
+                    "id": "ITEM-1"
+                }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0"
+      default-locale="en-x-translit-ja">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter=" vs. ">
+        <group delimiter=": ">
+            <text variable="title-main" text-case="title" font-style="italic"/>
+            <text variable="title-sub" text-case="title" font-style="italic"/>
+        </group>
+        <text variable="title" text-case="title" font-style="italic"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "article-journal",
+        "title": "Ein wichtiges Buch: Mit einem interessanten Untertitel",
+        "language": "de"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,191 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== RESULT =====>>
+IA AND IB EN
+İC AND ID TR
+İC AND ID TR
+IA AND IB EN [İC AND ID TR]
+<<===== RESULT =====<<
+
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-1"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-2"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-3"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-4"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>===== LANGPARAMS =====>>
+{
+    "institutions": [
+        "translit"
+    ],
+    "persons": [
+        "translit"
+    ],
+    "places": [
+        "translat"
+    ],
+    "publishers": [
+        "translat"
+    ],
+    "titles": [
+        "orig",
+        "translat"
+    ],
+    "langs": {
+      "translat": ["tr"]
+    }
+}
+<<===== LANGPARAMS =====<<
+
+
+>>===== MULTIAFFIX =====>>
+[
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    " [", 
+    "]", 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null
+]
+<<===== MULTIAFFIX =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      default-locale="en">
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <text variable="title" text-case="uppercase"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1",
+        "title": "ia and ıb EN",
+        "type": "book",
+        "multi": {"_keys":{}}
+    },
+    {
+        "id": "ITEM-2",
+        "title": "ic and ıd TR",
+        "type": "book",
+        "language": "tr",
+        "multi": {"_keys":{}}
+    },
+    {
+        "id": "ITEM-3",
+        "title": "ic and ıd TR",
+        "type": "book",
+        "multi": {
+           "main": {
+             "title": "tr"
+           },
+           "_keys": {
+              "title": {
+                 "_keys":{}
+              }
+           }
+        }
+    },
+    {
+        "id": "ITEM-4",
+        "title": "ia and ıb EN",
+        "type": "book",
+        "multi": {
+            "main": {
+              "title": "en"
+            },
+            "_keys": {
+               "title": {
+                "tr": "ic and ıd TR"
+              }
+            }
+        }
+    }
+]
+<<===== INPUT =====<<
+
+
+>>===== VERSION =====>>
+1.0
+<<===== VERSION =====<<
+
+

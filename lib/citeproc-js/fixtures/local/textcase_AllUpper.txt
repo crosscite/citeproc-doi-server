@@ -1,0 +1,213 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+>>===== OPTIONS =====>>
+{
+  "main_title_from_short_title": true,
+  "uppercase_subtitles": true
+}
+<<===== OPTIONS =====<<
+
+
+>>===== LANGPARAMS =====>>
+{
+    "persons":["translat","orig"],
+    "institutions":["translat","orig"],
+    "titles":["translit","orig"],
+    "journals":["translit","orig"],
+    "publishers":["translat"],
+    "places":["translat"]
+}
+<<===== LANGPARAMS =====<<
+
+
+>>===== MULTIAFFIX =====>>
+[
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null," [","]",null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null,
+  null,null,null,null,null,null,null,null
+]
+<<===== MULTIAFFIX =====<<
+
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">my title: my lowercase subtitle</div>
+  <div class="csl-entry">MY TITLE: MY UPPERCASE SUBTITLE</div>
+  <div class="csl-entry">My title: my capitalize-first subtitle</div>
+  <div class="csl-entry">My Title: My Capitalize-All Subtitle</div>
+  <div class="csl-entry">Taitoru: Sabu-taitoru [My title: My sentence subtitle]</div>
+  <div class="csl-entry">Taitoru: sabu-taitoru [My title: My sentence subtitle]</div>
+  <div class="csl-entry">My Title: My Title Subtitle</div>
+  <div class="csl-entry">My title: My vanilla subtitle</div>
+</div>
+<<===== RESULT =====<<
+
+
+/*
+*/
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }, 
+                {
+                    "id": "ITEM-2"
+                }, 
+                {
+                    "id": "ITEM-3"
+                }, 
+                {
+                    "id": "ITEM-4"
+                }, 
+                {
+                    "id": "ITEM-5"
+                }, 
+                {
+                    "id": "ITEM-6"
+                }, 
+                {
+                    "id": "ITEM-7"
+                }, 
+                {
+                    "id": "ITEM-8"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+*/
+*/
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0"
+      default-locale="en-x-translit-ja">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+      <text value="dummy"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <choose>
+        <if type="article-journal">
+          <text variable="title" text-case="lowercase"/>
+        </if>
+        <else-if type="article-magazine">
+          <text variable="title" text-case="uppercase"/>
+        </else-if>
+        <else-if type="article-newspaper">
+          <text variable="title" text-case="capitalize-first"/>
+        </else-if>
+        <else-if type="bill">
+          <text variable="title" text-case="capitalize-all"/>
+        </else-if>
+        <else-if type="book">
+          <text variable="title" text-case="sentence"/>
+        </else-if>
+        <else-if type="broadcast">
+          <text variable="title" text-case="title"/>
+        </else-if>
+        <else-if type="chapter">
+          <text variable="title"/>
+        </else-if>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "article-journal",
+        "title": "My title: my lowercase subtitle",
+        "title-short": "My title"
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "article-magazine",
+        "title": "My title: my uppercase subtitle",
+        "title-short": "My title"
+    },
+    {
+        "id": "ITEM-3", 
+        "type": "article-newspaper",
+        "title": "My title: my capitalize-first subtitle",
+        "title-short": "My title"
+    },
+    {
+        "id": "ITEM-4", 
+        "type": "bill",
+        "title": "My title: my capitalize-all subtitle",
+        "title-short": "My title"
+    },
+    {
+        "id": "ITEM-5", 
+        "type": "book",
+        "title": "My title: my sentence subtitle",
+        "title-short": "My title",
+        "multi": {
+          "_keys": {
+            "title": {
+              "ja": "Taitoru: sabu-taitoru"
+            },
+            "title-short": {
+              "ja": "Taitoru"
+            }
+          }
+        }
+    },
+    {
+        "id": "ITEM-6", 
+        "type": "book",
+        "title": "My title: my sentence subtitle",
+        "title-short": "My title",
+        "multi": {
+          "_keys": {
+            "title": {
+              "ja": "Taitoru: sabu-taitoru"
+            }
+          }
+        }
+    },
+    {
+        "id": "ITEM-7", 
+        "type": "broadcast",
+        "title": "My title: my title subtitle",
+        "title-short": "My title"
+    },
+    {
+        "id": "ITEM-8", 
+        "type": "chapter",
+        "title": "My title: my vanilla subtitle",
+        "title-short": "My title"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,207 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] 100, 123
+..[1] 200 (123)
+..[2] (300) 123
+>>[3] 400<sup>5</sup> 123
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "123"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2", 
+                    "locator": "123"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3", 
+                    "locator": "123"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-4", 
+            "citationItems": [
+                {
+                    "id": "ITEM-4", 
+                    "locator": "123"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 4
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ], 
+            [
+                "CITATION-3", 
+                3
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <choose>
+        <if type="book">
+          <group delimiter=", ">
+            <group delimiter=" ">
+              <text variable="title"/>
+              <group reject="comma-safe">
+                <number variable="locator"/>
+              </group>
+            </group>
+            <number variable="locator"/>
+          </group>
+        </if>
+        <else-if type="chapter">
+          <group delimiter=", ">
+            <group delimiter=" ">
+              <text variable="title"/>
+              <group reject="comma-safe">
+                <number variable="locator" prefix="(" suffix=")"/>
+              </group>
+            </group>
+            <number variable="locator" prefix="(" suffix=")"/>
+          </group>
+        </else-if>
+        <else-if type="article-journal">
+          <group delimiter=", ">
+            <group delimiter=" ">
+              <text variable="title" prefix="(" suffix=")"/>
+              <group reject="comma-safe">
+                <number variable="locator"/>
+              </group>
+            </group>
+            <number variable="locator"/>
+          </group>
+        </else-if>
+        <else-if type="article-newspaper">
+          <group delimiter=", ">
+            <group delimiter=" ">
+              <group>
+                <text variable="title"/>
+                <number variable="edition" vertical-align="sup"/>
+              </group>
+              <group reject="comma-safe">
+                <number variable="locator"/>
+              </group>
+            </group>
+            <number variable="locator"/>
+          </group>
+        </else-if>
+      </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "100",
+        "type": "book"
+    },
+    {
+        "id": "ITEM-2", 
+        "title": "200",
+        "type": "chapter"
+    },
+    {
+        "id": "ITEM-3", 
+        "title": "300",
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-4", 
+        "title": "400",
+        "edition": "5",
+        "type": "article-newspaper"
+    }
+]
+<<===== INPUT =====<<

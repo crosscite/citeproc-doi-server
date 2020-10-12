@@ -1,15 +1,18 @@
-[submodule "tests/fixtures/std"]
-	path = tests/fixtures/std
+[submodule "fixtures/std"]
+	path = fixtures/std
 	url = https://github.com/citation-style-language/test-suite
 [submodule "locale"]
 	path = locale
 	url = https://github.com/citation-style-language/locales.git
-[submodule "csl-schemata/csl"]
-	path = csl-schemata/csl
-	url = https://github.com/citation-style-language/schema.git
-[submodule "csl-schemata/csl-m"]
-	path = csl-schemata/csl-m
+[submodule "csl-schemata"]
+	path = csl-schemata
 	url = https://github.com/Juris-M/schema.git
 [submodule "docs"]
 	path = docs
 	url = https://github.com/Juris-M/citeproc-js-docs.git
+[submodule "juris-modules"]
+	path = juris-modules
+	url = https://github.com/Juris-M/style-modules
+[submodule "fixtures/styles"]
+	path = fixtures/styles
+	url = https://github.com/Juris-M/jm-style-tests.git

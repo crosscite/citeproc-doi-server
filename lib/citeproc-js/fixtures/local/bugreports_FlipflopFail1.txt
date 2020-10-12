@@ -1,0 +1,82 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+
+Then: It's wrong, but this is what you get with parsing U+2018 backticks
+      as nested quotes. Glottal stop hints should be entered as U+02BB.
+
+Now: Parsing works.
+
+2017-02-04
+
+Now: Unfortunately, the quote before the comma in T't’ must be entered
+     as a curly single quote U+2019. There are limits to what we can intuit.
+
+2017-08-23
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">Hay Dprots‘e Ev Ts‘arizmi K‘aghak‘akanut‘yune (1890-Akan T’t’, Pastat’ght’eri Hraparakum) (Armenian School and the Policy of Tsarism, 1980’s, Publication of Documents)</div>
+</div>
+<<===== RESULT =====<<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": 13831
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded" default-locale="ko-x-translat-en">
+<!-- This style is made from JLME -->
+<info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+<citation>
+  <layout delimiter="; ">
+   <text value="bogus"/>
+  </layout>
+</citation>  
+<bibliography>
+  <layout>
+   <text variable="title"/>
+  </layout>
+</bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+{
+  "id": 13831,
+  "type": "book",
+  "title": "Hay Dprots‘e Ev Ts‘arizmi K‘aghak‘akanut‘yune (1890-Akan T't’, Pastat'ght'eri Hraparakum) (Armenian School and the Policy of Tsarism, 1980's, Publication of Documents)",
+  "note": "00000",
+  "language": "en"
+}
+]
+<<===== INPUT =====<<

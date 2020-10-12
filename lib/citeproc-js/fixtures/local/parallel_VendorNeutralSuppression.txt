@@ -1,0 +1,186 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>== ABBREVIATIONS ==>>
+{
+  "us:oh": {
+    "institution-entire": {
+      "supreme.court": "Ohio"
+    }
+  }
+}
+<<== ABBREVIATIONS ==<<
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1"
+        }, 
+        {
+            "id": "ITEM-2"
+        }, 
+        {
+            "id": "ITEM-3",
+            "locator": "para. 15"
+        },
+        {
+            "id": "ITEM-4"            
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>== RESULT ==>>
+<i>Bonacorsi v. Wheeling &#38; Lake Erie Ry. Co.</i>, 95 Ohio St.3d 314, 2002-Ohio-2220, 767 N.E.2d 707, ¶ 15, <i>Unrelated Cite v. Algorithm</i>, 111 N.E.2d 222 (2002)
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="paragraph">paragraph</term>
+      <term name="paragraph" form="symbol">¶</term>
+    </terms>
+  </locale>
+  <citation disambiguate-add-givenname="true" et-al-min="3" et-al-use-first="1" near-note-distance="5">
+    <layout delimiter=", ">
+      <group delimiter=", ">
+        <group parallel-first="title">
+          <text variable="title" font-style="italic"/>
+        </group>
+        <choose>
+          <if>
+            <conditions match="all">
+              <condition match="all" variable="title authority page collection-number"/>
+              <condition match="none" variable="container-title archive"/>
+            </conditions>
+            <group delimiter="-" parallel-last-to-first="authority issued">
+              <number variable="collection-number"/>
+              <names variable="authority">
+                <name/>
+                <institution form="short"/>
+              </names>
+              <number variable="page"/>
+            </group>
+          </if>
+          <else>
+            <group delimiter=" ">
+              <number variable="volume"/>
+              <text variable="container-title"/>
+              <number variable="page"/>
+              <group delimiter=" " prefix="(" suffix=")" parallel-last="issued">
+                <date variable="issued" form="text" date-parts="year"/>
+              </group>
+            </group>
+          </else>
+        </choose>
+        <group delimiter=" ">
+          <label variable="locator" form="symbol"/>
+          <number variable="locator"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+  {
+      "id": "ITEM-1",
+      "type": "legal_case",
+      "title": "Bonacorsi v. Wheeling & Lake Erie Ry. Co.",
+      "container-title": "Ohio St.3d",
+      "authority": "supreme.court",
+      "page": "314",
+      "volume": "95",
+      "jurisdiction": "us:oh",
+      "issued": {
+         "date-parts": [
+            [
+               2002
+            ]
+         ]
+      },
+      "seeAlso": [
+        "ITEM-1",
+        "ITEM-2",
+        "ITEM-3"
+      ]
+   },
+   {
+      "id": "ITEM-2",
+      "type": "legal_case",
+      "title": "Bonacorsi v. Wheeling & Lake Erie Ry. Co.",
+      "authority": "supreme.court",
+      "page": "2220",
+      "collection-number": "2002",
+      "jurisdiction": "us:oh",
+      "issued": {
+         "date-parts": [
+            [
+               2002
+            ]
+         ]
+      },
+      "seeAlso": [
+        "ITEM-1",
+        "ITEM-2",
+        "ITEM-3"
+      ]
+   },
+   {
+      "id": "ITEM-3",
+      "type": "legal_case",
+      "title": "Bonacorsi v. Wheeling & Lake Erie Ry. Co.",
+      "container-title": "N.E.2d",
+      "page": "707",
+      "volume": "767",
+      "jurisdiction": "us:oh",
+      "issued": {
+         "date-parts": [
+            [
+               2002
+            ]
+         ]
+      },
+      "seeAlso": [
+        "ITEM-1",
+        "ITEM-2",
+        "ITEM-3"
+      ]
+   },
+   {
+     "id": "ITEM-4",
+     "type": "legal_case",
+     "title": "Unrelated Cite v. Algorithm",
+     "container-title": "N.E.2d",
+     "page": "222",
+     "volume": "111",
+     "jurisdiction": "us:oh",
+      "issued": {
+         "date-parts": [
+            [
+               2002
+            ]
+         ]
+      }
+   }
+]
+<<===== INPUT =====<<
+
+
+

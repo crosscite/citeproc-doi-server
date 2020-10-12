@@ -1,0 +1,367 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+>>===== RESULT =====>>
+Title input with immediate colon : Should normalize and start with uppercase
+Title input with immediate double-colon : Should normalize and start with uppercase
+Title input with space-colon : Should normalize and start with uppercase
+Title input with no-break-space-colon : Should normalize and start with uppercase
+Title input with narrow-no-break-space-colon : Should start with uppercase
+Title input with space-double-colon : Should normalize and start with uppercase
+Title input with immediate colon and no trailing space:should render vebatim
+Title input with immediate question mark ? Should start with uppercase
+Title input with space-question mark ? Should normalize and start with uppercase
+Title input with no-break-space-question mark ? Should normalize and start with uppercase
+Title input with narrow-no-break-space-question mark ? Should start with uppercase
+Title input with immediate question mark and no trailing space?should render vebatim
+Title input with immediate exclamation point ! Should start with uppercase
+Title input with space-exclamation point ! Should normalize and start with uppercase
+Title input with no-break-space-exclamation point ! Should normalize and start with uppercase
+Title input with narrow-no-break-space-exclamation point ! Should start with uppercase
+Title input with immediate exclamation point and no trailing space!should render vebatim
+Title input with immediate period. Should start with uppercase
+Title input with space-period. Should normalize and start with uppercase
+Title input with immediate period and no trailing space.should render vebatim
+Title input with em dash—Should start with uppercase
+Title input with space-em-dash-space—Should normalize and start with uppercase
+Title input with space-hyphen-space—Should normalize and start with uppercase
+Title input with space-double-hyphen-space—Should normalize and start with uppercase
+Title input with space-triple-hyphen-space—Should normalize and start with uppercase
+Title input with double-hyphen—Should normalize and start with uppercase
+Title input with triple-hyphen—Should normalize and start with uppercase
+Title input ending in single letter A : Should start with uppercase if title-short matches main title
+Comment on “Pigs can fly : A meta-analysis”—Authors’ response
+<<===== RESULT =====<<
+
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-1"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-2"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-3"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-4"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-5"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-6"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-7"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-8"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-9"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-10"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-11"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-12"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-13"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-14"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-15"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-16"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-17"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-18"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-19"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-20"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-21"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-22"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-23"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-24"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-25"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-26"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-27"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-28"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-29"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+
+>>===== OPTIONS =====>>
+{
+    "uppercase_subtitles": true,
+    "split_container_title": true
+}
+<<===== OPTIONS =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      default-locale="fr"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+      <text variable="container-title"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "container-title": "Title input with immediate colon: should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-2", 
+        "container-title": "Title input with immediate double-colon:: should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-3", 
+        "container-title": "Title input with space-colon : should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-4", 
+        "container-title": "Title input with no-break-space-colon : should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-5", 
+        "container-title": "Title input with narrow-no-break-space-colon : should start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-6", 
+        "container-title": "Title input with space-double-colon :: should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-7", 
+        "container-title": "Title input with immediate colon and no trailing space:should render vebatim", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-8", 
+        "container-title": "Title input with immediate question mark? should start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-9", 
+        "container-title": "Title input with space-question mark ? should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-10", 
+        "container-title": "Title input with no-break-space-question mark ? should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-11", 
+        "container-title": "Title input with narrow-no-break-space-question mark ? should start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-12", 
+        "container-title": "Title input with immediate question mark and no trailing space?should render vebatim", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-13", 
+        "container-title": "Title input with immediate exclamation point! should start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-14", 
+        "container-title": "Title input with space-exclamation point ! should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-15", 
+        "container-title": "Title input with no-break-space-exclamation point ! should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-16", 
+        "container-title": "Title input with narrow-no-break-space-exclamation point ! should start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-17", 
+        "container-title": "Title input with immediate exclamation point and no trailing space!should render vebatim", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-18", 
+        "container-title": "Title input with immediate period. should start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-19", 
+        "container-title": "Title input with space-period . should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-20", 
+        "container-title": "Title input with immediate period and no trailing space.should render vebatim", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-21", 
+        "container-title": "Title input with em dash—should start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-22", 
+        "container-title": "Title input with space-em-dash-space — should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-23", 
+        "container-title": "Title input with space-hyphen-space - should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-24", 
+        "container-title": "Title input with space-double-hyphen-space -- should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-25", 
+        "container-title": "Title input with space-triple-hyphen-space --- should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-26", 
+        "container-title": "Title input with double-hyphen--should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-27", 
+        "container-title": "Title input with triple-hyphen---should normalize and start with uppercase", 
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-28", 
+        "container-title": "Title input ending in single letter A: should start with uppercase if title-short matches main title",
+        "container-title-short": "Title input ending in single letter A",
+        "type": "article-journal"
+    },
+    {
+        "id": "ITEM-29", 
+        "container-title": "Comment on “Pigs can fly :: a meta-analysis” - authors’ response", 
+        "type": "article-journal"
+    }
+]
+<<===== INPUT =====<<

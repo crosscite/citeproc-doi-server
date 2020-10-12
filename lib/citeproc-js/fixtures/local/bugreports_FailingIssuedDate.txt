@@ -1,0 +1,164 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+Note that this test now requires a locale hack to
+suppress application of the AD label to small-value dates.
+
+2017-02-06
+
+>>===== RESULT =====>>
+Decision of the 最高裁判所, 平成 20 (受) 1207, February 17, 2009.
+<<===== RESULT =====<<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" demote-non-dropping-particle="sort-only" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="en">
+    <terms>
+      <term name="rule" form="long">rule</term>
+      <term name="rule" form="short">r.</term>
+      <term name="presented at">presented at</term>
+      <term name="article">article</term>
+      <term name="director">director</term>
+      <term form="verb" name="director">directed by</term>
+      <term form="verb-short" name="director">dir.</term>
+      <term form="short" name="director">dir.</term>
+      <term form="long" name="article">
+        <single>article</single>
+        <multiple>articles</multiple>
+      </term>
+      <term form="short" name="article">
+        <single>art.</single>
+        <multiple>arts.</multiple>
+      </term>
+      <term form="long" name="Section">
+        <single>section</single>
+        <multiple>sections</multiple>
+      </term>
+      <term form="short" name="Section">
+        <single>sec.</single>
+        <multiple>secs.</multiple>
+      </term>
+      <term form="long" name="Chapter">
+        <single>chapter</single>
+        <multiple>chapters</multiple>
+      </term>
+      <term form="short" name="Chapter">
+        <single>ch.</single>
+        <multiple>chs.</multiple>
+      </term>
+      <term form="symbol" name="Chapter">
+        <single>c.</single>
+        <multiple>cc.</multiple>
+      </term>
+      <term name="title">title</term>
+      <term form="short" name="title">tit.</term>
+      <term form="short" name="section">sec.</term>
+      <term form="symbol" name="section">
+        <single>&#167;</single>
+        <multiple>&#167;&#167;</multiple>
+      </term>
+      <term form="verb-short" name="editortranslator">
+        <single>trans. and ed.</single>
+        <multiple>trans. and ed.</multiple>
+      </term>
+
+      <term name="director" form="verb-short">dir.</term>
+      <term name="editor" form="verb-short">ed.</term>
+      <term name="editorial-director" form="verb-short">ed.</term>
+      <term name="illustrator" form="verb-short">illus.</term>
+      <term name="translator" form="verb-short">trans.</term>
+      <term name="editortranslator" form="verb-short">ed. &amp; trans.</term>
+
+      <term form="verb" name="editortranslator">
+        <single> Translated and edited by</single>
+        <multiple> Translated and edited by</multiple>
+      </term>
+      <term name="ad"></term>
+    </terms>
+  </locale>
+  <citation disambiguate-add-names="true" et-al-min="4" et-al-use-first="1">
+    <layout delimiter="; " suffix=".">
+        <group delimiter=", ">
+          <group delimiter=" ">
+            <text value="Decision of the"/>
+            <names variable="authority">
+              <name/>
+              <institution/>
+            </names>
+          </group>
+          <group delimiter=" ">
+            <text variable="genre" form="short"/>
+            <date variable="submitted" form="text" date-parts="year"/>
+            <number variable="call-number" prefix="(" suffix=")"/>
+            <number variable="number"/>
+          </group>
+          <date variable="issued" form="text" date-parts="year-month-day"/>
+        </group>
+    </layout>
+  </citation>
+</style>
+
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "URL": "http://www.tomeika.jur.kyushu-u.ac.jp/result.php?s=c0460d9136e2e953ba98b104b65333ca&c=0d77e8610fd7be75d2095e03af8f4752", 
+        "abstract": "Claim for declaration of shareholder’s rights, etc., claim for entry of a name change in the shareholders’ register, etc., claim for declaration of shareholding, etc.", 
+        "accessed": {
+            "date-parts": [], 
+            "raw": "2013-02-16 10:10:56"
+        }, 
+        "authority": [
+            {
+                "family": "最高裁判所", 
+                "given": "", 
+                "isInstitution": 1, 
+                "multi": {
+                    "_key": {
+                        "en": {
+                            "family": "Supreme Court", 
+                            "given": "", 
+                            "isInstitution": 1
+                        }
+                    }
+                }
+            }
+        ], 
+        "call-number": "受", 
+        "genre": "平成", 
+        "id": "ITEM-1", 
+        "issued": {
+            "date-parts": [], 
+            "raw": "2009-02-17"
+        }, 
+        "jurisdiction": "jp", 
+        "language": "ja", 
+        "multi": {
+            "_keys": {
+                "authority": {
+                    "en": "Supreme Court"
+                }
+            }, 
+            "main": {}
+        }, 
+        "number": "1207", 
+        "submitted": {
+            "raw": "20"
+        }, 
+        "system_id": "1153698_G8ZZAWS8", 
+        "type": "legal_case"
+    }
+]
+<<===== INPUT =====<<

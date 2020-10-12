@@ -1,0 +1,269 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== RESULT =====>>
+>>[0] Convention on the Elimination of All Forms of Discrimination against Women, 1 March 1980, 1 UNTS 13, 1111 Canadian TS 2222.
+<<===== RESULT =====<<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "gfmrj5f3s", 
+            "citationItems": [
+                {
+                    "id": 21, 
+                    "label": "page"
+                }, 
+                {
+                    "id": 27, 
+                    "label": "page"
+                }
+            ], 
+            "properties": {
+                "index": 0, 
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+>>===== CSL =====>>
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" default-locale="en" version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="en">
+    <style-options punctuation-in-quote="false"/>
+    <date form="text">
+      <date-part name="day" suffix=" "/>
+      <date-part name="month" suffix=" "/>
+      <date-part name="year"/>
+    </date>
+    <terms>
+      <term form="long" name="article">at art.</term>
+      <term form="short" name="article">art.</term>
+      <term name="director">director</term>
+      <term form="short" name="director">dir</term>
+      <term name="unpublished">unpublished</term>
+      <term form="long" name="Section">
+        <single>section</single>
+        <multiple>sections</multiple>
+      </term>
+      <term form="short" name="Section">
+        <single>sec.</single>
+        <multiple>secs.</multiple>
+      </term>
+      <term form="long" name="Chapter">
+        <single>chapter</single>
+        <multiple>chapters</multiple>
+      </term>
+      <term form="short" name="Chapter">
+        <single>ch.</single>
+        <multiple>chs.</multiple>
+      </term>
+      <term form="symbol" name="Chapter">
+        <single>c.</single>
+        <multiple>cc.</multiple>
+      </term>
+      <term name="title">title</term>
+      <term form="short" name="title">tit.</term>
+      <term form="long" name="chapter">at chap</term>
+      <term form="long" name="column">at col</term>
+      <term form="long" name="figure">at fig</term>
+      <term form="short" name="folio">at f.</term>
+      <term form="long" name="issue">at no</term>
+      <term form="long" name="line">
+        <single>at l</single>
+        <multiple>at ll</multiple>
+      </term>
+      <term form="long" name="note">
+        <single>at n</single>
+        <multiple>at nn</multiple>
+      </term>
+      <term form="long" name="opus">op</term>
+      <term form="long" name="page">at</term>
+      <term form="long" name="paragraph">at para</term>
+      <term form="long" name="part">at pt</term>
+      <term form="long" name="section">at sec</term>
+      <term form="short" name="section">sec</term>
+      <term form="long" name="sub verbo">
+        <single>s&#160;v</single>
+        <multiple>s&#160;vv</multiple>
+      </term>
+
+      <term name="director" form="verb-short">dir</term>
+      <term name="editor" form="verb-short">ed</term>
+      <term name="editorial-director" form="verb-short">ed</term>
+      <term name="illustrator" form="verb-short">illus</term>
+      <term name="translator" form="verb-short">trans</term>
+      <term name="editortranslator" form="verb-short">ed &amp; trans</term>
+
+      <term form="long" name="verse">
+        <single>at v</single>
+        <multiple>at vv</multiple>
+      </term>
+      <term form="long" name="volume">
+        <single>at vol</single>
+        <multiple>at vols</multiple>
+      </term>
+      <term name="et-al">et al</term>
+      <term name="ordinal-01">st</term>
+      <term name="ordinal-02">d</term>
+      <term name="ordinal-03">d</term>
+      <term name="ordinal-04">th</term>
+    </terms>
+  </locale>
+  <macro name="mcgill-treaty-first">
+    <group delimiter=", ">
+      <group parallel-first="title" parallel-delimiter-override=", ">
+        <text variable="title"/>
+      </group>
+      <group parallel-first="author" parallel-delimiter-override=", ">
+        <names variable="author">
+          <name/>
+          <institution and="text" delimiter=", " institution-parts="short"/>
+        </names>
+      </group>
+      <group delimiter=" ">
+        <group delimiter=", ">
+          <group delimiter=" " parallel-first="event-date" parallel-delimiter-override=", ">
+            <choose>
+              <if variable="event-date">
+                <date date-parts="year-month-day" form="text" variable="event-date"/>
+              </if>
+              <else-if variable="available-date">
+                <text value="opened for signature"/>
+                <date date-parts="year-month-day" form="text" variable="available-date"/>
+              </else-if>
+              <else-if variable="issued">
+                <text value="entered into force"/>
+                <date date-parts="year-month-day" form="text" variable="issued"/>
+              </else-if>
+              <else>
+                <text value="adopted"/>
+                <date date-parts="year-month-day" form="text" variable="original-date"/>
+              </else>
+            </choose>
+          </group>
+          <group delimiter=" ">
+            <choose>
+              <if match="none" variable="number">
+                <number prefix="(" suffix=")" variable="collection-number"/>
+              </if>
+            </choose>
+            <number variable="volume"/>
+            <text form="short" variable="container-title"/>
+            <choose>
+              <if variable="number">
+                <number variable="collection-number"/>
+                <group delimiter=" ">
+                  <label variable="number"/>
+                  <number variable="number"/>
+                </group>
+              </if>
+              <else>
+                <number variable="page"/>
+              </else>
+            </choose>
+          </group>
+          <group delimiter=", " prefix="(" suffix=")">
+            <choose>
+              <if match="any" variable="event-date available-date">
+                <text value="entered into force"/>
+                <date date-parts="year-month-day" form="text" variable="issued"/>
+              </if>
+              <else-if match="any" variable="event-date available-date issued">
+                <text value="adopted"/>
+                <date date-parts="year-month-day" form="text" variable="original-date"/>
+              </else-if>
+            </choose>
+          </group>
+        </group>
+      </group>
+      <text label-form="long" macro="std-locator-label"/>
+    </group>
+  </macro>
+  <macro name="std-locator-label">
+    <group delimiter=" ">
+      <label form="short" variable="locator"/>
+      <number label-form="short" variable="locator"/>
+    </group>
+  </macro>
+  <citation et-al-min="4" et-al-use-first="1">
+    <layout delimiter="; " suffix=".">
+      <text macro="mcgill-treaty-first"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+    "references": "Entered into force 03 September 1981, ratification by Canada 10 Dec 1981",
+
+    "references": "Entered into force 03 September 1981, ratification by Canada 10 Dec 1981",
+
+
+>>===== INPUT =====>>
+[
+  {
+    "id": 21,
+    "type": "treaty",
+    "multi": {
+      "_keys": {}
+    },
+    "title": "Convention on the Elimination of All Forms of Discrimination against Women",
+    "references": "Entered into force 03 September 1981, ratification by Canada 10 Dec 1981",
+    "container-title": "UNTS",
+    "page": "13",
+    "volume": "1",
+    "title-short": "CEDAW",
+    "event-date": {
+      "date-parts": [
+        [
+          "1980",
+          3,
+          1
+        ]
+      ]
+    },
+    "seeAlso": [27]
+  },
+  {
+    "id": 27,
+    "type": "treaty",
+    "multi": {
+      "_keys": {}
+    },
+    "title": "Convention on the Elimination of All Forms of Discrimination against Women",
+    "references": "Entered into force 03 September 1981, ratification by Canada 10 Dec 1981",
+    "container-title": "Canadian TS",
+    "page": "2222",
+    "volume": "1111",
+    "title-short": "CEDAW",
+    "event-date": {
+      "date-parts": [
+        [
+          "1980",
+          3,
+          1
+        ]
+      ]
+    },
+    "seeAlso": [21]
+  }
+]
+<<===== INPUT =====<<
+
+
+#    "title-short": "CEDAW",

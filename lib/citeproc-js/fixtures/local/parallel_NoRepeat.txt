@@ -1,0 +1,97 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>== ABBREVIATIONS ==>>
+{
+  "us:ca": {
+    "container-title": {
+      "Cal. 2d": "!authority>>>Cal. 2d"
+    }
+  }
+}
+<<== ABBREVIATIONS ==<<
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1"
+        }, 
+        {
+            "id": "ITEM-2"
+        }, 
+        {
+            "id": "ITEM-3"
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>== RESULT ==>>
+Supreme Court, 1234/2001, 5678/2002; Court of Appeal, 9012/2003
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <group no-repeat="authority jurisdiction" parallel-delimiter-override-on-suppress=", ">
+          <names variable="authority">
+            <name/>
+            <institution/>
+          </names>
+        </group>
+        <group delimiter="/">
+          <number variable="number"/>
+          <date variable="issued" form="text" date-parts="year"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+   {
+      "id": "ITEM-1",
+      "type": "legal_case",
+      "title": "Case One",
+      "number": "1234",
+      "authority": "Supreme Court",
+      "jurisdiction": "us:ca",
+      "issued": {"date-parts": [[2001, 1, 1]]}
+   },
+   {
+      "id": "ITEM-2",
+      "type": "legal_case",
+      "title": "Case Two",
+      "number": "5678",
+      "authority": "Supreme Court",
+      "jurisdiction": "us:ca",
+      "issued": {"date-parts": [[2002, 2, 2]]}
+   },
+   {
+      "id": "ITEM-3",
+      "type": "legal_case",
+      "title": "Case Three",
+      "number": "9012",
+      "authority": "Court of Appeal",
+      "jurisdiction": "us:ca",
+      "issued": {"date-parts": [[2003, 3, 3]]}
+   }
+]
+<<===== INPUT =====<<

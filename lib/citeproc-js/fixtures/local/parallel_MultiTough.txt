@@ -1,0 +1,263 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+        {
+            "id": "ITEM-1"
+        }, 
+        {
+            "id": "ITEM-2"
+        }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+The result string is a mess, but it confirms that things are working.
+
+(1) The two cites should collapse by omitting the author and title from the second cite; and
+(2) The "translation" should be omitted on the second cite.
+(3) Italics should be suppressed on the non-romaneque title.
+
+NOTE: This test has been rolled back to doing transliteration only on
+the container-title variable. The more demanding test case described
+above (with orig as main, and translit as variant) is not represented
+here because of limitations in the test suite (and lack of time and
+incentive to fix it). The test did run as described before the
+reversion though, like this:
+
+林秀弥, 競争法における関連市場の画定基準, 126 <span style="font-variant:small-caps;">民商法雑誌</span> <span style="font-variant:small-caps;">Minsho ho zasshi</span>, no. 1, at 23, 126 <span style="font-variant:small-caps;">民商法雑誌</span>, no. 2, 2002, at 56.
+
+
+
+>>== RESULT ==>>
+林秀弥, 競争法における関連市場の画定基準, 126 <span style="font-variant:small-caps;">Minsho ho zasshi</span>, no. 1, at 23, 126 <span style="font-variant:small-caps;">Minsho ho zasshi</span>, no. 2, 2002, at 56.
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded" default-locale="ja-JP-x-translit-ja-alalc97">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <style-options skip-words="but or yet so for and nor a an the at by from in into of on to with up down as via onto over till is this that within"/>
+    <terms>
+      <term name="article">article</term>
+      <term name="director">director</term>
+      <term form="short" name="director">dir.</term>
+      <term form="short" name="article">
+        <single>art.</single>
+        <multiple>arts.</multiple>
+      </term>
+      <term form="long" name="Section">
+        <single>section</single>
+        <multiple>sections</multiple>
+      </term>
+      <term form="short" name="Section">
+        <single>sec.</single>
+        <multiple>secs.</multiple>
+      </term>
+      <term form="long" name="Chapter">
+        <single>chapter</single>
+        <multiple>chapters</multiple>
+      </term>
+      <term form="short" name="Chapter">
+        <single>ch.</single>
+        <multiple>chs.</multiple>
+      </term>
+      <term form="symbol" name="Chapter">
+        <single>c.</single>
+        <multiple>cc.</multiple>
+      </term>
+      <term name="rule"/>
+      <term name="title">title</term>
+      <term form="short" name="title">tit.</term>
+      <term form="short" name="chapter">ch.</term>
+      <term form="short" name="column">col.</term>
+      <term form="short" name="figure">fig.</term>
+      <term form="short" name="issue">no.</term>
+      <term form="short" name="line">
+        <single>l.</single>
+        <multiple>ll.</multiple>
+      </term>
+      <term form="short" name="note">
+        <single>n.</single>
+        <multiple>nn.</multiple>
+      </term>
+      <term form="short" name="opus">op.</term>
+      <term form="short" name="page">
+        <single>p.</single>
+        <multiple>pp.</multiple>
+      </term>
+      <term form="short" name="paragraph">
+        <single>para.</single>
+        <multiple>paras.</multiple>
+      </term>
+      <term form="short" name="part">pt.</term>
+      <term form="short" name="section">
+        <single>sec.</single>
+        <multiple>secs.</multiple>
+      </term>
+      <term form="symbol" name="section">
+        <single>&#167;</single>
+        <multiple>&#167;&#167;</multiple>
+      </term>
+      <term form="short" name="sub verbo">s.v.</term>
+      <term form="short" name="verse">vrs.</term>
+      <term form="short" name="volume">vol.</term>
+      <term form="short" name="edition">
+        <single>ed.</single>
+        <multiple>eds.</multiple>
+      </term>
+      <term form="short" name="supplement">
+        <single>supp.</single>
+        <multiple>supps.</multiple>
+      </term>
+      <term name="ibid">id.</term>
+      <term form="verb" name="interview">interview</term>
+      <term form="short" name="translator">trans.</term>
+      
+      <term name="ordinal-01">st</term>
+      <term name="ordinal-02">d</term>
+      <term name="ordinal-03">d</term>
+      <term name="ordinal-04">th</term>
+    </terms>
+    <date form="text">
+      <date-part form="short" name="month" suffix=" "/>
+      <date-part form="numeric" name="day" suffix=", "/>
+      <date-part name="year"/>
+    </date>
+  </locale>
+  <macro name="author">
+    <names variable="author">
+      <name and="symbol" delimiter-precedes-last="never" form="long" initialize="false" initialize-with="."/>
+      <substitute>
+        <names variable="container-author"/>
+        <names variable="composer"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="wisconsin-secondary-first">
+    <group delimiter=": ">
+      <group delimiter=", ">
+        <group delimiter=" ">
+          <group delimiter=", ">
+            <group parallel-delimiter-override=", " parallel-first="author" delimiter=", ">
+              <text macro="author"/>
+              <text variable="title" font-style="italic"/>
+            </group>
+            <group delimiter=" ">
+              <number variable="volume"/>
+              <text variable="container-title" font-variant="small-caps"/>
+            </group>
+            <choose>
+              <if match="any" type="article-newspaper article-magazine">
+                <choose>
+                  <if has-year-only="issued">
+                    <group delimiter=" ">
+                      <label form="symbol" variable="issue"/>
+                      <number variable="issue"/>
+                    </group>
+                  </if>
+                </choose>
+                <group parallel-last="issued">
+                  <date date-parts="year-month-day" form="text" variable="issued"/>
+                </group>
+                <group delimiter=" ">
+                  <text term="at"/>
+                  <group delimiter=" ">
+                    <group delimiter=", ">
+                      <number variable="page-first"/>
+                    </group>
+                  </group>
+                </group>
+              </if>
+            </choose>
+          </group>
+        </group>
+      </group>
+    </group>
+  </macro>
+  <citation disambiguate-add-givenname="true" et-al-min="3" et-al-use-first="1" near-note-distance="5">
+    <layout delimiter="; " suffix=".">
+     <text macro="wisconsin-secondary-first"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+   {
+      "id": "ITEM-1",
+      "type": "article-magazine",
+      "key": "G3A88SIZ",
+      "title": "競争法における関連市場の画定基準",
+      "container-title": "民商法雑誌",
+      "page": "23-44",
+      "volume": "126",
+      "issue": "1",
+      "author": [
+         {
+            "family": "林",
+            "given": "秀弥"
+         }
+      ],
+      "issued": {
+         "date-parts": [
+            [
+               2002
+            ]
+         ]
+      },
+      "multi":{
+			"_keys":{
+				"container-title":{
+					"ja-alalc97":"Minsho ho zasshi"
+				}
+			}
+	  },
+      "seeAlso": ["ITEM-1", "ITEM-2"]
+   },
+   {
+      "id": "ITEM-2",
+      "type": "article-magazine",
+      "key": "46TEXRZ7",
+      "title": "競争法における関連市場の画定基準",
+      "container-title": "民商法雑誌",
+      "page": "56-72",
+      "volume": "126",
+      "issue": "2",
+      "author": [
+         {
+            "family": "林",
+            "given": "秀弥"
+         }
+      ],
+      "issued": {
+         "date-parts": [
+            [
+               2002
+            ]
+         ]
+      },
+      "multi":{
+			"_keys":{
+				"container-title":{
+					"ja-alalc97":"Minsho ho zasshi"
+				}
+			}
+	  },
+      "seeAlso": ["ITEM-1", "ITEM-2"]
+   }
+]
+<<===== INPUT =====<<

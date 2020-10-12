@@ -1,0 +1,117 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+>>[0] written by (long, then short) George Bush, Big Corp.; edited by (short, then long) Mudd, Big Corporation
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+             ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <terms>
+      <term name="author" form="verb">written by</term>
+    </terms>
+  </locale>
+  <macro name="test-name-person-full">
+    <names variable="author">
+      <label form="verb" suffix=" (long, then short) "/>
+      <name/>
+      <institution form="short"/>
+    </names>
+  </macro>
+  <macro name="test-name-person-short">
+    <names variable="editor">
+      <label form="verb" suffix=" (short, then long) "/>
+      <name form="short"/>
+      <institution/>
+    </names>
+  </macro>
+  <citation disambiguate-add-names="true" et-al-min="4" et-al-use-first="1">
+<layout>
+      <group delimiter="; ">
+        <text macro="test-name-person-full"/>
+        <text macro="test-name-person-short"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+
+<<===== CSL =====<<
+
+
+>>===== ABBREVIATIONS =====>>
+{
+    "default": {
+        "institution-part": {
+	    "Big Corporation": "DAMN"
+	},
+        "institution-entire": {
+            "Big Corporation": "Big Corp."
+        }
+    }
+}
+<<===== ABBREVIATIONS =====<<
+
+
+
+>>===== INPUT =====>>
+[
+    {
+        "title": "Buy Our Stuff",
+        "id": "ITEM-1",
+        "author": [
+          {
+            "given": "George",
+            "family": "Bush"
+          },
+          {
+            "literal": "Big Corporation"
+          }
+        ], 
+        "editor": [
+          {
+            "given": "Harry",
+            "family": "Mudd"
+          },
+          {
+            "literal": "Big Corporation"
+          }
+        ], 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

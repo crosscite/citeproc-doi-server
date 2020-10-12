@@ -1,0 +1,133 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] Brown, Encyclopedia X: One Big Book
+..[1] Smith, Encyclopedia X
+>>[2] Ibid.
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+      {
+        "id": "ITEM-1",
+        "locator": "| Brown"
+      }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+      {
+        "id": "ITEM-1",
+        "locator": "| Smith"
+      }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+      {
+        "id": "ITEM-1",
+        "locator": "| Smith"
+      }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ],
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+<group delimiter=", ">
+    <choose>
+    <if position="ibid">
+<text term="ibid"/>
+</if>
+    <else-if position="subsequent">
+<text variable="locator-extra"/>
+<text variable="title-short"/>
+    </else-if>
+<else>
+<text variable="locator-extra"/>
+<text variable="title"/>
+<date form="text" date-parts="year"/>
+</else>
+</choose>
+</group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "Encyclopedia X: One Big Book",
+        "title-short": "Encyclopedia X",
+        "issued": {"date-parts": [[2000]]},
+        "type": "book"
+    },
+    {
+        "id": "ITEM-2", 
+        "title": "Other Ref",
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "The code in this folder can be used to spin up a local `citeproc-js` demo page.  It is mainly intended as a sample of running code for developers working with the processor.",
+  "main": "demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ecstatic": "^4.1.4",
+    "getopts": "^2.2.5",
+    "randomize": "0.0.4"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}

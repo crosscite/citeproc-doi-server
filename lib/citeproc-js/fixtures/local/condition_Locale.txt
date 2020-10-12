@@ -1,0 +1,167 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-1"
+    },
+    {
+      "id": "ITEM-2"
+    },
+    {
+      "id": "ITEM-3"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-4"
+    },
+    {
+      "id": "ITEM-5"
+    },
+    {
+      "id": "ITEM-6"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-1"
+    },
+    {
+      "id": "ITEM-2"
+    },
+    {
+      "id": "ITEM-3"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>===== RESULT =====>>
+Author Bob; Container Bob (編); Secondary Bob (翻訳者)
+Bob Author; Bob Container (ed.); Bob Secondary (tran.)
+Author Bob; Container Bob (編); Secondary Bob (翻訳者)
+<<===== RESULT =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name/>
+    </names>
+  </macro>
+  <macro name="container-contributors">
+    <names variable="editor">
+      <name/>
+      <label form="short" prefix=" (" suffix=")"/>
+    </names>
+  </macro>
+  <macro name="secondary-contributors">
+    <names variable="translator">
+      <name/>
+      <label form="short" prefix=" (" suffix=")"/>
+    </names>
+  </macro>
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <choose>
+          <if locale="ja">
+            <text macro="author"/>
+            <text macro="container-contributors"/>
+            <text macro="secondary-contributors"/>
+          </if>
+          <else>
+            <text macro="author"/>
+            <text macro="container-contributors"/>
+            <text macro="secondary-contributors"/>
+          </else>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "book",
+        "author": [
+          {
+            "family": "Author",
+            "given": "Bob"
+          }
+        ],
+        "language": "ja"
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "book",
+        "editor": [
+          {
+            "family": "Container",
+            "given": "Bob"
+          }
+        ],
+        "language": "ja"
+    },
+    {
+        "id": "ITEM-3", 
+        "type": "book",
+        "translator": [
+          {
+            "family": "Secondary",
+            "given": "Bob"
+          }
+        ],
+        "language": "ja"
+    },
+    {
+        "id": "ITEM-4", 
+        "type": "article-journal",
+        "author": [
+          {
+            "family": "Author",
+            "given": "Bob"
+          }
+        ],
+        "language": "en"
+    },
+    {
+        "id": "ITEM-5", 
+        "type": "article-journal",
+        "editor": [
+          {
+            "family": "Container",
+            "given": "Bob"
+          }
+        ],
+        "language": "en"
+    },
+    {
+        "id": "ITEM-6", 
+        "type": "article-journal",
+        "translator": [
+          {
+            "family": "Secondary",
+            "given": "Bob"
+          }
+        ],
+        "language": "en"
+    }
+]
+<<===== INPUT =====<<

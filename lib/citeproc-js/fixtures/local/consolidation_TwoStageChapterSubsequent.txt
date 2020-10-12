@@ -1,0 +1,142 @@
+>>== MODE ==>>
+citation
+<<== MODE ==<<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                },
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ],
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>== RESULT ==>>
+..[0] Able Article in Baker Book (2000)
+..[1] Charley Comment in Baker Book; ibid
+>>[2] Able Article
+<<== RESULT ==<<
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.1mlz1" track-containers="chapter">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+      <choose>
+        <if position="ibid">
+          <text value="ibid"/>
+        </if>
+        <else-if position="subsequent">
+              <text variable="title"/>
+        </else-if>
+        <else-if position="container-subsequent">
+              <group delimiter=". ">
+                <group delimiter=" in ">
+                  <text variable="title"/>
+                  <text variable="container-title"/>
+                </group>
+              </group>
+        </else-if>
+        <else>
+          <group delimiter=" ">
+            <group delimiter=". ">
+              <group delimiter=" in ">
+                <text variable="title"/>
+                <text variable="container-title"/>
+              </group>
+            </group>
+            <date variable="issued" date-parts="year" form="text" prefix="(" suffix=")"/>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+   {
+      "id": "ITEM-1",
+      "type": "chapter",
+      "title": "Able Article",
+      "container-title": "Baker Book",
+      "issued": { "date-parts": [[2000]]}
+   },
+   {
+      "id": "ITEM-2",
+      "type": "chapter",
+      "title": "Charley Comment",
+      "container-title": "Baker Book",
+      "issued": { "date-parts": [[2000]]}
+   }
+]
+<<===== INPUT =====<<

@@ -1,0 +1,98 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== OPTIONS =====>>
+{
+  "main_title_from_short_title": true,
+  "uppercase_subtitles": true,
+  "implicit_short_title": true
+
+}
+<<===== OPTIONS =====<<
+
+
+>>===== RESULT =====>>
+# Empty short-title
+ With variable=’title’: Smith v. Jones
+ With  variable=’title’ and form=’short’: Smith v. Jones
+ With variable=’title-short’:
+ With variable=’title-short’ and form=’short’:
+# With title-short of “Smith”
+ With variable=’title’: Smith v. Jones
+ With  variable=’title’ and form=’short’: Smith
+ With variable=’title-short’: Smith
+ With variable=’title-short’ and form=’short’: Smith
+<<===== RESULT =====<<
+
+
+
+>>===== CITATION-ITEMS =====>>
+[
+    [
+       {
+         "id": "ITEM-1"
+       },
+       {
+         "id": "ITEM-2"
+       }
+    ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0"
+      default-locale="en-x-translit-ja">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout delimiter="&#x0A;">
+      <group delimiter="&#x0A;">
+       <text variable="genre"/>
+       <group delimiter=" ">
+         <group><text value=" With variable='title':"/></group>
+         <text variable="title"/>
+       </group>
+       <group delimiter=" ">
+         <group><text value=" With  variable='title' and form='short':"/></group>
+         <text variable="title" form="short"/>
+       </group>
+       <group delimiter=" ">
+         <group><text value=" With variable='title-short':"/></group>
+         <text variable="title-short"/>
+       </group>
+       <group delimiter=" ">
+         <group><text value=" With variable='title-short' and form='short':"/></group>
+         <text variable="title-short" form="short"/>
+       </group>
+     </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "legal_case",
+        "title": "Smith v. Jones",
+        "genre": "# Empty short-title"
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "legal_case",
+        "title": "Smith v. Jones",
+        "title-short": "Smith",
+        "genre": "# With title-short of 'Smith'"
+    }
+]
+<<===== INPUT =====<<

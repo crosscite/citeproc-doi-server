@@ -1,0 +1,55 @@
+>>==== MODE ====>>
+citation
+<<==== MODE ====<<
+
+The result below is broken, obviously. For dynamic labels, test for
+page="page", and apply explicit label when no match, otherwise apply
+the page label if desired.
+
+Although result below is undesired output, this is not far frmo what a user would
+normally expect against the CSL spec without further elaboration,
+apart from the expansion of ch. This isn't much of a bug.
+
+>>==== RESULT ====>>
+chap. chap. 13
+<<==== RESULT ====<<
+
+>>==== CITATION-ITEMS ====>>
+[
+    [
+        {
+            "id": "ITEM-1"
+        }
+    ]
+]
+<<==== CITATION-ITEMS ====<<
+
+>>==== CSL ====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <label variable="page" form="short" suffix=". " strip-periods="true"/>
+      <text variable="page"/>
+    </layout>
+  </citation>
+</style>
+<<==== CSL ====<<
+
+>>==== INPUT ====>>
+[
+  {
+    "id": "ITEM-1",
+    "page": "ch. 13",
+    "type": "book"
+  }
+]
+<<==== INPUT ====<<
+

@@ -1,0 +1,58 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+6.1: Should not trigger implicit short title
+<<===== RESULT =====<<
+
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-1"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+
+>>===== OPTIONS =====>>
+{
+    "uppercase_subtitles": true,
+    "implicit_short_title": true
+}
+<<===== OPTIONS =====<<
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <text variable="title" form="short"/>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "title": "6.1 : should not trigger implicit short title",
+        "type": "article-journal"
+    }
+]
+<<===== INPUT =====<<

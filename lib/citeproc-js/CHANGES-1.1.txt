@@ -1,0 +1,2328 @@
+Summary of changes to citeproc-js since version 1.0.0 release.
+
+==========================
+Changes in version 1.1.242
+==========================
+
+- Prefer pre-parsed date over raw date string when both are available.
+
+- Fix citation-number sorts via variable or macro
+
+  * Calling citation-number from cs:key as a macro or as a variable has
+    the same effect.
+  * citation-number with sort="descending" as primary key on cs:bibliography reverses the order
+    of items, from order-cited to reverse-of-order-cited. Citation numbers in this case
+    reflect citation order, and so run from high to low in the bibliography.
+  * citation-number as secondary key on cs:bibliography sets the order of
+    numbering.  Whether ascending or descending, citation number assignments are
+    aligned in citations and bibliography.
+
+- Move date and sort tests specfiic to citeproc-js from std test suite to
+  citeproc-js repo.
+
+==========================
+Changes in version 1.1.241
+==========================
+
+- Do not crash when @is-numeric is called against locator in bibliography.
+
+==========================
+Changes in version 1.1.240
+==========================
+
+- Protect against undefined citation object key "properties."
+  https://github.com/Juris-M/citeproc-js/issues/106
+
+==========================
+Changes in version 1.1.239
+==========================
+
+- General cleanup around ./demo
+
+- Short-circuit cs:substitute if initial variable succeeds
+ 
+  The performance gain from this is miniscule, but may be significant
+  on very large runs.
+
+- Pretty-printing for node traces in util_nodes.js
+
+  Uncomment INDENT and the code block that uses it in the source
+  to turn this on - useful only for development purposes, to
+  examine the style nodes hit when processing a reference.
+
+- Input sanity check control
+ 
+  Wrap input sanity checks for processCitationCluster in an option,
+  "citeproc.opt.development_extensions.strict_inputs". The option is
+  enabled by default, and should really never be disabled. Processor
+  performance can be greatly affected by malarranged inputs.
+
+==========================
+Changes in version 1.1.238
+==========================
+
+- Require that the calling application declare a sane citation context
+  in processCitationCluster.
+
+==========================
+Changes in version 1.1.237
+==========================
+
+- Remove CSL-M mode special-handling code for RTL text, which was causing
+  more problems that it was solving.
+
+==========================
+Changes in version 1.1.236
+==========================
+
+- Fix bugs in preview mode. Details in code comments.
+
+==========================
+Changes in version 1.1.235
+==========================
+
+- Release to fix mistaken dependency in npm package. Processor code identical
+  to 1.1.234.
+
+==========================
+Changes in version 1.1.234
+==========================
+
+- Try for title- or container-title-short if form="short" is set on cs:text.
+
+==========================
+Changes in version 1.1.233
+==========================
+
+- Fix bug in short-form variant fallback case where full-form field also lacks
+  a requested variant. citeproc-js was using the (wrong-lang) full form, where
+  desired result is the (wrong-lang) short-form.
+
+==========================
+Changes in version 1.1.232
+==========================
+
+- Properly fix style tests path in cslrun.yaml
+
+- Recognize uppercase_subtitles separately from main_title_from_short_title
+
+- Implement short-title variant fallback
+  * When short form lacks a variant available on the parent, use the latter
+
+
+==========================
+Changes in version 1.1.231
+==========================
+
+- Do not suppress non-space et-al prefix when et-al is non-romanesque.
+  Passes current tests and addresses this report:
+  https://forums.zotero.org/discussion/76679/delimiter-precedes-et-al-always-dose-not-work-in-locale-zh-cn
+  See tests name_EtAlKanji (new) and name_EtAlWithCombined (old)
+
+==========================
+Changes in version 1.1.230
+==========================
+
+Register author_date match strings for Classic items only
+when an author is available to the raw name reader.
+
+
+==========================
+Changes in version 1.1.229
+==========================
+
+- Recognize literal names when reading raw name data
+
+- Avoid running processNumber on fields with no data
+
+- Bugfixes around CSL-M "supplement" variable term
+  * Add its long form to locales if not present
+  * Add its nick to pattern data and mappings
+
+- Fix styles path in cslrun.yaml
+
+==========================
+Changes in version 1.1.228
+==========================
+
+- Fix bad placement of suffix with variable wrappers, reported
+  by Derek Sifford: https://github.com/Juris-M/citeproc-js/issues/101
+
+==========================
+Changes in version 1.1.227
+==========================
+
+- Remove empty segments from non-condition tokens. Very slightly reduces
+  bulk in memory.
+
+- Move test runner to separate Citeproc Test Runner npm package.
+
+- Updates to README
+
+- Fix CSL-M locale test to properly set and unset the locale within
+  the scope of the test element.
+
+- Reorganization of sources.
+
+==========================
+Changes in version 1.1.226
+==========================
+
+- Document AO/SA/Composite functionality.
+- Fix bugs uncovered by examples used in the docs.
+- Add option to throw and error on empty renderings.
+
+==========================
+Changes in version 1.1.225
+==========================
+
+- Implement cs:intext element and composite form with infix for narrative citations.
+
+- Implement citation-level user-supplied affixes.
+
+- Smooth out implementation of author-only and suppress-author in the
+  absence of cs:intext. Should function reasonably well without cs:intext
+  for all but numeric/trigraph styles and styles like APA with differing
+  requirements for names in text and names in citations.
+
+- Move all author-only/suppress-author tests to the citeproc-js test suite.
+
+- Fix some bugs and cosmetic issues in runtests.js.
+
+- For some reason the test suite shows about a 20% speed increase with recent
+  changes. Not sure if performance in production will improve, but I must have
+  done something right.
+
+==========================
+Changes in version 1.1.224
+==========================
+
+- Apply formatting to ranged numbers as a unit.
+  See: https://discourse.citationstyles.org/t/formatting-attributes-and-hyphen/1518
+
+- Add draft LaTeX format offered by Egon Willighagen (GitHub @egonw).
+
+- Housecleaning in load.js
+
+==========================
+Changes in version 1.1.223
+==========================
+
+- Recognize EDTF values for seasons (21-24) on input.
+
+==========================
+Changes in version 1.1.222
+==========================
+
+- Implement range-delimiter attribute on cs:date-part
+  Many thanks to Cormac Relf for pointing out this omission!
+
+- Implement watch mode in build/test script for style development
+
+==========================
+Changes in version 1.1.221
+==========================
+
+Continuous integration
+
+- Rewrite of the build/test script
+
+- Retirement of the previous test framework
+
+- Deployment of Travis CI on the GitHub repository
+
+- README notes on install/test steps
+
+==========================
+Changes in version 1.1.220
+==========================
+
+Bibliograhy options to exclude items
+
+- exclude_types: omit items matching one or more specified types.
+
+- exclude_with_fields: omit items that have a value in one or more
+  specified fields.
+
+- A test that exercises the new options.
+
+==========================
+Changes in version 1.1.219
+==========================
+
+- Fix a bug that caused labels to be dropped where a variable rendered
+  via cs:substitute was later called as the primary variable, and
+  a separate variable was rendered via cs:substitute.
+
+- Fix a bug that caused labels to be lost on a singleton cs:names
+  that followed a start/end cs:names element inside cs:substitute.
+
+- Add support for require-match on cs:names.
+
+- Amend test fixtures where processor output in now correct.
+
+- Add a test for the require-match attribute.
+
+
+
+==========================
+Changes in version 1.1.218
+==========================
+
+- Fix nesting error triggered by call to alt-issued or alt-event-date date variables
+  when the have a value. Calling these variables directly, outside of cs:alternative,
+  may be necessary in citations for styles that make use of cs:alternative in the
+  bibliography.
+
+==========================
+Changes in version 1.1.217
+==========================
+
+- Add support for new CSL-M elements cs:alternative and cs:alternative-text,
+  useful for citing translated works and reprints.
+
+- Test fixtures for a Japan Sociological Society style that makes use
+  of the cs:alternative element.
+
+==========================
+Changes in version 1.1.216
+==========================
+
+- Fix bugs in name initialization
+  https://forums.zotero.org/discussion/75969/apa-style-initials-cut-out
+
+- Remove legacy e4x support. Processor is capable of string-parsing
+  serialized XML directly, this layer is no longer needed.
+
+- Permit empty values in CSL fields added via the note field hack.
+
+- Add support for cs:alternative and cs:alternative-text elements,
+  for use in citing translated or reprinted materials in CSL-M.
+
+- Clean up syntax somewhat. HT to jshint.
+
+==========================
+Changes in version 1.1.215
+==========================
+
+- Address a memory leak
+  * Modify item objects stored in registry.refhash in place
+  * Call registry copy of item data when safe to do so
+  * Taint items for which input changes on update
+  * Quash some side effects that unnecessarily altered data after input
+
+==========================
+Changes in version 1.1.214
+==========================
+
+- Fix potential array-underrun crash in ibid evaluation
+
+==========================
+Changes in version 1.1.213
+==========================
+
+- Clean up test runner
+
+- Fix memory leak in citationById object (IDs were never removed)
+
+- Remove declarations of unused variables in api_bibliography
+
+- Protect against erronenous numeric value in string split array
+  HT to Emiliano Heyns for identifying the fault in i386 systems
+  and crafting a patch.
+
+- Add tests for non-CSL collection-title-short variable
+
+- Recognize -short form of any variable rendered via cs:text
+
+
+==========================
+Changes in version 1.1.212
+==========================
+
+- Wrap DOI correctly even if cruft exists before protocol in prefix attribute
+
+- Add a local test for wrapped DOI with cruft before protocol + domain prefix
+
+- Fix typo (Ukranaian -> Ukrainian)
+
+
+==========================
+Changes in version 1.1.211
+==========================
+
+- Add plain, asciidoc, and xslfo output options for test script
+
+- Set page-range-delimiter on ranged numbers with trailing alpha chars
+
+- Reset position info when processing full cs:names objects
+
+- Fix bug in wrapped DOI/URL, properly recognize container-title-short
+
+- Default to form=long on explicit label nodes
+
+- Add list of CREATORS, reclassify some abbrevs
+
+- Fix handling of suffix on DOI renderings without a protocol prefix
+
+- Implicit nocase for sub, sub and sc tags
+
+- (Re)capitalize only stop-list words in last position
+
+
+==========================
+Changes in version 1.1.210
+==========================
+
+- Recognize illustrator as a creator variable. Bug reported by @bwiernik:
+
+  https://forums.zotero.org/discussion/72782/citeproc-js-bug-illustrator-in-extra
+  https://github.com/Juris-M/citeproc-js/issues/76
+
+==========================
+Changes in version 1.1.209
+==========================
+
+- Insert to registry at bibliography sort location rather than
+  resorting the entire array. Many (many) thanks to @adomasven of
+  Zotero for diagnosing the excessive memory consumption that this
+  caused with large item sets, and for pointing at a solution:
+  
+  https://stackoverflow.com/questions/1344500/efficient-way-to-insert-a-number-into-a-sorted-array-of-numbers
+
+
+==========================
+Changes in version 1.1.208
+==========================
+
+- Fix out-of-scope variable assignments.
+
+- For some reason the variable name loadJurisdiction refused to accept
+  a variable assignment, although the variable exists nowhere else in
+  the code. Changing the variable name fixes the fault.
+
+==========================
+Changes in version 1.1.207
+==========================
+
+- Fix Thai orthography.
+
+==========================
+Changes in version 1.1.206
+==========================
+
+- Fix regexp for markup split in formatters.js. The Unicode literals of
+  en-dash and em-dash worked under early JS implementations, but fail
+  in more recent Firefox. The escaped forms is robust.
+
+==========================
+Changes in version 1.1.205
+==========================
+
+- Show only default-jurisdiction entry for "abbreviated" language names.
+
+==========================
+Changes in version 1.1.204
+==========================
+
+- Avoid needless use of abbreviate() on empty secondary and tertiary multilinguals.
+  Speeds things up very slightly.
+
+- Remove citeproc-js call to sys.getLanguageName()
+
+==========================
+Changes in version 1.1.203
+==========================
+
+- Suppress explicit country name abbreviation on jurisdiction field.
+
+==========================
+Changes in version 1.1.202
+==========================
+
+- Show country names as names, not raw codes, when Abbreviation Filter is
+  disabled and the processor has access to the sys.getHumanForm() method
+  (as in Juris-M).
+
+==========================
+Changes in version 1.1.201
+==========================
+
+- Fix nesting error triggered by a date set and called inside
+  cs:substitute, followed by a call to the same date variable
+  later in the style.
+
+    https://forums.zotero.org/discussion/71242/debugid-d682095689
+
+==========================
+Changes in version 1.1.200
+==========================
+
+- Extend 1.1.199 to protect embedded apostrophe in all Romanesque character sets (ascii,
+  Latin1, Persian, Hebrew, etc.)
+
+    https://forums.zotero.org/discussion/71008/unexpected-rich-text-output
+
+==========================
+Changes in version 1.1.199
+==========================
+
+- Fix markup parser misstep on curly single-quote apostrophe
+  inside markup.
+
+    https://forums.zotero.org/discussion/71167/initial-html-tags-in-citation-prefixes
+
+==========================
+Changes in version 1.1.198
+==========================
+
+- Block rendering of bare country name or ID for jurisdictions,
+  when human-readable forms of jurisdiction IDs are available.
+
+==========================
+Changes in version 1.1.197
+==========================
+
+- Small improvement on previous tag
+
+==========================
+Changes in version 1.1.196
+==========================
+
+- Throw more informative errors in three locations.
+
+    https://forums.zotero.org/discussion/70927/zotero-experienced-an-error-updating-your-document#Comment_303868
+
+==========================
+Changes in version 1.1.195
+==========================
+
+- Refactoring to address a deep bug in the handling of jurisdiction
+  abbreviations reported by John Luke Bentley:
+
+    https://github.com/Juris-M/zotero/issues/43#issuecomment-374096589
+
+  Among other things, this change introduces a new CSL-M variable "country",
+  which carries the country code at the front of a jurisdiction code, and
+  can be controlled in styles and in the processor as an independent CSL variable.
+
+==========================
+Changes in version 1.1.194
+==========================
+
+- Some cleanup and improvement of parsing in numeric and locator
+  fields.
+
+==========================
+Changes in version 1.1.193
+==========================
+
+- A small tweak to after-collapse-delimiter to make the attribute
+  useful in styles using collapse="year", as well as
+  collapse="year-suffix".
+
+==========================
+Changes in version 1.1.192
+==========================
+
+- Handle Chicago-style page-n-note pinpoint ranges a little
+  better.
+
+==========================
+Changes in version 1.1.191
+==========================
+
+- Handle empty strings fed to a date conversion function properly.
+  Addresses the rather scathing comment here:
+
+    https://github.com/Juris-M/citeproc-js/issues/62
+
+==========================
+Changes in version 1.1.190
+==========================
+
+- Add capitalize-if-first for label, and label-capitalize-if-first for macros.
+
+- Fix bug affecting locator label + embedded labels.
+
+- Make term_predecessor robust in require/reject implicit conditionals.
+
+- Remove some redundant bits of code
+
+==========================
+Changes in version 1.1.189
+==========================
+
+- Add CSL-M group require/reject conditional "empty-label-no-decor." Needed
+  for modular support of New Zealand Law Style and other styles that use "At"
+  for ibid backreferences with square-braced paragraph numbers.
+
+==========================
+Changes in version 1.1.188
+==========================
+
+- Small tweaks to address the issues of 1.1.187 a little more smartly.
+
+==========================
+Changes in version 1.1.187
+==========================
+
+- Be more aggressive about en-dashes. Do not reset pluralization group when an unrecognized
+  label is encountered. Allow semi-colon as delimiter. Based on use case flagged by Mark Bruffey.
+
+==========================
+Changes in version 1.1.186
+==========================
+
+- Reflect steps of disambiguate="true" in the bibliography. Addresses an issue
+  raised by @F.Altermann, following discussion with @adamsmith:
+
+  https://forums.zotero.org/discussion/70341/add-title-short-to-disambiguate-in-bibliography-only-if-necsessary
+
+==========================
+Changes in version 1.1.185
+==========================
+
+- Never shrink name forms below default. Addresses bug identified by @Sreg and @adamsmith:
+
+  https://forums.zotero.org/discussion/69865/abgekuerzter-vorname-in-fussnote-bei-mehreren-autoren-mit-gleichem-nachnamen
+
+==========================
+Changes in version 1.1.184
+==========================
+
+- Eliminate backtracking regexp, as a potential REDOS vulnerability.
+  Thanks to James Davis for reporting.
+
+
+==========================
+Changes in version 1.1.183
+==========================
+
+- Correctly nest JSON-parsed style internally when singleton terms are
+  used in cs:locale:
+
+    https://forums.zotero.org/discussion/comment/295820#Comment_295820
+
+==========================
+Changes in version 1.1.182
+==========================
+
+- Test runner: Do not crash on an empty input array.
+
+- Test runner: Permit testing for an empty return value.
+
+- When a specific URL prefix is set on cs:text with variable="DOI"
+  (prefix="https://doi.org/"), and processor option wrap_url_and_doi is
+  in effect, include the prefix in the html:a wrapper when generating
+  HTML output. But:
+
+  * If the field value does not already have a non-DOI HTML prefix, leave it untouched.
+  * If the field value has an HTTP DOI prefix, normalize to HTTPS.
+  * If the field value has an HTTPS prefix already, use it direct.
+
+  Issue reported by Dan Stillman:
+    https://github.com/Juris-M/citeproc-js/issues/57
+
+  Related test fixture:
+    https://github.com/Juris-M/citeproc-js/blob/master/tests/fixtures/local/magic_WrapDOI.txt
+
+==========================
+Changes in version 1.1.181
+==========================
+
+- Fix bad spacing with initialize="false" and initialize-with="." or initialize-with=". ",
+  with givenname input such as "A. Ben."
+
+  https://forums.zotero.org/discussion/68482/how-to-create-a-modified-version-of-a-style-and-keep-the-original
+
+- Protect against an undefined variable
+
+  https://github.com/Juris-M/citeproc-js/pull/58
+
+==========================
+Changes in version 1.1.180
+==========================
+
+- Um. Something.
+
+==========================
+Changes in version 1.1.179
+==========================
+
+- Protect against potentially invalid assignment.
+
+  Patch by Derek Sifford.
+
+==========================
+Changes in version 1.1.178
+==========================
+
+- Recognize a function sys.normalizeAbbrevsKey. Zotero performs
+  normalization internally, presenting a list of abbreviation keys to
+  the processor that is separate from the master list of
+  abbreviations, the keys in the latter, only, being normalized. In the
+  Abbreviation Filter add-on, the master list editable, and is applied
+  directly to citations. For that to work, the processor must be
+  capable of normalizing keys internally.
+
+  This extension will have no effect on deployments that do not define
+  a normalizeAbbrevsKey function on the sys object.
+
+- Recognize a new attribute jurisdiction-depth, to limit the
+  elements of a jurisdiction code used for human-form rendering.
+
+- Set new allowNonmatch toggle on getHumanForm when remapping
+  court variable.
+
+
+==========================
+Changes in version 1.1.177
+==========================
+
+- Do not force the trailing portion of given names to lowercase.
+
+- Avoid redundant load of en-US locale data when default locale differs.
+
+- Recognize quote before comma as a close-quote.
+
+- Bundle code without 'use strict' declaration.
+
+==========================
+Changes in version 1.1.176
+==========================
+
+- Fix long-standing bug that forced given names to lowercase after second
+  character (yeah, that was a weird thing to do).
+
+  https://forums.zotero.org/discussion/17610/apsa-problems-with-capitalization-of-mc-mac-etc/
+  https://github.com/Juris-M/citeproc-js/issues/43
+
+==========================
+Changes in version 1.1.175
+==========================
+
+- Do not distribute unnecessary files via NPM.
+
+  Reflects a pull request from Derek Sifford:
+
+    https://github.com/Juris-M/citeproc-js/pull/52
+
+- Fix bug triggered on some styles in strict mode:
+
+    https://forums.zotero.org/discussion/comment/284261
+
+==========================
+Changes in version 1.1.174
+==========================
+
+- Reenable processor tests (unit tests) in test.py.
+- Fix bug that crashed processor when makeCitationCluster() was run on an
+  unregistered item.
+
+  Addresses request by @adomasven of Zotero for registry-independent rendering
+  of formatted citation placeholders:
+  
+    https://github.com/Juris-M/citeproc-js/issues/51
+
+    also
+
+    https://github.com/zotero/zotero/pull/1242
+
+==========================
+Changes in version 1.1.173
+==========================
+
+- Adopt patch from @miguelsm replacing ES6 syntax with ES5
+
+  Adopts a pull request from @miguelsm:
+
+    https://github.com/Juris-M/citeproc-js/pull/38
+
+- Fix potential assignment of value to nonexistent key.
+
+- Declare all loose variables and set 'use strict' on bundled code object.
+- Build a CommonJS module along with the raw objects.
+
+  Reflects changes originally proposed and implemented by Derek Sifford:
+
+    https://github.com/Juris-M/citeproc-js/pull/50
+
+- Drive the ``citeproc-js`` NPM package directly from this source repo.
+  Addresses requests from Derek Sifford (above) and Aamir Shah:
+
+    https://github.com/Juris-M/citeproc-js/pull/44
+
+==========================
+Changes in version 1.1.172
+==========================
+
+- Fix bug in handling of affixes containing terminal punctuation.
+
+  https://forums.zotero.org/discussion/66827/spaces-with-full-stops-and-commas-in-footnotes
+
+==========================
+Changes in version 1.1.171
+==========================
+
+- Adopt DOI patch from Rintze.
+
+==========================
+Changes in version 1.1.170
+==========================
+
+- Revert 5cdc4b from 1.1.150, which broke bibliography formatting in
+  clients. Refs:
+
+    https://github.com/Juris-M/citeproc-js/issues/15
+    https://forums.zotero.org/discussion/comment/277092
+   
+==========================
+Changes in version 1.1.169
+==========================
+
+- Avoid crash when in-field quotes appear under a quotes="false"
+  attribute. Reported on Zotero forums:
+
+    https://forums.zotero.org/discussion/65626/cannot-update-document-state-fun-decorate-params-0-params-1-is-undefined
+
+==========================
+Changes in version 1.1.168
+==========================
+
+- In in-text markup, fix parsing of open straight-quotes that immediately
+  follow other markup.
+
+    https://github.com/Juris-M/citeproc-js/issues/46
+
+==========================
+Changes in version 1.1.167
+==========================
+
+- Fix punctuation movement on user-supplied suffixes. Issue
+  reported on Zotero forums:
+
+    https://forums.zotero.org/discussion/65609/comma-period-inside-closing-quotation-mark-in-sblhs
+
+=========================
+Changes in version 1.1.166
+==========================
+
+- Preserve leading spaces on strings processed by flipflop. Issue
+  reported on Zotero forums:
+
+    https://forums.zotero.org/discussion/65702/change-in-suffix-behaviour
+
+===========================
+Changes in version 1.1.165
+==========================
+
+- Revert ffa12aa3 (Oct. 31). It did not fix bibliography disambiguation,
+  but broke it instead.
+
+==========================
+Changes in version 1.1.164
+==========================
+
+- Treat emdash the same as hyphen. Ditto as below.
+
+==========================
+Changes in version 1.1.163
+==========================
+
+- Treat endash the same as hyphen in title case transform
+
+    https://github.com/Juris-M/citeproc-js/issues/42
+
+==========================
+Changes in version 1.1.162
+==========================
+
+- Rerelease of 1.1.162 to purge bad citeproc.js bundle.
+
+    https://github.com/Juris-M/citeproc-js/issues/40
+
+==========================
+Changes in version 1.1.161
+==========================
+
+- Workaround to accommodate "single-field" names set as "name" rather than now-normal "literal."
+
+- In non-numeric styles only, silently omit references not rendered in the bibliography.
+
+==========================
+Changes in version 1.1.160
+==========================
+
+- Fix crashing bug triggered by closing quotation marks with spaces
+  on both sides.
+
+    https://github.com/citation-style-language/test-suite/blob/master/processor-tests/humans/flipflop_OrphanQuote.txt
+
+==========================
+Changes in version 1.1.159
+==========================
+
+- Set default empty-string value on citation splice delimiter when no value
+  is provided in the style.
+
+    https://forums.zotero.org/discussion/64827/macos-error-when-trying-to-insert-new-citations-or-set-doc-preferences
+
+- Do not print an ugly placeholder for items omitted from bibliography in
+  non-numeric styles. In numeric styles, format the placeholder a little
+  more nicely. Arises from discussion here:
+
+    https://forums.zotero.org/discussion/64871/csl-allow-dropping-items-from-bibliography
+
+==========================
+Changes in version 1.1.158
+==========================
+
+- Fix delimiter in author-date styles with "collapse," where an author-date
+  cite was followed by a title-date cite. The processor had detected this
+  as a collapsed cite, and delivered the wrong delimiter. Issue was reported
+  here:
+
+    https://github.com/citation-style-language/styles/pull/2558
+
+==========================
+Changes in version 1.1.157
+==========================
+
+- Make sorts of citation-number operate on cite entries rather
+  than citation labels. Follows discussion here:
+
+    https://github.com/citation-style-language/test-suite/issues/1
+
+==========================
+Changes in version 1.1.156
+==========================
+
+- Fix bug in particle parsing that rendered Shun'ichi as Shun 'ichi.
+
+    https://forums.zotero.org/discussion/64543/apostrophe-in-name-causes-truncation
+
+==========================
+Changes in version 1.1.155
+==========================
+
+- Force string authority to name shape in Juris-M styles.
+
+- Ignore authority in ordinary-field abbreviation map.
+
+==========================
+Changes in version 1.1.154
+==========================
+
+- Protect against missing abbreviation segments.
+
+==========================
+Changes in version 1.1.153
+==========================
+
+- Permit abbreviation loading via a getAbbreviation() function
+  that does not return a value. Should now be backward-compatible.
+
+==========================
+Changes in version 1.1.152
+==========================
+
+- Change to abbreviation loading. Not sure if the changes are
+  backward-compatible -- please test with local getAbbreviation
+  hook when updating.
+
+==========================
+Changes in version 1.1.151
+==========================
+
+- Fix capitalization of stop-words that precede a hyphen.
+
+  But reported by @bwiernik
+
+==========================
+Changes in version 1.1.150
+==========================
+
+- Recognize small and negative years in embedded date parser
+  (for single year values only -- will not handle ranges or
+  dates with month or month/day elements).
+
+  Bug reported by @bwiernik
+
+- Fix spelling error in code that broke certain styles.
+
+  Bug reported by @adam3smith
+
+- Set hangingindent parameter as true (boolean), not as
+  2 (int).
+
+  Bug reported by @dsifford
+
+- Correct documentation of appendCitationCluster()
+
+  Bug reported by @johannesswilm
+
+==========================
+Changes in version 1.1.149
+==========================
+
+- Fix failure to parse correctly formatted small-caps in-text
+  markup.
+
+==========================
+Changes in version 1.1.148
+==========================
+
+- Fix bug that blocked title case capitalization following
+  proper (not straight) open quotes.
+
+- Fix bug that capitalized a stop-work occurring immediately
+  before a final nocase span in in-text markup.
+
+- Fix bug that was double-rendering the title in some styles.
+
+- Recognize several additional Unicode space characters when
+  performing word splits for text-case conversions.
+
+Many thanks for feedback on these bugs from GitHub codevs
+@retorquere, @bwiernik, @adam3smith, and @KarlHegbloom.
+
+==========================
+Changes in version 1.1.147
+==========================
+
+- Rewrite of "flipflop" module for in-text markup and localized
+  quotation marks.
+
+==========================
+Changes in version 1.1.146
+==========================
+
+- Refactor text-case functions, fixing several small bugs.
+
+- Some minor code reorganization.
+
+==========================
+Changes in version 1.1.145
+==========================
+
+- Allow missing field category segments in citeproc.transform.abbrevs.
+
+- Return empty string from cs:text where term="<termname>" not present
+  in style or locale.
+
+==========================
+Changes in version 1.1.144
+==========================
+
+- Use a CSL logging method, not "print," to report
+  a fatal error in XML parsing.
+
+==========================
+Changes in version 1.1.143
+==========================
+
+- Fix bug in E4X legacy parsing module.
+
+- Consolidate abbreviation category mappings in
+  a mapping object, and use it (in CSL.Transform).
+
+==========================
+Changes in version 1.1.142
+==========================
+
+- Fix obscure bug in the inheritance of name labels, tested
+  by new standard fixture name_LabelFormatBug.
+
+==========================
+Changes in version 1.1.141
+==========================
+
+- Fix failure of suffix when @display attribute is used, but
+  not present as top-level node within cs:layout.
+
+==========================
+Changes in version 1.1.140
+==========================
+
+- Fix subsequent-author-substitute for single-field names.
+
+    https://forums.zotero.org/discussion/comment/264815#Comment_264828
+
+==========================
+Changes in version 1.1.139
+==========================
+
+- Fix name disambiguation failure in bib that manifested in
+  bibliography in modern browser environments.
+
+    https://github.com/citation-style-language/styles/pull/2278
+
+
+==========================
+Changes in version 1.1.139
+==========================
+
+- Fix hyphenated-strings bug in numeric rendering:
+
+    https://forums.zotero.org/discussion/comment/264119
+
+- Append a non-numeric character to generated citationIDs:
+
+    https://github.com/Juris-M/citeproc-js/issues/22
+
+==========================
+Changes in version 1.1.138
+==========================
+
+- Retain leading zeros on numeric fields, without clobbering
+  is-numeric test result. Thread:
+
+    https://forums.zotero.org/discussion/comment/263404#Comment_263404
+
+==========================
+Changes in version 1.1.137
+==========================
+
+- Restore validFieldsForType in parseNoteFieldHacks()
+
+- Recognize "standard" as a jurism module type.
+
+- Disable style module completeness check.
+
+==========================
+Changes in version 1.1.136
+==========================
+
+- Permit non-conforming entries on the first line of "note" when
+  parsing "cheater syntax."
+
+==========================
+Changes in version 1.1.135
+==========================
+
+- Fix further bugs and infelicities in "cheater syntax" code. Main issues
+  are here:
+
+    https://github.com/Juris-M/citeproc-js/issues/6
+    https://github.com/zotero/zotero/issues/846
+
+- Update documentation on "cheater syntax" and related options:
+
+    http://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html#cheater-syntax-for-odd-fields
+
+==========================
+Changes in version 1.1.134
+==========================
+
+- Fix bug in placeholder label handling that blocked rendering
+  for ordinary numbers (edition, volume, etc).
+
+==========================
+Changes in version 1.1.133
+==========================
+
+- Fix bugs in new cheater-syntax code.
+
+==========================
+Changes in version 1.1.132
+==========================
+
+- Fix breakage in note-field "cheater syntax," and recognize simpler
+  line-entry syntax in addition to existing braced-entry syntax.
+  Breakage is described here:
+
+  https://github.com/Juris-M/citeproc-js/issues/6
+
+  Details of "cheater syntax" are documented here:
+
+  http://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html#cheater-syntax-for-odd-fields
+
+==========================
+Changes in version 1.1.131
+==========================
+
+- Reverse citation dereference from 1.1.127.
+
+==========================
+Changes in version 1.1.130
+==========================
+
+- Further fix for "no." label on number variable:
+
+  * Force literal rendering following a non-numeric entity
+  * Call "number" term when "no." short-code is used in "number"
+    variable only, but falling back to "issue" label if "number" 
+    locale term is empty or undefined.
+
+==========================
+Changes in version 1.1.129
+==========================
+
+- Fix dropped-labels bug reported here:
+
+  https://forums.zotero.org/discussion/62437/citation-style-bug-with-report-number
+
+==========================
+Changes in version 1.1.128
+==========================
+
+- Fix delimiter bug reported here:
+
+  https://forums.zotero.org/discussion/62352/style-error-american-fisheries-society
+
+==========================
+Changes in version 1.1.127
+==========================
+
+- Dereference citation and Item when first encountered during
+  a processor run. Avoids side effects in code of the calling
+  application, particularly in async environments.
+
+==========================
+Changes in version 1.1.126
+==========================
+
+- Fix bug affecting numeric styles, identified by 
+  Derek Sifford (dsifford):
+
+  https://github.com/Juris-M/citeproc-js/issues/17
+
+==========================
+Changes in version 1.1.125
+==========================
+
+- Add synchronous function CSL.getLocaleNames() to return a list of valid
+  CSL locale IDs appropriate for a given style.
+
+==========================
+Changes in version 1.1.124
+==========================
+
+- Remove dependency on jsdom in node deployments.
+
+==========================
+Changes in version 1.1.123
+==========================
+
+- Implement month-day date constraint.
+
+==========================
+Changes in version 1.1.122
+==========================
+
+- Restore jurisdiction suppression.
+
+==========================
+Changes in version 1.1.121
+==========================
+
+- Fix style module inheritance.
+
+==========================
+Changes in version 1.1.120
+==========================
+
+- Fix subsequent-author-substitute. Bug reported here:
+
+  https://forums.zotero.org/discussion/comment/260518
+
+==========================
+Changes in version 1.1.119
+==========================
+
+- Fix delimiter bug affecting some numeric styles:
+
+  https://forums.zotero.org/discussion/62288/citeprocjs-bug/
+
+==========================
+Changes in version 1.1.118
+==========================
+
+- Never render secondary or tertiary variants of title-short variable,
+  even when requested.
+
+==========================
+Changes in version 1.1.117
+==========================
+
+- Fix failure of group delimiter between a number and following text object.
+
+==========================
+Changes in version 1.1.116
+==========================
+
+- Fix an issue in inheritable name attributes that has been
+  outstanding since the introduction of separate storage of compiled
+  macro function bundles in version 1.1.0. Previously, macros
+  were built in separate copies for each call. This created a
+  lot of bloat, but it allowed inherited parameters to be burned
+  into each compiled copy of the macro, without side effects.
+
+  Since the move to single-instance storage of compiled macros, the
+  (largely unrevised) code for inherited attributes has been burning
+  one set of parameters into the macro, with no runtime
+  adjustments. This could easily break things when a macro was used in
+  both cs:citation and cs:bibliography. And it did.
+
+  The code has now been refactored to burn in only attributes
+  explictly set in macro code, and to call out for inherited options
+  at runtime. This allows macros to be shared between cs:citation and
+  cs:bibliography without side effects. It also allows the formatting
+  of names in modular legal styles ("juris" bundles) to be controlled
+  by the parent style.
+  
+
+==========================
+Changes in version 1.1.115
+==========================
+
+- Apply Institution variant conditions and styling to Institution
+  fields (was using Person parameters)
+
+==========================
+Changes in version 1.1.114
+==========================
+
+- Fix failure to resort tainted citations on up-registry reinsert.
+
+  Reported by Derek Sifford:
+
+    https://github.com/Juris-M/citeproc-js/issues/13
+
+==========================
+Changes in version 1.1.113
+==========================
+
+- Fix missing argument in log function.
+
+==========================
+Changes in version 1.1.112
+==========================
+
+- Fix multilingual bug, triggered by settings that invoked
+  a tertiary variant.
+
+==========================
+Changes in version 1.1.111
+==========================
+
+- Do not throw on CSL error. Use dump if console not available.
+
+==========================
+Changes in version 1.1.110
+==========================
+
+- Fix erroneous remap of CSL section field to locator in vanilla
+  CSL.
+
+    https://forums.zotero.org/discussion/59427/citation-of-a-law/
+
+==========================
+Changes in version 1.1.109
+==========================
+
+- Fix sort errors in Scandinavian locales that erupted here:
+
+    https://forums.zotero.org/discussion/59907/odd-behaviour-when-sorting-in-danish/
+
+==========================
+Changes in version 1.1.108
+==========================
+
+- Show language variants of institutions even when external abbreviation
+  is applied.
+
+==========================
+Changes in version 1.1.107
+==========================
+
+- Recognize default-locale on cs:date in rendering context.
+
+==========================
+Changes in version 1.1.106
+==========================
+
+- Recognize a default-locale attribute on cs:label and cs:text when used to
+  render a term.
+
+- Avoid use of array comprehension in variable assignment.
+
+==========================
+Changes in version 1.1.105
+==========================
+
+- Fix over-restrictiveness in the application of en-dash, uncovered
+  while working through a style issue reported here:
+
+    https://forums.zotero.org/discussion/59568/style-error-australian-guide-to-legal-citation/
+
+==========================
+Changes in version 1.1.104
+==========================
+
+- Rework the year-suffix fix introduced at 1.1.100, which
+  broke on a separate, as-yet-untested disambiguation issue.
+
+- Split `authority` and `committee` field content on a semicolon,
+  and cast as multiple name elements. Affects CSL-M
+  mode only.
+
+- Fix bugs in the handling of extended locator elements
+  (locator-date and locator-extra).
+
+==========================
+Changes in version 1.1.103
+==========================
+
+- In text-case="title" with English, capitalize a word that follows
+  a forward slash.
+
+- Properly escape <sup></sup> and <sub></sub> markup when applying
+  text transforms (fixes a bug unmasked by the change above).
+
+- When no authors are available for citation-label, use a fragment
+  of the title.
+
+- When adding multilingual variants in output, suppress italics,
+  oblique, and boldface in supplementary (secondary and tertiary)
+  text.
+
+==========================
+Changes in version 1.1.102
+==========================
+
+- Append citationID to the citation arrays returned
+  by processCitationCluster(). Depending on document
+  addressing capabilities, this can greatly simplify
+  the matching of updates to document citations.
+
+==========================
+Changes in version 1.1.101
+==========================
+
+- Fix missing-delimiter bug with explicit year-suffix.
+
+- Fix erroneous render of implicit year-suffix when date variable
+  has no content. Reported by Sebastian:
+
+    https://forums.zotero.org/discussion/58636/collapse-yearsuffix-in-chicago-manual-of-style/#Item_5
+
+==========================
+Changes in version 1.1.100
+==========================
+
+- In @initialize-with attribute value, retain zero-width non-breaking
+  space (\uFEFF) and non-breaking space (\u00A0) as inter-initials
+  join, and in the RU and FR locales only, when either non-breaking
+  space is present in the attribute value, use non-breaking space
+  (\u00A0) as given-to-family join when building initialized names in
+  non-sort order. Otherwise, use space for given-to-family join.
+
+  Resolves issue discussed at:
+
+    https://forums.zotero.org/discussion/31693/nonbreaking-space-unavailable-between-initials-and-names
+
+- Fix bug in which styling of cs:date nodes with no variable content
+  (specifically affixes) affected styling in subsequent date nodes.
+
+- Fix bugs in explicit year-suffix when used with year- or year-suffix collapse.
+
+=========================
+Changes in version 1.1.99
+=========================
+
+- Fix pluralism of embedded labels.
+
+=========================
+Changes in version 1.1.98
+=========================
+
+- Recognized balanced single- or balanced double-quotes
+  in XML markup.
+
+=========================
+Changes in version 1.1.97
+=========================
+
+- Set single-field names from {:key:val} note field hacks as
+  literal, rather than as family + isInstitution.
+
+=========================
+Changes in version 1.1.96
+=========================
+
+- Handle DOS and Mac line endings correctly when parsing serialized
+  XML.
+
+=========================
+Changes in version 1.1.95
+=========================
+
+- Trim numeric field values before parsing.
+
+=========================
+Changes in version 1.1.94
+=========================
+
+- Extend parseNoteFieldHacks() to accept a hash object of
+  valid-field flags.
+
+=========================
+Changes in version 1.1.93
+=========================
+
+- Expose field-hack decoding as parseNoteFieldHacks() method
+  on CSL object.
+
+=========================
+Changes in version 1.1.92
+=========================
+
+- Add pretitle macros to all style modules. Thank you OSCOLA,
+  thank you European Court of Justice.
+
+=========================
+Changes in version 1.1.91
+=========================
+
+- Return bibliography strings as an array of strings,
+  not as a array of and array of strings. Restores behaviour
+  prior to 1.1.68. Fault reported by Carles Pina.
+
+=========================
+Changes in version 1.1.90
+=========================
+
+- Return false for comma-safe when term set is a value term
+  on cs:text.
+
+=========================
+Changes in version 1.1.89
+=========================
+
+- Set just_did_number flag on cs:text with term or value attribute.
+
+=========================
+Changes in version 1.1.88
+=========================
+
+- With comma-safe, always return true a term exists and is alpha.
+
+=========================
+Changes in version 1.1.87
+=========================
+
+Fix nesting mismatch triggered on RTL-language items. Reported by
+abdeali khurrum to the Juris-M Freshers list.
+
+=========================
+Changes in version 1.1.86
+=========================
+
+- Fix failure to return variable_attempt=true when
+  require="empty-label" failed, and so fail to suppress
+  sibling term when no other variable renderings are
+  attempted.
+
+=========================
+Changes in version 1.1.85
+=========================
+
+- Remove stale alternative-macro support from processor,
+  and fix tests to remove it from there.
+
+- Update CSL-M schema to add empty-label value on reject and require.
+
+- Enhancements and bugfixes for require and reject:
+
+    - Handle group_context only on real nodes in the style.
+    - Treat the outer group on macros as a real group node in the style.
+    - Fix a bug in the application of layout suffix on bibliographies.
+    - Add an empty-label value to reject and require.
+    - Flag a failed reject or require to the parent as a failed attempt
+      to render a variable, so that it will take bare term siblings
+      with it on fail.
+
+
+
+=========================
+Changes in version 1.1.84
+=========================
+
+- Replace reject and require conditions with smarter
+  comma-safe value
+
+=========================
+Changes in version 1.1.83
+=========================
+
+- Fix hang condition triggered when single straight quotes were set as
+  inner quotes, and a field contained a straight-quote apostrophe.
+
+=========================
+Changes in version 1.1.82
+=========================
+
+- Fix Arabic locale selection.
+
+=========================
+Changes in version 1.1.81
+=========================
+
+- Remove unused macros from modular code tests.
+
+- Fix minor bugs in require and reject code.
+
+- Fix bug in "romanesque" regular expressions.
+
+- Return styleID from JSON parser.
+
+=========================
+Changes in version 1.1.80
+=========================
+
+- Force per-word sorting on all sort keys.
+
+- Fix bug in new reject and require attributes that caused
+  test to fail when rendered label was nested in a macro
+  or condition statement.
+
+- Move in CSL-M tests migrated from standard CSL test suite.
+
+=========================
+Changes in version 1.1.79
+=========================
+
+- Recognize require and reject attribute on cs:text in
+  value and term modes.
+
+=========================
+Changes in version 1.1.78
+=========================
+
+- Clean up group context code, replacing array with
+  keyed object.
+
+- Remove stale "oops" attribute code.
+
+- Implement require and reject condition attributes
+  on cs:group with "label-empty-or-alpha" value.
+
+=========================
+Changes in version 1.1.77
+=========================
+
+- Fix failure of locale-based numeric-term embedded affixes on
+  first number in field.
+
+- Add "static" term form to CSL-M schema, and mask it from
+  changes via the label-form attribute.
+
+- Add -nojuris mode option to ./test.py
+
+=========================
+Changes in version 1.1.76
+=========================
+
+- Fix parallel cite test failure.
+
+=========================
+Changes in version 1.1.75
+=========================
+
+- Unescape angle brackets in string-based parser.
+  (checked Zotero styles repo to confirm that all
+  names entities used in CSL styles are now covered).
+
+=========================
+Changes in version 1.1.74
+=========================
+
+- Migrate repo to git.
+
+- Fix issue with raw affix affecting French styles.
+
+- Include CSL test suite, CSL locales, CSL and CSL-M schemata,
+  and a new citeproc-js-docs repo as submodules.
+
+- Implement a string-based XML-to-JS converter.
+
+- Bundle DOM and JSON walking parsers and XML-to-JS converter in
+  processor instance, and sniff input to select parser.
+
+- Provide with-E4X and without-E4X versions of the processor code.
+
+- Clean up the test script a bit.
+
+- Fix support for alternative JS engines.
+  
+- Merge JS runners into a single file.
+
+- Add jing validator to project repo, and fix test.py -c to
+  report correct source filename on error.
+
+- Remove unused files.
+
+=========================
+Changes in version 1.1.73
+=========================
+
+- Permit use of leading-noise-words in style-level locale declarations.
+
+- Suppress parens flip on all but note styles.
+
+- Make test fixtures work with standard CSL locales.
+
+=========================
+Changes in version 1.1.72
+=========================
+
+- More robust implementation of parens-flipping, enabled only
+  on note styles.
+
+- Fix global replacements that failed on many JS implementations.
+
+- Introduce string-based parsing of serialized XML.
+
+- Extend test framework to allow use of alternative JS engines.
+
+- Remove spaces from sort keys to fix sort behaviour on several
+  JS implementations.
+
+- Add a few test fixtures.
+
+=========================
+Changes in version 1.1.71
+=========================
+
+- Fix bug affecting styles making use of near-note.
+  Reported by Zotero user @tog
+  https://forums.zotero.org/discussion/56946/attribute-name-formshort-ignored/
+
+=========================
+Changes in version 1.1.70
+=========================
+
+- Fix a second bug, affecting all styles. Check for nesting name
+  failed erroneously, but failure did not show in tests b/c written
+  to console.log() rather than print().
+
+=========================
+Changes in version 1.1.69
+=========================
+
+- Fix a bug that manifested in Juris-M configuration with the
+  Vancouver style.
+
+=========================
+Changes in version 1.1.68
+=========================
+
+- Revised handling for numeric variables
+  * Numeric variables are processed identically in cs:text and cs:number
+  * Label short-codes embedded in fields are recognized and pluralized
+  * Label override by leading short-code recognized in locator and number
+  * Per-number affixes can be specified in locale label terms with %s placeholder
+  * Prefix and suffix labels can be forced in locale label terms with %s placeholder
+  * Expansion and collapsing of page ranges in locators is supported
+
+=========================
+Changes in version 1.1.67
+=========================
+
+- Fix a bug in reverse-lookup support used by the visual editor.
+
+=========================
+Changes in version 1.1.66
+=========================
+
+- Remove title-casing suppression from quotes, and smarten up
+  quote parsing.
+
+    http://xbiblio-devel.2463403.n2.nabble.com/Title-case-questions-tt7579427.html
+
+=========================
+Changes in version 1.1.65
+=========================
+
+- Amend date parser module to accomodate usage in Juris-M, and
+  provide parse() method for backward compatibility.
+
+- Make parsed date values numeric
+
+    https://github.com/Juris-M/zotero/issues/2
+
+- Fix date parsing bug exposed when multiple date locales are
+  loaded
+  
+    https://github.com/Juris-M/zotero/issues/9
+
+- Recognize underscore workaround as a date delimiter
+
+    https://github.com/Juris-M/zotero/issues/6
+
+- Return incompletely parsed dates as literal
+
+    https://github.com/Juris-M/zotero/issues/13
+
+=========================
+Changes in version 1.1.64
+=========================
+
+- Fix bug in xmljson.js that caused incorrect formatting of
+  names in some styles when rendered with xmljson.js parser:
+
+    https://github.com/zotero/citeproc-node/issues/26
+
+- Fix bug in text-case="title" that prevented tag-enclosed
+  text from uppercasing properly.
+
+    https://bitbucket.org/fbennett/citeproc-js/issues/187/title-case-formatter-does-not-title-case
+
+- Fix sort bug affecting some JavaScript engines.
+
+    https://twitter.com/fgbjr/status/662844111834079232
+
+=========================
+Changes in version 1.1.63
+=========================
+
+- Extend uppercase-subtitles option to cover container-title
+  as well. New code is extensible to series titles as well, if
+  that is desired.
+
+    https://github.com/Juris-M/propachi-upper/issues/2
+
+=========================
+Changes in version 1.1.62
+=========================
+
+- Fix bug in cite-group-delimiter:
+
+    https://github.com/citation-style-language/styles/pull/1742/files#r43429282
+
+=========================
+Changes in version 1.1.61
+=========================
+
+- Fix Extra-field hack parse of creators. Add (possibly multiple)
+  names if original input had not name of same category. Addresses
+  bug report:
+
+    https://github.com/zotero/zotero/issues/846#issuecomment-146794378
+
+=========================
+Changes in version 1.1.60
+=========================
+
+- Avoid erroneous disambiguation when non-"issued" date variables
+  are the only difference between citations (but continue to ignore
+  "accessed").
+
+  https://forums.zotero.org/discussion/52758/disambiguation-enabled-when-not-needed-with-date--original-date/
+
+=========================
+Changes in version 1.1.59
+=========================
+
+- Update to processor documentation.
+
+- Fix parsing of particles with articulars to work like normal.
+
+=========================
+Changes in version 1.1.58
+=========================
+
+- Fix a bug in the particle parser, ouch. Thanks to Emiliano Heyns
+  for reporting it:
+
+    https://bitbucket.org/fbennett/citeproc-js/issues/183/particle-parser-returning-non-dropping
+
+=========================
+Changes in version 1.1.57
+=========================
+
+- Simplify particle parsing mechanism, following discussion in these threads:
+
+    https://forums.zotero.org/discussion/51491/double-surnames-starting-with-te-end-up-quoted-incorrect/
+    https://forums.zotero.org/discussion/51783/1/parsing-problem-on-italian-names/
+
+- Move list of particles to a separate processor segment, for access by
+  calling applications that implement their own parsing methods.
+
+=========================
+Changes in version 1.1.56
+=========================
+
+- Fix bug in cite-group-delimiter:
+
+    https://forums.zotero.org/discussion/51942/citeprog-bug-citegroupdelimiter-and-yearsuffix/#Item_1
+
+=========================
+Changes in version 1.1.55
+=========================
+
+- Add Dutch particles from external source linked by Rintze, as suggested by nickbart
+
+    https://forums.zotero.org/discussion/30974/2/any-idea-why-an-a-author-comes-last-in-the-bibliography/2/#Item_26
+
+- Merge entries as appropriate
+
+=========================
+Changes in version 1.1.54
+=========================
+
+- Reformat particle list
+
+=========================
+Changes in version 1.1.53
+=========================
+
+- Fix some Italian particle classifications
+
+    https://forums.zotero.org/discussion/51783/parsing-problem-on-italian-names/
+
+=========================
+Changes in version 1.1.52
+=========================
+
+- Fix Dutch particle classifications, per:
+
+    https://forums.zotero.org/discussion/51491/double-surnames-starting-with-te-end-up-quoted-incorrect/#Comment_232339
+
+- Restore case sensitivity in names parsing.
+
+- Restore uppercase Arabic particles, pending further feedback from Arabists.
+
+=========================
+Changes in version 1.1.51
+=========================
+
+- Discriminate between dropping and non-dropping particles in
+  subsequent-author-substitute. Reported by gracile:
+
+    https://forums.zotero.org/discussion/51260/citeproc-same-author-different-particles-parsing-subsequentauthorsubstitute/
+
+=========================
+Changes in version 1.1.50
+=========================
+
+- Bugfixes in handling of displayed jurisdiction names.
+
+=========================
+Changes in version 1.1.49
+=========================
+
+- Clean up suppress-jurisdictions mess (includes a change to hook function
+  signature).
+
+=========================
+Changes in version 1.1.48
+=========================
+
+- Do not swap punctuation across quotes="false" boundary.
+
+- Do not migrate terminal punctuation across quotes boundary.
+
+=========================
+Changes in version 1.1.47
+=========================
+
+- Avoid first-entry exception with styles that use first-reference-note-number.
+
+    https://forums.zotero.org/discussion/39244/error-mlz-citation-processor-only-works-second-time/#Item_27
+
+=========================
+Changes in version 1.1.46
+=========================
+
+- Fix parsing crash.
+
+    https://forums.zotero.org/discussion/17317/2/sep-is-undefined/#Item_18
+
+
+=========================
+Changes in version 1.1.45
+=========================
+
+- Make name parsing completely case-insensitive. This change
+  aims only to put a consistent behaviour in place, as a basis
+  for further discussion as we make our way through the name-particle
+  morass.
+
+    https://forums.zotero.org/discussion/42687/found-a-bug-with-name-starting-with-de/#Item_6
+
+- Provide for discretionary classification of "de las" and "de la" as all-non-dropping
+  or dropping/non-dropping, depending on user entry.
+
+    https://forums.zotero.org/discussion/30974/2/any-idea-why-an-a-author-comes-last-in-the-bibliography/#Item_12
+
+- Remove uppercase versions of Arabic name particles. Maybe be restored if case
+  sensitivity is introduced.
+
+=========================
+Changes in version 1.1.44
+=========================
+
+- Suppress jurisdictions based on machine-readable code,
+  regardless of multilingual variant.
+
+=========================
+Changes in version 1.1.43
+=========================
+
+- Fix bugs in three particle specs (d', des, de).
+
+    https://forums.zotero.org/discussion/50718/apostrophe-in-last-name/
+
+=========================
+Changes in version 1.1.42
+=========================
+
+- Eliminate extraneous \\line operator in RTF output. Not
+  extensively tested.
+
+    https://forums.zotero.org/discussion/2252/word-plugin-inserts-superfluous-linebreaks-in-bibliography/
+    https://forums.zotero.org/discussion/50628/bibliography-alignment/
+
+=========================
+Changes in version 1.1.41
+=========================
+
+- Introduce option to disable the parsing of names in the
+  processor (delegating to the calling application)
+
+    https://forums.zotero.org/discussion/30974?page=1#Item_46
+
+=========================
+Changes in version 1.1.40
+=========================
+
+- Introduce force_jurisdiction option for extended styles.
+
+- Replace String() methods with RegExp() for compatibility
+
+    https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+- Fix typo in particle parsing struct (affecting al- and von), and add
+  a list of Arabic particles
+  
+    https://forums.zotero.org/discussion/30974/any-idea-why-an-a-author-comes-last-in-the-bibliography/#Item_30
+
+=========================
+Changes in version 1.1.39
+=========================
+
+- Fix title case to work in Internet Explorer.
+
+  Thanks to David Laurenson for reporting the fault.
+
+=========================
+Changes in version 1.1.38
+=========================
+
+- Do not capitalize leading particles in the bibliography.
+
+  https://forums.zotero.org/discussion/50199/lowercase-first-letter-of-the-surname
+
+=========================
+Changes in version 1.1.37
+=========================
+
+- Fix scoping bug in RTF markup.
+
+  https://forums.zotero.org/discussion/50304/problems-with-et-al
+
+=========================
+Changes in version 1.1.36
+=========================
+
+- Fix further root of bug in institutiona names handling,
+  affecting first-class instititional names (not authority 
+  or committee) that have a multilingual variant.
+
+  Thanks to Zotero user bluunksaesn for reporting.
+
+=========================
+Changes in version 1.1.35
+=========================
+
+- Fix a bug introduced at 1.1.33. New code for juggling
+  suffixes crashed when an empty item was encountered.
+
+=========================
+Changes in version 1.1.34
+=========================
+
+- Fix bug in institution names handling. Force values to
+  obj.literal rather than obj.family w/obj.isInstitution.
+  Simpler is beautifuler.
+
+=========================
+Changes in version 1.1.33
+=========================
+
+- Fix bug in multiple layouts. With the second-field-align option,
+  the layout suffix on non-default alternative layouts was placed
+  outside of the right-inline block, resulting in a stray hard
+  return between the citation and the trailing punctuation in output.
+
+  Many thanks to Vladimir Sobolev for reporting the fault.
+
+=========================
+Changes in version 1.1.32
+=========================
+
+- Show multilingual forms of long-form institution name on
+  failover from request for short form.
+
+=========================
+Changes in version 1.1.31
+=========================
+
+- Fix bug in 1.1.30
+
+=========================
+Changes in version 1.1.30
+=========================
+
+- Enable alternative-macro calls from within modular code.
+  The macro called is the macro in the main style; this will
+  require a convention to use a uniform macro name for this
+  purpose (this: "at-locator-label"), and to provide it in
+  all main JM styles.
+
+=========================
+Changes in version 1.1.29
+=========================
+
+- Extend discretionary creator handling to committee variable.
+
+=========================
+Changes in version 1.1.28
+=========================
+
+- Provide mappings for all multilingual fields in LangPrefsMap
+
+=========================
+Changes in version 1.1.27
+=========================
+
+- Make short form of institutional names empty by default.
+
+=========================
+Changes in version 1.1.26
+=========================
+
+- Add language-name and language-name-original with
+  short forms in "place" category.
+
+=========================
+Changes in version 1.1.25
+=========================
+
+- Add an authority-residue condition. Checks whether
+  there are elements not rendered by the most recent
+  use-last condition.
+
+=========================
+Changes in version 1.1.24
+=========================
+
+- The proper fix for fallbacks.
+
+=========================
+Changes in version 1.1.23
+=========================
+
+- Bugfix in fallback.
+
+=========================
+Changes in version 1.1.22
+=========================
+
+- Set "us" as the fallback style module, if available.
+
+=========================
+Changes in version 1.1.21
+=========================
+
+- Introduce far-note test on position attribute.
+
+=========================
+Changes in version 1.1.20
+=========================
+
+- Better handling of implicit conditional rendering with
+  juris-locator-label macro in cs:group.
+
+=========================
+Changes in version 1.1.19
+=========================
+
+- Fix a subtle bug affecting juris-locator-label in
+  modular style code.
+
+- Fix potential bug in detection of output from multiple
+  variables.
+
+=========================
+Changes in version 1.1.18
+=========================
+
+- Add locale fallback "lv_LV" for "lv".
+
+- Check for callback completeness in test runner.
+
+=========================
+Changes in version 1.1.17
+=========================
+
+- Add locale fallback "hr_HR" for "hr".
+
+=========================
+Changes in version 1.1.16
+=========================
+
+- Align treatment of locators on regulation with legislation et al.
+
+=========================
+Changes in version 1.1.15
+=========================
+
+- Make the juris-locator-label macro shy like a bare label
+  or term.
+
+=========================
+Changes in version 1.1.14
+=========================
+
+- Improved handling of suppressed jurisdiction names
+  and modular style code.
+
+=========================
+Changes in version 1.1.13
+=========================
+
+- New names for composite locators in modular code.
+
+=========================
+Changes in version 1.1.12
+=========================
+
+- Fix bug in parsing of embedded labels on non-locator vars
+  when section var not present in input (legal types only)
+
+- Remove capitalized Chapter and Section terms (legal types only)
+
+- Adjust tests to use explicit labels on number var, rather
+  than label-form attribute (legal types only)
+
+=========================
+Changes in version 1.1.11
+=========================
+
+- Extract label from number rendered with cs:number, and
+  make available on cs:label with variable="number."
+  Behaviour tracks that of page and page-first variables.
+
+- Fix bug in parsing of pipe-delimited extra data on locator
+
+- Change locator-revision to locator-extra (accompanied by
+  change to CSL-m schema)
+
+=========================
+Changes in version 1.1.10
+=========================
+
+- Fix conditional for embedded label in "number" variable rendered
+  with cs:number
+
+========================
+Changes in version 1.1.9
+========================
+
+- Fix repeat of "by" term in Chicago Author-Date etc.
+
+- Remove treaty from modular types, add report
+
+========================
+Changes in version 1.1.8
+========================
+
+- Add support for cs:law-module types="a b c", following schema revision.
+
+========================
+Changes in version 1.1.7
+========================
+
+- Run alternative-macro when a variable render fails, or when no
+  attempt is made to render anything.
+
+- Flag attempt to render a term in cs:label.
+
+- Properly add cs:name nodes in xmljson.xml. Fault reported
+  by Faolan Cheslack-Postava.
+
+========================
+Changes in version 1.1.6
+========================
+
+- Fix group closure bug (loss of decorations when self-testing jurisdiction
+  modules)
+
+- Fix erroneous capitalization of non-English characters.
+      https://forums.zotero.org/discussion/47850/greek-letter-is-shown-as-b-in-bibliography/#Item_18
+
+- Allow non-conforming macro names in jurisdiction modules. Necessary for
+  standalone testing.
+
+
+========================
+Changes in version 1.1.5
+========================
+
+- More name particles, from Philipp Zumstein:
+
+  https://forums.zotero.org/discussion/47161/names-reform-request-for-comments/#Comment_217706
+
+- Fix bug in terminator testing in util_names.js (Thanks to @fcheslack).
+
+- Fix a small spacing issue affecting name particles with a leading
+  single quote.
+
+========================
+Changes in version 1.1.4
+========================
+
+- Particles parser.
+
+========================
+Changes in version 1.1.3
+========================
+
+- Rename alt-macro attribute as alternative-macro
+
+========================
+Changes in version 1.1.2
+========================
+
+- Fix loss of affixes on failed juris test
+- Implement item-type-specific support in modules
+- Some code cleanup
+
+========================
+Changes in version 1.1.1
+========================
+
+- Require juris-locator-label macro as a late addition.
+
+========================
+Changes in version 1.1.0
+========================
+
+- citeproc-js now has full support for jurisdiction-specific
+  modular legal styles. This is the last piece to the puzzle
+  it set out to solve. Time to roll over that version number.
+

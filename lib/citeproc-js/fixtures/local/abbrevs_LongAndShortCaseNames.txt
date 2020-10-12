@@ -1,0 +1,124 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] Smith Inc v Jones
+..[1] Book A
+>>[2] Smith Inc
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+     <choose>
+       <if position="subsequent">
+         <text variable="title-short" form="short"/>
+       </if>
+       <else>
+         <text variable="title" form="short"/>
+       </else>
+     </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== ABBREVIATIONS =====>>
+{
+    "default": {
+        "title": {
+            "Smith Incorporated": "Smith Inc", 
+            "Smith Incorporated v. Jones": "Smith Inc v Jones"
+        }
+    }
+}
+<<===== ABBREVIATIONS =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "title": "Smith Incorporated v. Jones",
+        "title-short": "Smith Incorporated",
+        "id": "ITEM-1", 
+        "type": "legal_case"
+    },
+    {
+        "title": "Book A",
+        "id": "ITEM-2", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<
+
+
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [["CITATION-1", 1]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [["CITATION-1", 1],["CITATION-2",2]], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+

@@ -1,0 +1,163 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": 201
+                }, 
+                {
+                    "id": "ITEM-2", 
+                    "locator": 301
+                }, 
+                {
+                    "id": "ITEM-1", 
+                    "locator": 202
+                }, 
+                {
+                    "id": "ITEM-2", 
+                    "locator": 302
+                }, 
+                {
+                    "id": "ITEM-3", 
+                    "locator": 401
+                }
+            ], 
+            "properties": {
+                "index": 0, 
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+>>===== RESULT =====>>
+>>[0] Smith v. Noakes, 222 U.S. 200, 201, 333 L.Ed. 300, 301 (1965); ibid. at 202, 333 L.Ed. 302; Jim v. Bob, 444 U.S. 400, 401 (1966).
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1" year-range-format="expanded">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation disambiguate-add-givenname="true" et-al-min="3" et-al-use-first="1" near-note-distance="5">
+    <layout delimiter="; " suffix=".">
+      <choose>
+        <if position="ibid-with-locator">
+          <group delimiter=" ">
+            <text term="ibid"/>
+            <text value="at"/>
+            <number variable="locator"/>
+          </group>
+        </if>
+        <else-if position="subsequent">
+            <group delimiter=" " parallel-delimiter-override=", ">
+              <number variable="volume"/>
+              <text variable="container-title"/>
+              <number variable="locator"/>
+            </group>
+        </else-if>
+        <else>
+          <group delimiter=", ">
+            <group parallel-first="title" parallel-delimiter-override=", ">
+              <text variable="title"/>
+            </group>
+            <group delimiter=" ">
+              <number variable="volume"/>
+              <text variable="container-title"/>
+              <group delimiter=", ">
+                <number variable="page"/>
+                <number variable="locator"/>
+              </group>
+              <group delimiter=" " prefix="(" suffix=")">
+                <group parallel-last="authority">
+                  <names variable="authority">
+                    <name/>
+                    <institution institution-parts="short"/>
+                  </names>
+                </group>
+                <group parallel-last="issued">
+                  <date variable="issued" form="text" date-parts="year"/>
+                </group>
+              </group>
+            </group>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965"
+                ]
+            ]
+        }, 
+        "volume" : "222",
+        "page" : "200",
+        "title": "Smith v. Noakes", 
+        "container-title": "U.S.",
+        "jurisdiction": "us",
+        "type": "legal_case",
+        "seeAlso": ["ITEM-2"]
+    },
+    {
+        "id": "ITEM-2", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1965"
+                ]
+            ]
+        }, 
+        "volume" : "333",
+        "page" : "300",
+        "title": "Smith v. Noakes", 
+        "container-title": "L.Ed.", 
+        "jurisdiction": "us",
+        "type": "legal_case",
+        "seeAlso": ["ITEM-1"]
+    },
+    {
+        "id": "ITEM-3", 
+        "issued": {
+            "date-parts": [
+                [
+                    "1966"
+                ]
+            ]
+        }, 
+        "volume" : "444",
+        "page" : "400",
+        "title": "Jim v. Bob", 
+        "container-title": "U.S.", 
+        "jurisdiction": "us",
+        "type": "legal_case"
+    }
+]
+<<===== INPUT =====<<

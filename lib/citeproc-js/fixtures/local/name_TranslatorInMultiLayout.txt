@@ -1,0 +1,241 @@
+>>===== MODE =====>>
+bibliography
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+<div class="csl-bib-body">
+  <div class="csl-entry">I. Locke, Hrsg., 1895, Das erste Buch, Geneva: Ex Ante Press. (tran. A. Aalto, 2001, First Book, Tokyo: Ex Post Press.)</div>
+  <div class="csl-entry">S. Marple, ed., 1895, Her Book, Geneva: Ex Ante Press. (Übers. C. Brand, 2001, Ihr Buch, Tokyo: Ex Post Press.)</div>
+  <div class="csl-entry">H. Digarmo, ed., 1999, The Other Book, White Plains: Ex Ante Press. (1999, Wow.)</div>
+</div>
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ], 
+            [
+                "CITATION-2", 
+                2
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1"
+      default-locale="en">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="alternative">
+    <alternative delimiter=", " prefix="(" suffix=".)">
+      <alternative-text/>
+    </alternative>
+  </macro>
+  <macro name="bib-entry">
+    <group delimiter=". ">
+      <group delimiter=", ">
+        <choose>
+          <if context="alternative">
+            <names variable="editor">
+              <label form="short" suffix=" "/>
+              <name initialize-with=". "/>
+              <substitute>
+                <names variable="translator"/>
+              </substitute>
+            </names>
+          </if>
+          <else>
+            <names variable="editor">
+              <name initialize-with=". "/>
+              <label form="short" prefix=", "/>
+              <substitute>
+                <names variable="translator"/>
+              </substitute>
+            </names>
+          </else>
+        </choose>
+        <date variable="issued" form="text" date-parts="year"/>        
+        <text variable="title" text-case="title"/>
+        <group delimiter=": ">
+          <text variable="publisher-place"/>
+          <text variable="publisher"/>
+        </group>
+      </group>
+      <text macro="alternative"/>
+    </group>
+  </macro>
+  <citation>
+    <layout>
+      <text value="bogus" />
+    </layout>
+  </citation>
+  <bibliography>
+    <layout locale="de">
+      <text macro="bib-entry"/>
+    </layout>
+    <layout>
+      <text macro="bib-entry"/>
+    </layout>
+  </bibliography>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "editor": [
+            {
+                "family": "Locke", 
+                "given": "Issac"
+            }
+        ], 
+        "note": "alt-translator: Aalto||Alan\nalt-issued:2001\nalt-publisher:Ex Post Press\nalt-publisher-place:Tokyo",
+        "title": "Das erste Buch",
+        "publisher": "Ex Ante Press",
+        "publisher-place": "Geneva",
+        "language": "en<de",
+        "multi": {
+           "_keys": {
+             "title": {
+               "en": "First book"
+             }
+           }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1895
+            ]
+          ]
+        },
+        "id": "ITEM-1", 
+        "type": "book"
+    },
+    {
+        "editor": [
+            {
+                "family": "Marple", 
+                "given": "Seamus"
+            }
+        ], 
+        "note": "alt-translator: Brand||Cynthia\nalt-issued:2001\nalt-publisher:Ex Post Press\nalt-publisher-place:Tokyo",
+        "title": "Her book",
+        "publisher": "Ex Ante Press",
+        "publisher-place": "Geneva",
+        "language": "en>de",
+        "multi": {
+           "_keys": {
+             "title": {
+               "de": "Ihr Buch"
+             }
+           }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1895
+            ]
+          ]
+        },
+        "id": "ITEM-2", 
+        "type": "book"
+    },
+    {
+        "editor": [
+            {
+                "family": "Digarmo", 
+                "given": "Henry"
+            }
+        ], 
+        "title": "The other book",
+        "publisher": "Ex Ante Press",
+        "publisher-place": "White Plains",
+        "language": "en>ja",
+        "note": "alt-issued:1999\nalt-title: Wow",
+        "multi": {
+           "_keys": {
+             "title": {
+               "de": "Das andere Buch"
+             }
+           }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "id": "ITEM-3", 
+        "type": "book"
+    }
+]
+<<===== INPUT =====<<

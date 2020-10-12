@@ -1,0 +1,143 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] 1961:78=1984:86
+..[1] 1961=1984:78
+>>[2] 1961:78–80=1984:86–92
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "78|86"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "78"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 0
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                0
+            ]
+        ], 
+        []
+    ], 
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1", 
+                    "locator": "78-80|86-92"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 0
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                0
+            ], 
+            [
+                "CITATION-2", 
+                0
+            ]
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout>
+      <group delimiter="=">
+        <group delimiter=":">
+          <date variable="original-date" form="text" date-parts="year"/>
+          <choose>
+            <if variable="locator-extra">
+              <number variable="locator"/>
+            </if>
+          </choose>
+        </group>
+        <group delimiter=":">
+          <date variable="issued" form="text" date-parts="year"/>
+          <choose>
+            <if variable="locator-extra">
+              <number variable="locator-extra"/>
+            </if>
+            <else>
+              <number variable="locator"/>
+            </else>
+          </choose>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "title": "Book One",
+        "id": "ITEM-1", 
+        "type": "bill",
+        "original-date": {
+           "date-parts": [
+             [1961]
+           ]
+        },
+        "issued": {
+           "date-parts": [
+             [1984]
+           ]
+        }
+    }
+]
+<<===== INPUT =====<<
