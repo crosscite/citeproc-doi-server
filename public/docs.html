@@ -296,10 +296,7 @@
 
                     <p>
                         The DOI resolver at doi.org will normally redirect a user to the resource location of a DOI. For example, the DOI "10.1126/science.169.3946.635" redirects to a landing page describing the article, "The Structure of Ordinary Water". Content negotiated
-                        requests to doi.org that ask for a content type which isn't "text/html" will be redirected to a metadata service hosted by the DOI's registration agency. CrossRef, DataCite and mEDRA support content negotiated DOIs via
-                        <a
-                            href="https://data.crossref.org">https://data.crossref.org</a>,
-                            <a href="https://data.datacite.org">https://data.datacite.org</a> and <a href="http://data.medra.org">http://data.medra.org</a> respectively.
+                        requests to doi.org that ask for a content type which isn't "text/html" will be redirected to a metadata service hosted by the DOI's registration agency. CrossRef, DataCite and mEDRA support content negotiated DOIs via their respective resolvers.                      
                     </p>
 
 
@@ -338,7 +335,7 @@ https://doi.org/10.1126/science.169.3946.635
                    V
 
        CrossRef metadata service
-http://data.crossref.org/10.1126/science.169.3946.635
+https://api.crossref.org/10.1126/science.169.3946.635/transform
 </pre>
 
                         </div>
