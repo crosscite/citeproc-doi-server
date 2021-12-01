@@ -279,7 +279,9 @@
                         a <a href='https://doi.org'>DOI resolver</a>. Such researchers may not even realise they are using DOIs and a DOI resolver since they may follow links with embedded DOIs.
                     </p>
                     <p>
-                        Yet DOIs can provide more than a permanent, indirect link to content. DOI registration agencies such as CrossRef, DataCite and mEDRA collect bibliographic metadata about the works they link to. This metadata can be retrieved from a DOI resolver too, using
+                        Yet DOIs can provide more than a permanent, indirect link to content. DOI registration agencies such as Crossref,
+                        DataCite and mEDRA collect bibliographic metadata about the works they link to. This metadata can be retrieved from a
+                        DOI resolver too, using
                         content negotiation to request a particular representation of the metadata.
                     </p>
                     <p>
@@ -296,7 +298,9 @@
 
                     <p>
                         The DOI resolver at doi.org will normally redirect a user to the resource location of a DOI. For example, the DOI "10.1126/science.169.3946.635" redirects to a landing page describing the article, "The Structure of Ordinary Water". Content negotiated
-                        requests to doi.org that ask for a content type which isn't "text/html" will be redirected to a metadata service hosted by the DOI's registration agency. CrossRef, DataCite and mEDRA support content negotiated DOIs via their respective resolvers.                      
+                        requests to doi.org that ask for a content type which isn't "text/html" will be redirected to a metadata service hosted
+                        by the DOI's registration agency. Crossref, DataCite and mEDRA support content negotiated DOIs via their respective
+                        resolvers.
                     </p>
 
 
@@ -334,7 +338,7 @@ https://doi.org/10.1126/science.169.3946.635
                    |
                    V
 
-       CrossRef metadata service
+    Crossref metadata service
 https://api.crossref.org/10.1126/science.169.3946.635/transform
 </pre>
 
@@ -463,7 +467,8 @@ https://api.crossref.org/10.1126/science.169.3946.635/transform
 
 
                     <p>
-                        Currently three DOI registration agencies have implemented content negotation for their DOIs: CrossRef, DataCite and mEDRA. They support a number of metadata content types, some of which are common to the three RAs.
+                        Currently three DOI registration agencies have implemented content negotation for their DOIs: Crossref, DataCite and
+                        mEDRA. They support a number of metadata content types, some of which are common to the three RAs.
                     </p>
                     <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" class="table table-bordered table-striped">
                         <colgroup>
@@ -477,7 +482,7 @@ https://api.crossref.org/10.1126/science.169.3946.635/transform
                             <tr>
                                 <th scope="col" class="left">Format</th>
                                 <th scope="col" class="left">Content Type</th>
-                                <th scope="col" class="left">CrossRef</th>
+                                <th scope="col" class="left">Crossref</th>
                                 <th scope="col" class="left">DataCite</th>
                                 <th scope="col" class="left">mEDRA</th>
                             </tr>
@@ -533,13 +538,23 @@ https://api.crossref.org/10.1126/science.169.3946.635/transform
                                 <td class="left"><span class='label label-success'>Yes</span></td>
                             </tr>
                             <tr>
-                                <td class="left"><a href='https://support.crossref.org/hc/en-us/articles/214936283-UNIXREF-query-output-format'>CrossRef Unixref XML</a></td>
+                                <td class="left"><a href='https://support.crossref.org/hc/en-us/articles/214936283-UNIXREF-query-output-format'>Crossref
+                                        Unixref XML</a></td>
                                 <td class="left">application/vnd.crossref.unixref+xml</td>
                                 <td class="left"><span class='label label-success'>Yes</span></td>
                                 <td class="left"><span class='label label-important'>No</span></td>
                                 <td class="left"><span class='label label-important'>No</span></td>
                             </tr>
                             <tr>
+                                <td class="left"><a
+                                        href='https://www.crossref.org/documentation/retrieve-metadata/xml-output-formats/unixsd-query-output-format/'>Crossref
+                                        UNIXSD XML</a></td>
+                                <td class="left">application/vnd.crossref.unixsd+xml</td>
+                                <td class="left"><span class='label label-success'>Yes</span></td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                                <td class="left"><span class='label label-important'>No</span></td>
+                                </tr>
+                                <tr>
                                 <td class="left"><a href='https://schema.datacite.org/'>DataCite XML</a></td>
                                 <td class="left">application/vnd.datacite.datacite+xml</td>
                                 <td class="left"><span class='label label-important'>No</span></td>
@@ -568,7 +583,7 @@ https://api.crossref.org/10.1126/science.169.3946.635/transform
 
 
                     <p>
-                        This request will return CrossRef XML for CrossRef DOIs and RDF XML for non-CrossRef DOIs, such as DataCite DOIs.
+                        This request will return Crossref XML for Crossref DOIs and RDF XML for non-Crossref DOIs, such as DataCite DOIs.
                     </p>
 
                 </div>
@@ -579,7 +594,8 @@ https://api.crossref.org/10.1126/science.169.3946.635/transform
 
 
                         <p>
-                            CrossRef, DataCite and mEDRA support formatted citations via the text/bibliography content type. These are the output of the
+                            Crossref, DataCite and mEDRA support formatted citations via the text/bibliography content type. These are the output of
+                            the
                             <a href='http://citationstyles.org/'>Citation Style Language</a> processor, citeproc-js. The content type can take two additional parameters to customise its response format. A "style" can be chosen from the list of style names
                             found in the <a href='https://github.com/citation-style-language/styles'>CSL style
   repository</a>. Many styles are supported, including common styles such as apa and harvard3:
@@ -635,7 +651,7 @@ Frank, HS 1970, « The Structure of Ordinary Water: New data and interpretations
                         For documentation see <a href="https://data.datacite.org">https://data.datacite.org</a>.
                     </p>
                     <p>
-                        CrossRef also supports link-based content type requests via their REST API:
+                        Crossref also supports link-based content type requests via their REST API:
                     </p>
 
 
