@@ -1,0 +1,193 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+..[0] Darrel Jones, 100(1) Named J. 10; Smith, 200(2) Other J. 20
+..[1] Daniel Jones, 100(1) Named J. 10; Smith, 200(2) Other J. 20
+>>[2] Noakes, 300 Better Journal 30
+<<===== RESULT =====<<
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "container-title": {
+            "Named Journal": "#1>>>Named J.",
+            "Other Journal": "#1>>>Other J."
+        }
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                },
+                {
+                    "id": "ITEM-3"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-2"
+                },
+                {
+                    "id": "ITEM-4"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [["CITATION-1", 1]], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-3", 
+            "citationItems": [
+                {
+                    "id": "ITEM-5"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 3
+            }
+        }, 
+        [["CITATION-1", 1], ["CITATION-2", 2]], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title />
+    <id />
+    <link href="dummy" rel="self" />
+    <link href="dummy" rel="documentation" />
+    <category citation-format="numeric" />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation disambiguate-add-givenname="true">
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <names variable="author">
+          <name form="short" initialize-with="."/>
+        </names>
+        <group delimiter=" ">
+          <group>
+            <number variable="volume"/>
+            <choose>
+              <if cite-form="1">
+                <number variable="issue" prefix="(" suffix=")"/>
+              </if>
+            </choose>
+          </group>
+          <text form="short" variable="container-title"/>
+          <number variable="page"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "article-journal",
+        "author": [
+          {
+            "family": "Jones",
+            "given": "Darrel"
+          }
+        ],
+        "volume": "100",
+        "issue": "1",
+        "container-title": "Named Journal",
+        "page": "10"
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "article-journal",
+        "author": [
+          {
+            "family": "Jones",
+            "given": "Daniel"
+          }
+        ],
+        "volume": "100",
+        "issue": "1",
+        "container-title": "Named Journal",
+        "page": "10"
+    },
+    {
+        "id": "ITEM-3", 
+        "type": "article-journal",
+        "author": [
+          {
+            "family": "Smith",
+            "given": "William"
+          }
+        ],
+        "volume": "200",
+        "issue": "2",
+        "container-title": "Other Journal",
+        "page": "20"
+    },
+    {
+        "id": "ITEM-4", 
+        "type": "article-journal",
+        "author": [
+          {
+            "family": "Smith",
+            "given": "William"
+          }
+        ],
+        "volume": "200",
+        "issue": "2",
+        "container-title": "Other Journal",
+        "page": "20"
+    },
+    {
+        "id": "ITEM-5", 
+        "type": "article-journal",
+        "author": [
+          {
+            "family": "Noakes",
+            "given": "Richard"
+          }
+        ],
+        "volume": "300",
+        "issue": "3",
+        "container-title": "Better Journal",
+        "page": "30"
+    }
+]
+<<===== INPUT =====<<

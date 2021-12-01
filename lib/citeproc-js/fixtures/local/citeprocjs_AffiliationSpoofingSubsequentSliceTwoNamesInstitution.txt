@@ -1,6 +1,7 @@
 >>===== OPTIONS =====>>
 {
-    "spoof_institutional_affiliations": true
+    "spoof_institutional_affiliations": true,
+    "etal_min_etal_usefirst_hack": true
 }
 <<===== OPTIONS =====<<
 

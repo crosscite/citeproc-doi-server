@@ -31,7 +31,7 @@ Tiny Subcommittee
         <institution 
           institution-parts="long" 
           delimiter=", "
-          use-first="1"/>
+          use-last="1"/>
       </names>
     </layout>
   </citation>

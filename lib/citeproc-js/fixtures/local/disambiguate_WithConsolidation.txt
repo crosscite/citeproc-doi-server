@@ -1,0 +1,128 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+>>[0] SchUG idF BGBl I 80/2020; SchUG idF BGBl I 117/2008.
+>>[1] SchUG idF BGBl I 80/2020; SchUG idF BGBl I 117/2008.
+<<===== RESULT =====<<
+
+
+>>===== CITATIONS =====>>
+[
+    [
+        {
+            "citationID": "CITATION-1",
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                },
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 1
+            }
+        }, 
+        [], 
+        []
+    ],
+    [
+        {
+            "citationID": "CITATION-2", 
+            "citationItems": [
+                {
+                    "id": "ITEM-1"
+                },
+                {
+                    "id": "ITEM-2"
+                }
+            ], 
+            "properties": {
+                "noteIndex": 2
+            }
+        }, 
+        [
+            [
+                "CITATION-1", 
+                1
+            ] 
+        ], 
+        []
+    ]
+]
+<<===== CITATIONS =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title>Test fixture</title>
+    <id>http://citationstyles.org/tests/fixture</id>
+    <link href="http://citationstyles.org/tests/fixture" rel="self"/>
+    <link href="http://citationstyles.org/documentation/text" rel="documentation"/>
+    <category citation-format="author-date"/>
+    <updated>2014-04-30T13:19:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <macro name="tail">
+    <group delimiter=" ">
+      <text variable="title" form="short"/>
+      <text variable="references" prefix="idF "/>
+    </group>
+  </macro>
+
+  <macro name="tail-short">
+    <group delimiter=" ">
+      <text variable="title" form="short"/>
+      <choose>
+        <if disambiguate="true">
+          <text variable="references" prefix="idF "/>
+        </if>
+      </choose>
+    </group>
+  </macro>
+
+  <citation>
+    <layout suffix="." delimiter="; ">
+      <choose>
+        <if position="subsequent">
+          <text macro="tail-short"/>
+        </if>
+        <else>
+          <text macro="tail"/>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+  {
+    "id": "ITEM-1",
+    "type": "legislation",
+    "title": "Schulunterrichtsgesetz",
+    "references": "BGBl I 80/2020",
+    "shortTitle": "SchUG",
+    "jurisdiction": "at"
+  },
+  {
+    "id": "ITEM-2",
+    "type": "legislation",
+    "title": "Schulunterrichtsgesetz",
+    "references": "BGBl I 117/2008",
+    "shortTitle": "SchUG",
+    "jurisdiction": "at"
+  }
+]
+<<===== INPUT =====<<

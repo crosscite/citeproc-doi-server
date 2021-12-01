@@ -5,7 +5,7 @@ citation
 
 
 >>===== RESULT =====>>
-Some Court
+Some Court, or other
 <<===== RESULT =====<<
 
 >>===== ABBREVIATIONS =====>>
@@ -38,7 +38,7 @@ Some Court
     <layout>
       <names variable="author">
         <name delimiter=", "/>
-        <institution institution-parts="short" use-first="1"/>
+        <institution institution-parts="short" use-first="1" use-last="1"/>
       </names>
     </layout>
   </citation>
@@ -51,10 +51,13 @@ Some Court
     {
         "author": [
             {
-                "literal": "somecourt"
+                "literal": "somecourt|or other"
             }
         ], 
-        "type": "book"
+        "type": "book",
+        "issued": {
+          "date-parts": [[2000]]
+        }
     }
 ]
 <<===== INPUT =====<<

@@ -35,6 +35,7 @@ Roe, Tiny Subcommittee of Big Ministry, et al. eds.
           delimiter=", "
           part-separator=" of "
           use-first="1"
+	  reverse-order="true"
           use-last="1">
         </institution>
         <label form="short" prefix=" "/>

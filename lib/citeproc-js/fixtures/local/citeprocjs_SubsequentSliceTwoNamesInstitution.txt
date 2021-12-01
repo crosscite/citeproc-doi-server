@@ -2,7 +2,11 @@
 bibliography
 <<===== MODE =====<<
 
-
+>>===== OPTIONS =====>>
+{
+    "etal_min_etal_usefirst_hack": true
+}
+<<===== OPTIONS =====<<
 
 >>===== RESULT =====>>
 <div class="csl-bib-body">

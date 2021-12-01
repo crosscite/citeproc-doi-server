@@ -317,7 +317,7 @@ citation
       <if type="report">
         <names variable="authority">
           <name and="text" delimiter=", " sort-separator=", "/>
-          <institution form="long" reverse-order="true"/>
+          <institution form="long"/>
         </names>
       </if>
     </choose>

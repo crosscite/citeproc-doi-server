@@ -34,7 +34,7 @@ Division of Errors and Omissions, Court of Appeal
     <layout>
       <names variable="author">
         <name/>
-        <institution form="short"/>
+        <institution form="short" reverse-order="true"/>
       </names>
     </layout>
   </citation>

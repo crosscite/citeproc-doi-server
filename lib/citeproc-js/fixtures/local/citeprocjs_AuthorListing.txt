@@ -4,6 +4,12 @@ bibliography
 
 Not the cleanest of tests.
 
+>>===== OPTIONS =====>>
+{
+    "etal_min_etal_usefirst_hack": true
+}
+<<===== OPTIONS =====<<
+
 >>===== RESULT =====>>
 <div class="csl-bib-body">
   <div class="csl-entry">

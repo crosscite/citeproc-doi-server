@@ -1,4 +1,167 @@
 =========================
+Changes in version 1.4.61
+=========================
+
+- Apply text-case to numeric variables with numeric content.
+
+=========================
+Changes in version 1.4.60
+=========================
+
+- Limit en-dash equivalence to hyphen at 1.4.50 to the page
+  variable.
+
+=========================
+Changes in version 1.4.59
+=========================
+
+- Fix bug in names abbreviation fallback from institution-entire
+  to institution-part.
+
+=========================
+Changes in version 1.4.58
+=========================
+
+- Smarten up is-multiple
+
+  https://github.com/Juris-M/citeproc-js/issues/174
+
+=========================
+Changes in version 1.4.57
+=========================
+
+- Preserve bare hyphens in docket numbers.
+
+=========================
+Changes in version 1.4.56
+=========================
+
+- Change is-multiple test attribute to test for presence of
+  comma-space, space-and-space or ampersand.
+
+=========================
+Changes in version 1.4.55
+=========================
+
+- Implement cite-form flag, supplied via abbreviation markup as
+  discussed here:
+
+  https://github.com/Juris-M/legal-resource-registry/issues/34#issuecomment-749249240
+
+=========================
+Changes in version 1.4.54
+=========================
+
+- Support in-text markup in name elements.
+
+  https://github.com/Juris-M/citeproc-js/issues/173
+
+=========================
+Changes in version 1.4.53
+=========================
+
+- Remove sort mask from macros calling an empty date, and set date
+  keys as pure numeric strings
+
+  https://github.com/citation-style-language/styles/pull/5169
+
+=========================
+Changes in version 1.4.52
+=========================
+
+- Add is-multiple test. Returns true if the target variable contains one or more
+  spaces.
+
+=========================
+Changes in version 1.4.51
+=========================
+
+- Fix crashing bug triggered by parallels initialization failure (affects CSL-M styles only).
+
+=========================
+Changes in version 1.4.50
+=========================
+
+- Fix page-range-format to work equally with hyphen and en-dash.
+
+=========================
+Changes in version 1.4.49
+=========================
+
+- Fix in-text backref behavior (previously completely non-functional).
+
+=========================
+Changes in version 1.4.48
+=========================
+
+- Fix disambig with demote-non-dropping-particle=never
+
+  https://github.com/Juris-M/citeproc-js/issues/171
+
+=========================
+Changes in version 1.4.47
+=========================
+
+- Changes to institution name attributes
+  - Apply use-first and use-last to elements as entered, not as reversed
+  - Add stop-first to mirror stop-last
+  - Render as entered by default, require explicit reverse-order to reverse
+  - Make code less unreadable
+
+- Remove implicit institution name truncation
+
+- Recognize strings and terms in cs:substitute
+
+=========================
+Changes in version 1.4.46
+=========================
+
+- Enable trailing-punctuation suppression in in-text styles.
+
+=========================
+Changes in version 1.4.45
+=========================
+
+- Fix bug in parallel-referencing code.
+
+- Update schema (fix missing or misplaced attributes and elements),
+  fix syntax issues in style modules, update style tests.
+
+=========================
+Changes in version 1.4.44
+=========================
+
+- Fix a bug in fallback from institution-entire to institution-part
+
+=========================
+Changes in version 1.4.43
+=========================
+
+- Implement fallback attribute on cs:law-module
+  https://github.com/Juris-M/zotero/issues/95
+
+=========================
+Changes in version 1.4.42
+=========================
+
+- Fall back from institution-entire abbrev to institution-part abbrev
+
+- Adjust output of NL legal_case in module
+
+=========================
+Changes in version 1.4.41
+=========================
+
+- Make availableAbbrevDomains persistent, extend abbrev key
+  normalization to number and classic
+
+=========================
+Changes in version 1.4.40
+=========================
+
+- Implement item-level locale arbitration of jurisdiction-preference for abbrevs
+
+=========================
 Changes in version 1.4.39
 =========================
 

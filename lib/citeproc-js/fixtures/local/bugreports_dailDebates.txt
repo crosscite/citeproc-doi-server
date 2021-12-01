@@ -401,7 +401,7 @@ citation
         <group delimiter=" ">
           <names variable="author">
             <name/>
-            <institution institution-parts="short" use-first="1"/>
+            <institution institution-parts="short" use-last="1"/>
             <substitute>
               <names variable="authority"/>
               <text form="short" variable="title"/>

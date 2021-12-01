@@ -1481,7 +1481,7 @@ citation
       <else-if match="all" type="legal_case" variable="title"/>
       <else-if match="all" type="report" variable="jurisdiction title"/>
       <else>
-        <names variable="authority">
+        <names variable="authority" prefix="XXX">
           <name/>
           <institution institution-parts="short"/>
         </names>

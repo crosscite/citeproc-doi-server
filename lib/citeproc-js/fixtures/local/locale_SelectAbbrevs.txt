@@ -1,0 +1,73 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+>>===== RESULT =====>>
+SCC
+CSC
+<<===== RESULT =====<<
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-1"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-2"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>===== CSL =====>>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" page-range-format="chicago" version="1.1mlz1">
+  <info>
+    <title>JM Indigo Book Law Review TESTING</title>
+    <id>http://juris-m.github.io/styles/jm-indigobook-law-review-testing</id>
+    <link href="http://juris-m.github.io/styles/jm-indigobook-law-review" rel="self"/>
+    <link href="https://law.resource.org/pub/us/code/blue/IndigoBook.html" rel="documentation"/>
+    <author>
+      <name>Frank Bennett</name>
+      <email>biercenator@gmail.com</email>
+    </author>
+    <category citation-format="note"/>
+    <category field="law"/>
+    <updated>2016-10-08T08:07:23.106844</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="fr">
+	<style-options jurisdiction-preference="fr"/>
+  </locale>
+  <citation>
+    <layout>
+     <names variable="authority">
+       <name/>
+       <institution form="short"/>
+     </names>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "legal_case",
+        "authority": "supreme.court",
+        "jurisdiction": "ca"
+    },
+    {
+        "id": "ITEM-2", 
+        "type": "legal_case",
+        "authority": "supreme.court",
+        "jurisdiction": "ca",
+        "language": "fr"
+    }
+]
+<<===== INPUT =====<<

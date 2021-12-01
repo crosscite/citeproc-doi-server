@@ -39,6 +39,7 @@ Noakes with Roe, Tiny Subcommittee, Big Ministry and Doe et al., Trivial Working
         <institution 
           institution-parts="long" 
           delimiter=", "
+	  reverse-order="true"
           use-first="1"
           use-last="1"/>
         <label form="short" prefix=" "/>

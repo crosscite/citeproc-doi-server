@@ -1,0 +1,100 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+Case type: 2:19-cv-00222
+Other type: 2:19-cv–00222
+<<===== RESULT =====<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.0">
+  <info>
+    <id />
+    <title />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=" ">
+        <choose>
+          <if type="legal_case">
+            <text value="Case type:"/>
+          </if>
+          <else>
+            <text value="Other type:"/>
+          </else>
+        </choose>
+        <label variable="number"/>
+        <number variable="number"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+>>===== CITATION-ITEMS =====>>
+[
+  [
+    {
+      "id": "ITEM-2"
+    }
+  ],
+  [
+    {
+      "id": "ITEM-1"
+    }
+  ]
+]
+<<===== CITATION-ITEMS =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1",
+        "type": "book",
+        "number": "2:19-cv-00222"
+    },
+	{
+        "id": "ITEM-2",
+		"type": "legal_case",
+		"multi": {
+			"main": {},
+			"_keys": {}
+		},
+		"authority": "district.court",
+		"note": "event-date: Jul 31, 2019",
+		"number": "2:19-cv-00222",
+		"title": "Smith v. State of Maine",
+		"URL": "https://www.courtlistener.com/docket/15675964/smith-v-state-of-maine/#entry-26",
+		"document-name": "Ord. Affirming Recommended Dec. of Magis. J.",
+		"document-number": "26",
+		"jurisdiction": "us:c1:me.d",
+		"accessed": {
+			"date-parts": [
+				[
+					"2020",
+					12,
+					31
+				]
+			]
+		},
+		"submitted": {
+			"date-parts": [
+				[
+					"2019",
+					5,
+					15
+				]
+			]
+		}
+	}
+]
+<<===== INPUT =====<<

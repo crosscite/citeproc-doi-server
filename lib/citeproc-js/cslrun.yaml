@@ -4,7 +4,8 @@ path:
     local: fixtures/local
     std: fixtures/std/processor-tests/humans
     src: src
+    abbrevs: /media/storage/src/JM/jurism/juris-abbrevs
     locale: locale
-    modules: juris-modules
+    modules: /media/storage/src/JM/citeproc-js/juris-modules
     cslschema: csl-schemata/csl.rnc
     cslmschema: csl-schemata/csl-mlz.rnc

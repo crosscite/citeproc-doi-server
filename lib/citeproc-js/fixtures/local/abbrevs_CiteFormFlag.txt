@@ -1,0 +1,63 @@
+>>===== MODE =====>>
+citation
+<<===== MODE =====<<
+
+
+
+>>===== RESULT =====>>
+cite-form match OK on Pick.
+<<===== RESULT =====<<
+
+>>== ABBREVIATIONS ==>>
+{
+    "default": {
+        "container-title": {
+            "Pickwick Papers": "#1>>>Pick."
+        }
+    }
+}
+<<== ABBREVIATIONS ==<<
+
+
+>>===== CSL =====>>
+<style 
+      xmlns="http://purl.org/net/xbiblio/csl"
+      class="note"
+      version="1.1mlz1">
+  <info>
+    <title />
+    <id />
+    <link href="dummy" rel="self" />
+    <link href="dummy" rel="documentation" />
+    <category citation-format="numeric" />
+    <updated>2009-08-10T04:49:00+09:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation>
+    <layout delimiter="; ">
+      <group delimiter=" ">
+        <choose>
+          <if cite-form="1">
+            <text value="cite-form match OK on"/>
+          </if>
+          <else>
+            <text value="Oops, cite-form match FAIL on"/>
+          </else>
+        </choose>
+        <text form="short" variable="container-title"/>
+      </group>
+    </layout>
+  </citation>
+</style>
+<<===== CSL =====<<
+
+
+>>===== INPUT =====>>
+[
+    {
+        "id": "ITEM-1", 
+        "type": "article-journal",
+        "container-title": "Pickwick Papers"
+    }
+]
+<<===== INPUT =====<<

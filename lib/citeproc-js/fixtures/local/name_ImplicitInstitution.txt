@@ -32,6 +32,7 @@ bibliography
     <layout>
       <names variable="author">
         <name and="symbol" />
+        <institution reverse-order="true"/>
       </names>
     </layout>
   </bibliography>
@@ -45,21 +46,18 @@ bibliography
         "author": [
             {
                 "family": "Doe", 
-                "given": "John", 
-                "static-ordering": false
+                "given": "John"
             }, 
             {
                 "family": "Roe", 
-                "given": "Jane", 
-                "static-ordering": false
+                "given": "Jane"
             }, 
             {
                 "literal": "Multi-National United|Department of Alien Weapons Vivisection"
             }, 
             {
                 "family": "Noakes", 
-                "given": "John", 
-                "static-ordering": false
+                "given": "John"
             }
         ], 
         "id": "ITEM-1", 

@@ -31,6 +31,7 @@ Tiny Subcommittee, Big Ministry
         <institution 
           institution-parts="long" 
           delimiter=", "
+	  reverse-order="true"
           use-first="1"
           use-last="1"/>
       </names>

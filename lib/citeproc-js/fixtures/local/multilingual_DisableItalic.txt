@@ -168,7 +168,7 @@ bibliography
               </names>
               <names variable="committee">
                 <name/>
-                <institution use-last="1"/>
+                <institution use-last="1" stop-first="1"/>
               </names>
             </group>
           </group>
