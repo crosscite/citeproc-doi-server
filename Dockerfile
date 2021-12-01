@@ -1,4 +1,4 @@
-FROM phusion/passenger-nodejs:0.9.19
+FROM phusion/passenger-nodejs:2.0.0
 
 # Set correct environment variables
 ENV HOME /home/app
@@ -26,7 +26,6 @@ RUN rm -f /etc/service/nginx/down && \
     rm /etc/nginx/sites-enabled/default
 COPY vendor/docker/webapp.conf /etc/nginx/sites-enabled/webapp.conf
 COPY vendor/docker/00_app_env.conf /etc/nginx/conf.d/00_app_env.conf
-COPY vendor/docker/cors.conf /etc/nginx/conf.d/cors.conf
 
 # install dockerize
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
