@@ -1,3 +1,7 @@
+**Unmaintained**
+
+This repository used to be the code for the hosted citation service at https://citation.crosscite.org this now has been taken over and supported by the DOI foundation, see https://citation.doi.org/
+
 # DOI Formating service (citeproc)
 
 [![Build Status](https://travis-ci.org/crosscite/citeproc-doi-server.svg)](https://travis-ci.org/crosscite/citeproc-doi-server)
